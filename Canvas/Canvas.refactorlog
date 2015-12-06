@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="6ee90f0c-5d14-47b6-bbfd-1481f5dc2fe3" ChangeDateTime="12/06/2015 00:23:00">
+    <Property Name="ElementName" Value="[dbo].[Projeto].[Resposta]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Projeto]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Resposta_8" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a1c2052c-60a0-4d5d-b5bc-8919188dccd1" ChangeDateTime="12/06/2015 00:37:20">
+    <Property Name="ElementName" Value="[dbo].[Avaliacao].[Nota_Questao_1]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Avaliacao]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Nota_Quadro_1" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="aff613dc-56e1-4f0b-a887-cea30127a1f3" ChangeDateTime="12/06/2015 00:37:27">
+    <Property Name="ElementName" Value="[dbo].[Avaliacao].[Nota_Questao_2]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Avaliacao]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Nota_Quadro_2" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ef37e866-d192-43f5-a065-924c5fb1d34e" ChangeDateTime="12/06/2015 00:52:54">
+    <Property Name="ElementName" Value="[dbo].[Aluno_Projeto].[Id_Alun]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Aluno_Projeto]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Aluno" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="20265f53-00b4-4962-aca0-5044619079ee" ChangeDateTime="12/06/2015 00:55:49">
+    <Property Name="ElementName" Value="[dbo].[Comentario].[Campo_1]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Comentario]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Quadro_1" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="abbd91ed-ee62-43dc-a26c-804bcf6aa420" ChangeDateTime="12/06/2015 00:59:10">
+    <Property Name="ElementName" Value="[dbo].[Comentario].[Id_Projeto]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Comentario]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Aluno_Projeto" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="98b6f0b9-2404-4912-b289-a8cf76f34917" ChangeDateTime="12/06/2015 01:01:46">
+    <Property Name="ElementName" Value="[dbo].[Peso].[Peso_Quadro_1]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Peso]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Peso_Quadro_6" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3808813c-e9ef-472e-86b9-fcd34e61f375" ChangeDateTime="12/06/2015 01:02:09">
+    <Property Name="ElementName" Value="[dbo].[Peso].[Peso_Quadro_1]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Peso]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Peso_Quadro_8" />
+  </Operation>
+</Operations>
