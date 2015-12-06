@@ -23,7 +23,7 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <asp:HiddenField runat="server" ID="hdn" />
 
-    <h3>Cadastro de Alunos</h3>
+    <h3>Cadastro de Clientes</h3>
 
 
 
@@ -37,8 +37,8 @@
             Email:<br />
             <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# BindItem.Email %>' />
             <br />
-            Senha:<br />
-            <asp:TextBox ID="SenhaTextBox" runat="server" Text='<%# BindItem.Senha %>' />
+            Data de Nascimento:<br />
+            <asp:TextBox ID="DataNascimentoTextBox" runat="server" Text='<%# BindItem.DataNascimento %>' />
             <br />
 
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Salvar" />
@@ -104,9 +104,9 @@
                         <asp:TextBox ID="txtEmailModal" runat="server" /></td>
                 </tr>
                 <tr>
-                    <td>Senha:</td>
+                    <td>Data de Nascimento:</td>
                     <td>
-                        <asp:TextBox ID="txtSenhaModal" runat="server" /></td>
+                        <asp:TextBox ID="txtDataNascModal" runat="server" /></td>
                 </tr>
             </table>
 
@@ -120,5 +120,3 @@
 
 
 </asp:Content>
-
-
