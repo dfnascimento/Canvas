@@ -46,7 +46,13 @@ namespace Modelo.PN
             foreach (var result in query) {
                 PNProfessor p = new PNProfessor();
                 p.nome = result.part.Nome;
+                p.email = result.part.Email;
+                p.senha = result.part.Senha;
+                p.status = result.part.Status;
+                p.disciplinaPrincipal = result.prof.Disciplina_Principal;
+                p.departamento = result.prof.Departamento;
 
+                lista.Add(p);
 
             }
             return lista;
