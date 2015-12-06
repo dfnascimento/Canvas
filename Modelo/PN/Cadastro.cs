@@ -12,55 +12,116 @@ namespace Modelo.PN
 
         public static bool InserirProfessor(PNProfessor pr)
         {
-            CanvasEntities2 db = new CanvasEntities2();
-            //Participante npr = new Participante();
-
-            //Verifica se o email já está cadastrado
-            var npr = (from part in db.Participantes
-                  where part.Email == pr.email
-                  select  part).Count();
-
-
-            if (npr > 0)
+            try
             {
-                return false;
-            }
-            //Teste commit
-            return pr.Inserir();
+                CanvasEntities2 db = new CanvasEntities2();
+                
+                //Verifica se o email já está cadastrado
+                var npr = (from part in db.Participantes
+                           where part.Email == pr.email
+                           select part).Count();
 
+
+                if (npr > 0)
+                {
+                    return false;
+                }
+                
+                return pr.Inserir();
+            }
+            catch (Exception) {
+                throw;
+            }
+        }
+
+        public static bool InserirAvaliadorExterno(PNAvaliadorExterno ae)
+        {
+            try
+            {
+                CanvasEntities2 db = new CanvasEntities2();
+
+                //Verifica se o email já está cadastrado
+                var npr = (from part in db.Participantes
+                           where part.Email == ae.email
+                           select part).Count();
+
+
+                if (npr > 0)
+                {
+                    return false;
+                }
+
+                return ae.Inserir();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static bool InserirAluno(PNAluno al)
+        {
+            try
+            {
+                CanvasEntities2 db = new CanvasEntities2();
+
+                //Verifica se o email já está cadastrado
+                var npr = (from part in db.Participantes
+                           where part.Email == al.email
+                           select part).Count();
+
+
+                if (npr > 0)
+                {
+                    return false;
+                }
+
+                return al.Inserir();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public static List<PNProfessor> ListaProfessoresInativos()
         {
 
-            CanvasEntities2 db = new CanvasEntities2();
+            try
+            {
+                CanvasEntities2 db = new CanvasEntities2();
 
-            var query =
-                       from prof in db.Professors
-                       join part in db.Participantes on prof.Id_Participante equals part.Id
-                       where part.Status == "Inativo"
-                       select new
-                       {
-                           prof, part
-                       };
+                var query =
+                           from prof in db.Professors
+                           join part in db.Participantes on prof.Id_Participante equals part.Id
+                           where part.Status == "Inativo"
+                           select new
+                           {
+                               prof,
+                               part
+                           };
 
-            List<PNProfessor> lista = new List<PNProfessor>();
+                List<PNProfessor> lista = new List<PNProfessor>();
 
-            foreach (var result in query) {
-                PNProfessor p = new PNProfessor();
-                p.nome = result.part.Nome;
-                p.email = result.part.Email;
-                p.senha = result.part.Senha;
-                p.status = result.part.Status;
-                p.disciplinaPrincipal = result.prof.Disciplina_Principal;
-                p.departamento = result.prof.Departamento;
+                foreach (var result in query)
+                {
+                    PNProfessor p = new PNProfessor();
+                    p.nome = result.part.Nome;
+                    p.email = result.part.Email;
+                    p.senha = result.part.Senha;
+                    p.status = result.part.Status;
+                    p.disciplinaPrincipal = result.prof.Disciplina_Principal;
+                    p.departamento = result.prof.Departamento;
 
-                lista.Add(p);
+                    lista.Add(p);
+
+                }
+                return lista;
 
             }
-            return lista;
-            
-
+            catch (Exception) {
+                throw;
+            }
         }
 
 
