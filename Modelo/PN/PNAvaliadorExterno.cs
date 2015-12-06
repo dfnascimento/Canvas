@@ -32,10 +32,10 @@ namespace Modelo.PN
 
             //Insere no banco
 
-            db.Participantes.Add(p);
+            db.Participante.Add(p);
             db.SaveChanges();
 
-            a.Id_Participante = db.Participantes.Where(s => s.Email == p.Email).FirstOrDefault<Participante>().Id;
+            a.Id_Participante = db.Participante.Where(s => s.Email == p.Email).FirstOrDefault<Participante>().Id;
 
             a.Area_Atuacao = this.areaAtuacao;
             a.Formacao = this.formacao;

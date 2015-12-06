@@ -17,10 +17,10 @@ namespace Modelo.DAO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Participante()
         {
-            this.Admins = new HashSet<Admin>();
-            this.Alunoes = new HashSet<Aluno>();
+            this.Admin = new HashSet<Admin>();
+            this.Aluno = new HashSet<Aluno>();
             this.Avaliador_Externo = new HashSet<Avaliador_Externo>();
-            this.Professors = new HashSet<Professor>();
+            this.Professor = new HashSet<Professor>();
         }
     
         public int Id { get; set; }
@@ -30,12 +30,12 @@ namespace Modelo.DAO
         public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Admin> Admins { get; set; }
+        public virtual ICollection<Admin> Admin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Aluno> Alunoes { get; set; }
+        public virtual ICollection<Aluno> Aluno { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Avaliador_Externo> Avaliador_Externo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Professor> Professors { get; set; }
+        public virtual ICollection<Professor> Professor { get; set; }
     }
 }

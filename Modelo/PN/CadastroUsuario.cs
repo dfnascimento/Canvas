@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Modelo.PN
 {
-    public class Cadastro
+    public class CadastroUsuario
     {
 
         public static bool InserirProfessor(PNProfessor pr)
@@ -17,7 +17,7 @@ namespace Modelo.PN
                 CanvasEntities2 db = new CanvasEntities2();
                 
                 //Verifica se o email já está cadastrado
-                var npr = (from part in db.Participantes
+                var npr = (from part in db.Participante
                            where part.Email == pr.email
                            select part).Count();
 
@@ -41,7 +41,7 @@ namespace Modelo.PN
                 CanvasEntities2 db = new CanvasEntities2();
 
                 //Verifica se o email já está cadastrado
-                var npr = (from part in db.Participantes
+                var npr = (from part in db.Participante
                            where part.Email == ae.email
                            select part).Count();
 
@@ -66,7 +66,7 @@ namespace Modelo.PN
                 CanvasEntities2 db = new CanvasEntities2();
 
                 //Verifica se o email já está cadastrado
-                var npr = (from part in db.Participantes
+                var npr = (from part in db.Participante
                            where part.Email == al.email
                            select part).Count();
 
@@ -92,8 +92,8 @@ namespace Modelo.PN
                 CanvasEntities2 db = new CanvasEntities2();
 
                 var query =
-                           from prof in db.Professors
-                           join part in db.Participantes on prof.Id_Participante equals part.Id
+                           from prof in db.Professor
+                           join part in db.Participante on prof.Id_Participante equals part.Id
                            where part.Status == "Inativo"
                            select new
                            {
@@ -124,6 +124,47 @@ namespace Modelo.PN
             }
         }
 
+        public static List<PNAvaliadorExterno> ListaAvaliadoresExternosInativos()
+        {
+
+            try
+            {
+                CanvasEntities2 db = new CanvasEntities2();
+
+                var query =
+                           from aval in db.Avaliador_Externo
+                           join part in db.Participante on aval.Id_Participante equals part.Id
+                           where part.Status == "Inativo"
+                           select new
+                           {
+                               aval,
+                               part
+                           };
+
+                List<PNAvaliadorExterno> lista = new List<PNAvaliadorExterno>();
+
+                foreach (var result in query)
+                {
+                    PNAvaliadorExterno p = new PNAvaliadorExterno();
+                    p.nome = result.part.Nome;
+                    p.email = result.part.Email;
+                    p.senha = result.part.Senha;
+                    p.status = result.part.Status;
+                    p.areaAtuacao = result.aval.Area_Atuacao;
+                    p.formacao = result.aval.Formacao;
+                    
+                    lista.Add(p);
+
+                }
+                return lista;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
 
         public static bool Ativar(Participante pa) {
@@ -132,7 +173,7 @@ namespace Modelo.PN
             {
                 CanvasEntities2 db = new CanvasEntities2();
 
-                Participante par = db.Participantes.First(p => p.Email == pa.Email);
+                Participante par = db.Participante.First(p => p.Email == pa.Email);
 
                 par.Status = "Ativo";
 
@@ -153,7 +194,7 @@ namespace Modelo.PN
             {
                 CanvasEntities2 db = new CanvasEntities2();
 
-                Participante par = db.Participantes.First(p => p.Email == pa.Email);
+                Participante par = db.Participante.First(p => p.Email == pa.Email);
 
                 par.Status = "Inativo";
 

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CanvasModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CanvasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="Id" />
@@ -152,6 +152,7 @@
           <Property Name="Resposta_11" Type="varchar" MaxLength="200" />
           <Property Name="Resposta_12" Type="varchar" MaxLength="200" />
           <Property Name="Resposta_13" Type="varchar" MaxLength="200" />
+          <Property Name="Nome" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <Association Name="FK_Admin_Participante">
           <End Role="Participante" Type="Self.Participante" Multiplicity="1" />
@@ -333,7 +334,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CanvasModel1StoreContainer">
+        <EntityContainer Name="CanvasModelStoreContainer">
           <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Aluno" EntityType="Self.Aluno" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Aluno_Projeto" EntityType="Self.Aluno_Projeto" Schema="dbo" store:Type="Tables" />
@@ -412,7 +413,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="CanvasModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="CanvasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="Id" />
@@ -432,7 +433,7 @@
           <Property Name="Campus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Participante" Relationship="Self.FK_Aluno_Participante" FromRole="Aluno" ToRole="Participante" />
           <NavigationProperty Name="Aluno_Projeto" Relationship="Self.FK_Aluno_Projeto_Aluno" FromRole="Aluno" ToRole="Aluno_Projeto" />
-          <NavigationProperty Name="Liderancas" Relationship="Self.FK_Lideranca_Aluno" FromRole="Aluno" ToRole="Lideranca" />
+          <NavigationProperty Name="Lideranca" Relationship="Self.FK_Lideranca_Aluno" FromRole="Aluno" ToRole="Lideranca" />
         </EntityType>
         <EntityType Name="Aluno_Projeto">
           <Key>
@@ -443,7 +444,7 @@
           <Property Name="Id_Aluno" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Aluno" Relationship="Self.FK_Aluno_Projeto_Aluno" FromRole="Aluno_Projeto" ToRole="Aluno" />
           <NavigationProperty Name="Projeto" Relationship="Self.FK_Aluno_Projeto_Projeto" FromRole="Aluno_Projeto" ToRole="Projeto" />
-          <NavigationProperty Name="Comentarios" Relationship="Self.FK_Comentario_Aluno_Projeto" FromRole="Aluno_Projeto" ToRole="Comentario" />
+          <NavigationProperty Name="Comentario" Relationship="Self.FK_Comentario_Aluno_Projeto" FromRole="Aluno_Projeto" ToRole="Comentario" />
         </EntityType>
         <EntityType Name="Avaliacao">
           <Key>
@@ -533,10 +534,10 @@
           <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Senha" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Admins" Relationship="Self.FK_Admin_Participante" FromRole="Participante" ToRole="Admin" />
-          <NavigationProperty Name="Alunoes" Relationship="Self.FK_Aluno_Participante" FromRole="Participante" ToRole="Aluno" />
+          <NavigationProperty Name="Admin" Relationship="Self.FK_Admin_Participante" FromRole="Participante" ToRole="Admin" />
+          <NavigationProperty Name="Aluno" Relationship="Self.FK_Aluno_Participante" FromRole="Participante" ToRole="Aluno" />
           <NavigationProperty Name="Avaliador_Externo" Relationship="Self.FK_Avaliador_Externo_Participante" FromRole="Participante" ToRole="Avaliador_Externo" />
-          <NavigationProperty Name="Professors" Relationship="Self.FK_Professor_Participante" FromRole="Participante" ToRole="Professor" />
+          <NavigationProperty Name="Professor" Relationship="Self.FK_Professor_Participante" FromRole="Participante" ToRole="Professor" />
         </EntityType>
         <EntityType Name="Peso">
           <Key>
@@ -585,11 +586,12 @@
           <Property Name="Resposta_11" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Resposta_12" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Resposta_13" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Nome" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Aluno_Projeto" Relationship="Self.FK_Aluno_Projeto_Projeto" FromRole="Projeto" ToRole="Aluno_Projeto" />
           <NavigationProperty Name="Avaliador_Projeto" Relationship="Self.FK_Avaliador_Projeto_Projeto" FromRole="Projeto" ToRole="Avaliador_Projeto" />
-          <NavigationProperty Name="Liderancas" Relationship="Self.FK_Lideranca_Projeto" FromRole="Projeto" ToRole="Lideranca" />
+          <NavigationProperty Name="Lideranca" Relationship="Self.FK_Lideranca_Projeto" FromRole="Projeto" ToRole="Lideranca" />
           <NavigationProperty Name="Orientador_Projeto" Relationship="Self.FK_Orientador_Projeto_Professor" FromRole="Projeto" ToRole="Orientador_Projeto" />
-          <NavigationProperty Name="Pesoes" Relationship="Self.FK_Peso_Projeto" FromRole="Projeto" ToRole="Peso" />
+          <NavigationProperty Name="Peso" Relationship="Self.FK_Peso_Projeto" FromRole="Projeto" ToRole="Peso" />
         </EntityType>
         <Association Name="FK_Admin_Participante">
           <End Role="Participante" Type="Self.Participante" Multiplicity="1" />
@@ -772,49 +774,49 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="CanvasEntities2" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Admins" EntityType="Self.Admin" />
-          <EntitySet Name="Alunoes" EntityType="Self.Aluno" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" />
+          <EntitySet Name="Aluno" EntityType="Self.Aluno" />
           <EntitySet Name="Aluno_Projeto" EntityType="Self.Aluno_Projeto" />
-          <EntitySet Name="Avaliacaos" EntityType="Self.Avaliacao" />
+          <EntitySet Name="Avaliacao" EntityType="Self.Avaliacao" />
           <EntitySet Name="Avaliador_Externo" EntityType="Self.Avaliador_Externo" />
           <EntitySet Name="Avaliador_Projeto" EntityType="Self.Avaliador_Projeto" />
-          <EntitySet Name="Comentarios" EntityType="Self.Comentario" />
-          <EntitySet Name="Liderancas" EntityType="Self.Lideranca" />
+          <EntitySet Name="Comentario" EntityType="Self.Comentario" />
+          <EntitySet Name="Lideranca" EntityType="Self.Lideranca" />
           <EntitySet Name="Orientador_Projeto" EntityType="Self.Orientador_Projeto" />
-          <EntitySet Name="Participantes" EntityType="Self.Participante" />
-          <EntitySet Name="Pesoes" EntityType="Self.Peso" />
-          <EntitySet Name="Professors" EntityType="Self.Professor" />
-          <EntitySet Name="Projetoes" EntityType="Self.Projeto" />
+          <EntitySet Name="Participante" EntityType="Self.Participante" />
+          <EntitySet Name="Peso" EntityType="Self.Peso" />
+          <EntitySet Name="Professor" EntityType="Self.Professor" />
+          <EntitySet Name="Projeto" EntityType="Self.Projeto" />
           <AssociationSet Name="FK_Admin_Participante" Association="Self.FK_Admin_Participante">
-            <End Role="Participante" EntitySet="Participantes" />
-            <End Role="Admin" EntitySet="Admins" />
+            <End Role="Participante" EntitySet="Participante" />
+            <End Role="Admin" EntitySet="Admin" />
           </AssociationSet>
           <AssociationSet Name="FK_Aluno_Participante" Association="Self.FK_Aluno_Participante">
-            <End Role="Participante" EntitySet="Participantes" />
-            <End Role="Aluno" EntitySet="Alunoes" />
+            <End Role="Participante" EntitySet="Participante" />
+            <End Role="Aluno" EntitySet="Aluno" />
           </AssociationSet>
           <AssociationSet Name="FK_Aluno_Projeto_Aluno" Association="Self.FK_Aluno_Projeto_Aluno">
-            <End Role="Aluno" EntitySet="Alunoes" />
+            <End Role="Aluno" EntitySet="Aluno" />
             <End Role="Aluno_Projeto" EntitySet="Aluno_Projeto" />
           </AssociationSet>
           <AssociationSet Name="FK_Lideranca_Aluno" Association="Self.FK_Lideranca_Aluno">
-            <End Role="Aluno" EntitySet="Alunoes" />
-            <End Role="Lideranca" EntitySet="Liderancas" />
+            <End Role="Aluno" EntitySet="Aluno" />
+            <End Role="Lideranca" EntitySet="Lideranca" />
           </AssociationSet>
           <AssociationSet Name="FK_Aluno_Projeto_Projeto" Association="Self.FK_Aluno_Projeto_Projeto">
-            <End Role="Projeto" EntitySet="Projetoes" />
+            <End Role="Projeto" EntitySet="Projeto" />
             <End Role="Aluno_Projeto" EntitySet="Aluno_Projeto" />
           </AssociationSet>
           <AssociationSet Name="FK_Comentario_Aluno_Projeto" Association="Self.FK_Comentario_Aluno_Projeto">
             <End Role="Aluno_Projeto" EntitySet="Aluno_Projeto" />
-            <End Role="Comentario" EntitySet="Comentarios" />
+            <End Role="Comentario" EntitySet="Comentario" />
           </AssociationSet>
           <AssociationSet Name="FK_Avaliacao_Avaliador_Projeto" Association="Self.FK_Avaliacao_Avaliador_Projeto">
-            <End Role="Avaliacao" EntitySet="Avaliacaos" />
-            <End Role="Avaliacao1" EntitySet="Avaliacaos" />
+            <End Role="Avaliacao" EntitySet="Avaliacao" />
+            <End Role="Avaliacao1" EntitySet="Avaliacao" />
           </AssociationSet>
           <AssociationSet Name="FK_Avaliador_Externo_Participante" Association="Self.FK_Avaliador_Externo_Participante">
-            <End Role="Participante" EntitySet="Participantes" />
+            <End Role="Participante" EntitySet="Participante" />
             <End Role="Avaliador_Externo" EntitySet="Avaliador_Externo" />
           </AssociationSet>
           <AssociationSet Name="FK_Avaliador_Projeto_Avaliador" Association="Self.FK_Avaliador_Projeto_Avaliador">
@@ -822,28 +824,28 @@
             <End Role="Avaliador_Projeto" EntitySet="Avaliador_Projeto" />
           </AssociationSet>
           <AssociationSet Name="FK_Avaliador_Projeto_Projeto" Association="Self.FK_Avaliador_Projeto_Projeto">
-            <End Role="Projeto" EntitySet="Projetoes" />
+            <End Role="Projeto" EntitySet="Projeto" />
             <End Role="Avaliador_Projeto" EntitySet="Avaliador_Projeto" />
           </AssociationSet>
           <AssociationSet Name="FK_Lideranca_Projeto" Association="Self.FK_Lideranca_Projeto">
-            <End Role="Projeto" EntitySet="Projetoes" />
-            <End Role="Lideranca" EntitySet="Liderancas" />
+            <End Role="Projeto" EntitySet="Projeto" />
+            <End Role="Lideranca" EntitySet="Lideranca" />
           </AssociationSet>
           <AssociationSet Name="FK_Orientador_Projeto_Professor" Association="Self.FK_Orientador_Projeto_Professor">
-            <End Role="Projeto" EntitySet="Projetoes" />
+            <End Role="Projeto" EntitySet="Projeto" />
             <End Role="Orientador_Projeto" EntitySet="Orientador_Projeto" />
           </AssociationSet>
           <AssociationSet Name="FK_Orientador_Projeto_Projeto" Association="Self.FK_Orientador_Projeto_Projeto">
-            <End Role="Professor" EntitySet="Professors" />
+            <End Role="Professor" EntitySet="Professor" />
             <End Role="Orientador_Projeto" EntitySet="Orientador_Projeto" />
           </AssociationSet>
           <AssociationSet Name="FK_Professor_Participante" Association="Self.FK_Professor_Participante">
-            <End Role="Participante" EntitySet="Participantes" />
-            <End Role="Professor" EntitySet="Professors" />
+            <End Role="Participante" EntitySet="Participante" />
+            <End Role="Professor" EntitySet="Professor" />
           </AssociationSet>
           <AssociationSet Name="FK_Peso_Projeto" Association="Self.FK_Peso_Projeto">
-            <End Role="Projeto" EntitySet="Projetoes" />
-            <End Role="Peso" EntitySet="Pesoes" />
+            <End Role="Projeto" EntitySet="Projeto" />
+            <End Role="Peso" EntitySet="Peso" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -851,17 +853,17 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CanvasModel1StoreContainer" CdmEntityContainer="CanvasEntities2">
-          <EntitySetMapping Name="Admins">
-            <EntityTypeMapping TypeName="CanvasModel1.Admin">
+        <EntityContainerMapping StorageEntityContainer="CanvasModelStoreContainer" CdmEntityContainer="CanvasEntities2">
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="CanvasModel.Admin">
               <MappingFragment StoreEntitySet="Admin">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Id_Participante" ColumnName="Id_Participante" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Alunoes">
-            <EntityTypeMapping TypeName="CanvasModel1.Aluno">
+          <EntitySetMapping Name="Aluno">
+            <EntityTypeMapping TypeName="CanvasModel.Aluno">
               <MappingFragment StoreEntitySet="Aluno">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Id_Participante" ColumnName="Id_Participante" />
@@ -872,7 +874,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Aluno_Projeto">
-            <EntityTypeMapping TypeName="CanvasModel1.Aluno_Projeto">
+            <EntityTypeMapping TypeName="CanvasModel.Aluno_Projeto">
               <MappingFragment StoreEntitySet="Aluno_Projeto">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Id_Projeto" ColumnName="Id_Projeto" />
@@ -880,8 +882,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Avaliacaos">
-            <EntityTypeMapping TypeName="CanvasModel1.Avaliacao">
+          <EntitySetMapping Name="Avaliacao">
+            <EntityTypeMapping TypeName="CanvasModel.Avaliacao">
               <MappingFragment StoreEntitySet="Avaliacao">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Id_Avaliador_Projeto" ColumnName="Id_Avaliador_Projeto" />
@@ -898,7 +900,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Avaliador_Externo">
-            <EntityTypeMapping TypeName="CanvasModel1.Avaliador_Externo">
+            <EntityTypeMapping TypeName="CanvasModel.Avaliador_Externo">
               <MappingFragment StoreEntitySet="Avaliador_Externo">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Id_Participante" ColumnName="Id_Participante" />
@@ -908,7 +910,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Avaliador_Projeto">
-            <EntityTypeMapping TypeName="CanvasModel1.Avaliador_Projeto">
+            <EntityTypeMapping TypeName="CanvasModel.Avaliador_Projeto">
               <MappingFragment StoreEntitySet="Avaliador_Projeto">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Id_Avaliador" ColumnName="Id_Avaliador" />
@@ -917,8 +919,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Comentarios">
-            <EntityTypeMapping TypeName="CanvasModel1.Comentario">
+          <EntitySetMapping Name="Comentario">
+            <EntityTypeMapping TypeName="CanvasModel.Comentario">
               <MappingFragment StoreEntitySet="Comentario">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Id_Aluno_Projeto" ColumnName="Id_Aluno_Projeto" />
@@ -934,8 +936,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Liderancas">
-            <EntityTypeMapping TypeName="CanvasModel1.Lideranca">
+          <EntitySetMapping Name="Lideranca">
+            <EntityTypeMapping TypeName="CanvasModel.Lideranca">
               <MappingFragment StoreEntitySet="Lideranca">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Id_Aluno" ColumnName="Id_Aluno" />
@@ -946,7 +948,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orientador_Projeto">
-            <EntityTypeMapping TypeName="CanvasModel1.Orientador_Projeto">
+            <EntityTypeMapping TypeName="CanvasModel.Orientador_Projeto">
               <MappingFragment StoreEntitySet="Orientador_Projeto">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Id_Orientador" ColumnName="Id_Orientador" />
@@ -954,8 +956,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Participantes">
-            <EntityTypeMapping TypeName="CanvasModel1.Participante">
+          <EntitySetMapping Name="Participante">
+            <EntityTypeMapping TypeName="CanvasModel.Participante">
               <MappingFragment StoreEntitySet="Participante">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -965,8 +967,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Pesoes">
-            <EntityTypeMapping TypeName="CanvasModel1.Peso">
+          <EntitySetMapping Name="Peso">
+            <EntityTypeMapping TypeName="CanvasModel.Peso">
               <MappingFragment StoreEntitySet="Peso">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Id_Projeto" ColumnName="Id_Projeto" />
@@ -982,8 +984,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Professors">
-            <EntityTypeMapping TypeName="CanvasModel1.Professor">
+          <EntitySetMapping Name="Professor">
+            <EntityTypeMapping TypeName="CanvasModel.Professor">
               <MappingFragment StoreEntitySet="Professor">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Id_Participante" ColumnName="Id_Participante" />
@@ -992,8 +994,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Projetoes">
-            <EntityTypeMapping TypeName="CanvasModel1.Projeto">
+          <EntitySetMapping Name="Projeto">
+            <EntityTypeMapping TypeName="CanvasModel.Projeto">
               <MappingFragment StoreEntitySet="Projeto">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
@@ -1010,6 +1012,7 @@
                 <ScalarProperty Name="Resposta_11" ColumnName="Resposta_11" />
                 <ScalarProperty Name="Resposta_12" ColumnName="Resposta_12" />
                 <ScalarProperty Name="Resposta_13" ColumnName="Resposta_13" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1027,7 +1030,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

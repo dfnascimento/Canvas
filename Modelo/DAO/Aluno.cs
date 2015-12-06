@@ -18,7 +18,7 @@ namespace Modelo.DAO
         public Aluno()
         {
             this.Aluno_Projeto = new HashSet<Aluno_Projeto>();
-            this.Liderancas = new HashSet<Lideranca>();
+            this.Lideranca = new HashSet<Lideranca>();
         }
     
         public int Id { get; set; }
@@ -31,6 +31,6 @@ namespace Modelo.DAO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Aluno_Projeto> Aluno_Projeto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lideranca> Liderancas { get; set; }
+        public virtual ICollection<Lideranca> Lideranca { get; set; }
     }
 }

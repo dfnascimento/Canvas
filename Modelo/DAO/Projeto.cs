@@ -19,9 +19,9 @@ namespace Modelo.DAO
         {
             this.Aluno_Projeto = new HashSet<Aluno_Projeto>();
             this.Avaliador_Projeto = new HashSet<Avaliador_Projeto>();
-            this.Liderancas = new HashSet<Lideranca>();
+            this.Lideranca = new HashSet<Lideranca>();
             this.Orientador_Projeto = new HashSet<Orientador_Projeto>();
-            this.Pesoes = new HashSet<Peso>();
+            this.Peso = new HashSet<Peso>();
         }
     
         public int Id { get; set; }
@@ -39,16 +39,17 @@ namespace Modelo.DAO
         public string Resposta_11 { get; set; }
         public string Resposta_12 { get; set; }
         public string Resposta_13 { get; set; }
+        public string Nome { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Aluno_Projeto> Aluno_Projeto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Avaliador_Projeto> Avaliador_Projeto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lideranca> Liderancas { get; set; }
+        public virtual ICollection<Lideranca> Lideranca { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orientador_Projeto> Orientador_Projeto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Peso> Pesoes { get; set; }
+        public virtual ICollection<Peso> Peso { get; set; }
     }
 }

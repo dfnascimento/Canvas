@@ -31,14 +31,14 @@ namespace Modelo.PN
             
             //Insere no banco
 
-            db.Participantes.Add(p);
+            db.Participante.Add(p);
             db.SaveChanges();
 
-            pr.Id_Participante = db.Participantes.Where(s => s.Email == p.Email).FirstOrDefault<Participante>().Id;
+            pr.Id_Participante = db.Participante.Where(s => s.Email == p.Email).FirstOrDefault<Participante>().Id;
             pr.Departamento = this.departamento;
             pr.Disciplina_Principal = this.disciplinaPrincipal;
 
-            db.Professors.Add(pr);
+            db.Professor.Add(pr);
             db.SaveChanges();
 
             return true;

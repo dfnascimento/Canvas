@@ -33,15 +33,15 @@ namespace Modelo.PN
 
             //Insere no banco
 
-            db.Participantes.Add(p);
+            db.Participante.Add(p);
             db.SaveChanges();
 
-            al.Id_Participante = db.Participantes.Where(s => s.Email == p.Email).FirstOrDefault<Participante>().Id;
+            al.Id_Participante = db.Participante.Where(s => s.Email == p.Email).FirstOrDefault<Participante>().Id;
             al.Periodo = this.periodo;
             al.Campus = this.campus;
             al.Curso = this.curso;
             
-            db.Alunoes.Add(al);
+            db.Aluno.Add(al);
             db.SaveChanges();
 
             return true;
