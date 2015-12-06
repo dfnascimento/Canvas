@@ -13,12 +13,15 @@ namespace Modelo.PN
         public static bool Inserir(PNProfessor pr)
         {
             CanvasEntities2 db = new CanvasEntities2();
-            Participante npr = new Participante();
+            //Participante npr = new Participante();
 
             //Verifica se o email já está cadastrado
-            npr = db.Participantes.Where(s => s.Email == pr.email).First();
+            var npr = (from part in db.Participantes
+                  where part.Email == pr.email
+                  select  part).Count();
 
-            if (npr != null)
+
+            if (npr > 0)
             {
                 return false;
             }
