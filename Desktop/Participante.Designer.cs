@@ -1,6 +1,6 @@
 ﻿namespace Desktop
 {
-    partial class Teste
+    partial class Participante
     {
         /// <summary>
         /// Required designer variable.
