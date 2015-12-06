@@ -27,32 +27,38 @@ namespace Modelo.PN
 
         }
 
-    //    public static List<Professor> ListaProfessoresInativos() {
+        public static List<PNProfessor> ListaProfessoresInativos()
+        {
 
-    //        CanvasEntities2 db = new CanvasEntities2();
+            CanvasEntities2 db = new CanvasEntities2();
 
-    //        var query =
-    //                   from prof in db.Professors
-    //                   join part in db.Participantes on prof.Id_Participante equals part.Id
-    //                   where part.Status == "Inativo"
-    //                   select new { part.Nome,
-    //                                part.Email,
-    //                                part.Senha,
-    //                                prof.Disciplina_Principal,
-    //                                prof.Departamento,
-    //                                part.Status };
+            var query =
+                       from prof in db.Professors
+                       join part in db.Participantes on prof.Id_Participante equals part.Id
+                       where part.Status == "Inativo"
+                       select new
+                       {
+                           prof, part
+                       };
 
+            List<PNProfessor> lista = new List<PNProfessor>();
 
-
-    //    //    List<PNProfessor> lista = query.ToList<PNProfessor>;
-
-    //}
-
+            foreach (var result in query) {
+                PNProfessor p = new PNProfessor();
+                p.nome = result.part.Nome;
 
 
-    //public static bool Ativar(Participante pa) {
+            }
+            return lista;
+            
 
-      //  }
+        }
+
+
+
+        //public static bool Ativar(Participante pa) {
+
+        //  }
 
 
     }
