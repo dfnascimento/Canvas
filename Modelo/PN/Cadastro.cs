@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Modelo.PN
 {
-    public class CadastroProfessor
+    public class Cadastro
     {
 
-        public static bool Inserir(PNProfessor pr)
+        public static bool InserirProfessor(PNProfessor pr)
         {
             CanvasEntities2 db = new CanvasEntities2();
             //Participante npr = new Participante();
@@ -65,9 +65,48 @@ namespace Modelo.PN
 
 
 
-        //public static bool Ativar(Participante pa) {
+        public static bool Ativar(Participante pa) {
 
-        //  }
+            try
+            {
+                CanvasEntities2 db = new CanvasEntities2();
+
+                Participante par = db.Participantes.First(p => p.Email == pa.Email);
+
+                par.Status = "Ativo";
+
+                db.SaveChanges();
+
+                return true;
+                    
+            }
+            catch (Exception){
+                throw;       
+            }
+        }
+
+        public static bool Inativar(Participante pa)
+        {
+
+            try
+            {
+                CanvasEntities2 db = new CanvasEntities2();
+
+                Participante par = db.Participantes.First(p => p.Email == pa.Email);
+
+                par.Status = "Inativo";
+
+                db.SaveChanges();
+
+                return true;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
 
     }
