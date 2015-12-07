@@ -106,9 +106,15 @@
     <Compile Include="DAO\Projeto.cs">
       <DependentUpon>Canvas1.tt</DependentUpon>
     </Compile>
-    <Compile Include="PN\pnCanvas.cs" />
-    <Compile Include="PN\CadastroProfessor.cs" />
+    <Compile Include="PN\Acesso.cs" />
+    <Compile Include="PN\CadastroProjeto.cs" />
+    <Compile Include="PN\IAcessoDB.cs" />
+    <Compile Include="PN\PNAluno.cs" />
+    <Compile Include="PN\PNAvaliadorExterno.cs" />
+    <Compile Include="PN\CadastroUsuario.cs" />
     <Compile Include="PN\PNProfessor.cs" />
+    <Compile Include="PN\PNProjeto.cs" />
+    <Compile Include="PN\UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
