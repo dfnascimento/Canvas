@@ -20,10 +20,10 @@ namespace Modelo.PN
             p.Nome = nome;
             p.Status = "Novo";
 
-            db.Projeto.Add(p);
+            db.Projetoes.Add(p);
             db.SaveChanges();
 
-            id = db.Projeto.Where(s => s.Nome == nome).FirstOrDefault<Projeto>().Id;
+            id = db.Projetoes.Where(s => s.Nome == nome).FirstOrDefault<Projeto>().Id;
 
             Lideranca l = new Lideranca();
             l.Id_Aluno = Acesso.id;
@@ -31,7 +31,7 @@ namespace Modelo.PN
             l.Data_Inicio = DateTime.Now;
             l.Data_Final = null;
 
-            db.Lideranca.Add(l);
+            db.Liderancas.Add(l);
             db.SaveChanges();
         }
 

@@ -11,7 +11,7 @@ namespace Modelo.PN
     {
         public String nome { get; set; }
         public String email { get; set; }
-        public byte[] senha { get; set; }
+        public String senha { get; set; }
         public String disciplinaPrincipal { get; set; }
         public String departamento { get; set; }
         public String status { get; set; }
@@ -31,14 +31,14 @@ namespace Modelo.PN
             
             //Insere no banco
 
-            db.Participante.Add(p);
+            db.Participantes.Add(p);
             db.SaveChanges();
 
-            pr.Id_Participante = db.Participante.Where(s => s.Email == p.Email).FirstOrDefault<Participante>().Id;
+            pr.Id_Participante = db.Participantes.Where(s => s.Email == p.Email).FirstOrDefault<Participante>().Id;
             pr.Departamento = this.departamento;
             pr.Disciplina_Principal = this.disciplinaPrincipal;
 
-            db.Professor.Add(pr);
+            db.Professors.Add(pr);
             db.SaveChanges();
 
             return true;

@@ -17,7 +17,7 @@ namespace Modelo.PN
                 CanvasEntities2 db = new CanvasEntities2();
                 
                 //Verifica se o email já está cadastrado
-                var npr = (from part in db.Participante
+                var npr = (from part in db.Participantes
                            where part.Email == pr.email
                            select part).Count();
 
@@ -41,7 +41,7 @@ namespace Modelo.PN
                 CanvasEntities2 db = new CanvasEntities2();
 
                 //Verifica se o email já está cadastrado
-                var npr = (from part in db.Participante
+                var npr = (from part in db.Participantes
                            where part.Email == ae.email
                            select part).Count();
 
@@ -66,7 +66,7 @@ namespace Modelo.PN
                 CanvasEntities2 db = new CanvasEntities2();
 
                 //Verifica se o email já está cadastrado
-                var npr = (from part in db.Participante
+                var npr = (from part in db.Participantes
                            where part.Email == al.email
                            select part).Count();
 
@@ -92,8 +92,8 @@ namespace Modelo.PN
                 CanvasEntities2 db = new CanvasEntities2();
 
                 var query =
-                           from prof in db.Professor
-                           join part in db.Participante on prof.Id_Participante equals part.Id
+                           from prof in db.Professors
+                           join part in db.Participantes on prof.Id_Participante equals part.Id
                            where part.Status == "Inativo"
                            select new
                            {
@@ -133,7 +133,7 @@ namespace Modelo.PN
 
                 var query =
                            from aval in db.Avaliador_Externo
-                           join part in db.Participante on aval.Id_Participante equals part.Id
+                           join part in db.Participantes on aval.Id_Participante equals part.Id
                            where part.Status == "Inativo"
                            select new
                            {
@@ -173,7 +173,7 @@ namespace Modelo.PN
             {
                 CanvasEntities2 db = new CanvasEntities2();
 
-                Participante par = db.Participante.First(p => p.Email == pa.Email);
+                Participante par = db.Participantes.First(p => p.Email == pa.Email);
 
                 par.Status = "Ativo";
 
@@ -194,7 +194,7 @@ namespace Modelo.PN
             {
                 CanvasEntities2 db = new CanvasEntities2();
 
-                Participante par = db.Participante.First(p => p.Email == pa.Email);
+                Participante par = db.Participantes.First(p => p.Email == pa.Email);
 
                 par.Status = "Inativo";
 

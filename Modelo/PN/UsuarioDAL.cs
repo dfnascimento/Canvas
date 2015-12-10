@@ -16,7 +16,7 @@ namespace Modelo.PN
         {
             using (var db = new CanvasEntities2())
             {
-                db.Participante.Add(registro);
+                db.Participantes.Add(registro);
                 var usuarioSalvo = db.SaveChanges();
                 return usuarioSalvo >= 1;
             }
@@ -46,7 +46,7 @@ namespace Modelo.PN
         {
             using (var db = new CanvasEntities2())
             {
-                return db.Participante.FirstOrDefault(u => u.Email == registro.Email && u.Senha == registro.Senha);
+                return db.Participantes.FirstOrDefault(u => u.Email == registro.Email && u.Senha == registro.Senha);
             }
         }
 
@@ -96,4 +96,4 @@ namespace Modelo.PN
         }
     }
 }
-}
+

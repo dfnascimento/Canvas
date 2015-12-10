@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\a1175530\Source\Repos\Canvas\Modelo\DAO\Canvas1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Diego\Desktop\Canvas\Modelo\DAO\Canvas1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

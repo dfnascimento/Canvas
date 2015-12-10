@@ -15,21 +15,21 @@ namespace Modelo.PN
         public static int id { get; set; }
         public static String acesso { get; set; }
 
-        public static String logar(String login, byte[] senha)
+        public static String logar(String login, String senha)
         {
             try
             {
                 CanvasEntities2 db = new CanvasEntities2();
 
                 //Recupera paricipante
-                Participante p = db.Participante.Where(s => s.Email == login).First<Participante>();
+                var p = db.Participantes.FirstOrDefault(s => s.Email == login);
 
                 if (p == null)
                 {
                     return "Email não cadastrado";
                 }
 
-                if (!StructuralComparisons.StructuralEqualityComparer.Equals(p.Senha, senha))
+                if (!p.Senha.Equals(senha))
                 {
                     return "Senha incorreta";
                 }
@@ -38,11 +38,11 @@ namespace Modelo.PN
                 nome = p.Nome;
                 id = p.Id;
 
-                if ((from aluno in db.Aluno where aluno.Id_Participante == p.Id select aluno).Count() > 0)
+                if ((from aluno in db.Alunoes where aluno.Id_Participante == p.Id select aluno).Count() > 0)
                 {
                     acesso = "Aluno";
                 }
-                else if ((from prof in db.Professor where prof.Id_Participante == p.Id select prof).Count() > 0)
+                else if ((from prof in db.Professors where prof.Id_Participante == p.Id select prof).Count() > 0)
                 {
                     acesso = "Professor";
                 }
@@ -50,7 +50,7 @@ namespace Modelo.PN
                 {
                     acesso = "Avaliador";
                 }
-                else if ((from adm in db.Admin where adm.Id_Participante == p.Id select adm).Count() > 0)
+                else if ((from adm in db.Admins where adm.Id_Participante == p.Id select adm).Count() > 0)
                 {
                     acesso = "Administrador";
                 }

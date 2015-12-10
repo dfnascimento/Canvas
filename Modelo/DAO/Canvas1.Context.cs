@@ -25,18 +25,18 @@ namespace Modelo.DAO
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Admin> Admin { get; set; }
-        public virtual DbSet<Aluno> Aluno { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; }
+        public virtual DbSet<Aluno> Alunoes { get; set; }
         public virtual DbSet<Aluno_Projeto> Aluno_Projeto { get; set; }
-        public virtual DbSet<Avaliacao> Avaliacao { get; set; }
+        public virtual DbSet<Avaliacao> Avaliacaos { get; set; }
         public virtual DbSet<Avaliador_Externo> Avaliador_Externo { get; set; }
         public virtual DbSet<Avaliador_Projeto> Avaliador_Projeto { get; set; }
-        public virtual DbSet<Comentario> Comentario { get; set; }
-        public virtual DbSet<Lideranca> Lideranca { get; set; }
+        public virtual DbSet<Comentario> Comentarios { get; set; }
+        public virtual DbSet<Lideranca> Liderancas { get; set; }
         public virtual DbSet<Orientador_Projeto> Orientador_Projeto { get; set; }
-        public virtual DbSet<Participante> Participante { get; set; }
-        public virtual DbSet<Peso> Peso { get; set; }
-        public virtual DbSet<Professor> Professor { get; set; }
-        public virtual DbSet<Projeto> Projeto { get; set; }
+        public virtual DbSet<Participante> Participantes { get; set; }
+        public virtual DbSet<Peso> Pesoes { get; set; }
+        public virtual DbSet<Professor> Professors { get; set; }
+        public virtual DbSet<Projeto> Projetoes { get; set; }
     }
 }

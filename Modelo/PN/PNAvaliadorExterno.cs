@@ -12,7 +12,7 @@ namespace Modelo.PN
 
         public String nome { get; set; }
         public String email { get; set; }
-        public byte[] senha { get; set; }
+        public String senha { get; set; }
         public String areaAtuacao { get; set; }
         public String formacao { get; set; }
         public String status { get; set; }
@@ -32,10 +32,10 @@ namespace Modelo.PN
 
             //Insere no banco
 
-            db.Participante.Add(p);
+            db.Participantes.Add(p);
             db.SaveChanges();
 
-            a.Id_Participante = db.Participante.Where(s => s.Email == p.Email).FirstOrDefault<Participante>().Id;
+            a.Id_Participante = db.Participantes.Where(s => s.Email == p.Email).FirstOrDefault<Participante>().Id;
 
             a.Area_Atuacao = this.areaAtuacao;
             a.Formacao = this.formacao;

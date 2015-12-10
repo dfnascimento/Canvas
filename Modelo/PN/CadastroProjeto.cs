@@ -17,7 +17,7 @@ namespace Modelo.PN
             {
                 CanvasEntities2 db = new CanvasEntities2();
 
-                if ((from lider in db.Lideranca
+                if ((from lider in db.Liderancas
                     where lider.Id_Aluno == Acesso.id 
                     && lider.Data_Final == null
                     select lider).Count() > 0)

@@ -1,6 +1,6 @@
 ﻿namespace Desktop
 {
-    partial class Canvas
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -90,7 +90,7 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // Canvas
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -101,8 +101,9 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Canvas";
-            this.Text = "Form2";
+            this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Logon";
             this.Load += new System.EventHandler(this.Canvas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

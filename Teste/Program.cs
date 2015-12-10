@@ -12,17 +12,17 @@ namespace Teste
     {
         static void Main(string[] args)
         {
-            Participante p = new Participante();
-            Professor pr = new Professor();
+            //Participante p = new Participante();
+            //Professor pr = new Professor();
 
-            p.Nome = "Teste";
-            p.Email = "teste";
-            p.Status = "novo";
-            p.Senha = System.Text.Encoding.UTF8.GetBytes("teste");
-            pr.Departamento = "dainf";
-            pr.Disciplina_Principal = "quimica";
+            //p.Nome = "Teste";
+            //p.Email = "teste";
+            //p.Status = "novo";
+            //p.Senha = System.Text.Encoding.UTF8.GetBytes("teste");
+            //pr.Departamento = "dainf";
+            //pr.Disciplina_Principal = "quimica";
 
-            CadastroProfessor.Inserir(pr, p);
+            //CadastroProfessor.Inserir(pr, p);
         }
     }
 }
