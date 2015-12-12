@@ -23,6 +23,17 @@ namespace Teste
             //pr.Disciplina_Principal = "quimica";
 
             //CadastroProfessor.Inserir(pr, p);
+
+            PNProfessor p = new PNProfessor();
+            p.nome = "Novo Professor";
+            p.email = "professor@daif";
+            p.senha = "nova senha";
+            p.departamento = "dp";
+            p.disciplinaPrincipal = "matematica";
+
+            CadastroUsuario.InserirProfessor(p);
+
+            
         }
     }
 }

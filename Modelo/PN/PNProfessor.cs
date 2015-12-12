@@ -25,7 +25,7 @@ namespace Modelo.PN
             Professor pr = new Professor();
 
             p.Nome = this.nome;
-            p.Senha = this.senha;
+            p.Senha = Util.HashValue(this.senha);
             p.Email = this.email;
             p.Status = "Inativo";
             

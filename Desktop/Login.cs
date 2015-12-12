@@ -42,16 +42,35 @@ namespace Desktop
             if (!ret.Equals("Sucesso"))
             {
                 MessageBox.Show("Erro ao logar: " + ret);
+                this.txtUsuario.Text = "";
+                this.txtSenha.Text = "";
             }
             else {
-                var formLogado = new Principal();
+                var formLogado = new Form();
+                if (Acesso.acesso.Equals("Admin"))
+                {
+                    formLogado = new TelaAdmin();
+                }
+                else if (Acesso.acesso.Equals("Professor"))
+                {
+                    formLogado = new TelaProfessor();
+                }
+                else if (Acesso.acesso.Equals("Avaliador")) {
+                    formLogado = new TelaAvaliador();
+                }
+
+                this.Hide();
                 formLogado.ShowDialog();
+                this.Show();
             }
         }
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
-           
+            var cadastrar = new Cadastro();
+            this.Hide();
+            cadastrar.ShowDialog();
+            this.Show();
         }
     }
 }

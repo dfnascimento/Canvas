@@ -26,7 +26,7 @@ namespace Modelo.PN
             Participante p = new Participante();
 
             p.Nome = this.nome;
-            p.Senha = this.senha;
+            p.Senha = Util.HashValue(this.senha);
             p.Email = this.email;
             p.Status = "Inativo";
 

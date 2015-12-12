@@ -29,7 +29,7 @@ namespace Modelo.PN
                     return "Email não cadastrado";
                 }
 
-                if (!p.Senha.Equals(senha))
+                if (!p.Senha.Equals(Util.HashValue(senha)))
                 {
                     return "Senha incorreta";
                 }
@@ -52,7 +52,7 @@ namespace Modelo.PN
                 }
                 else if ((from adm in db.Admins where adm.Id_Participante == p.Id select adm).Count() > 0)
                 {
-                    acesso = "Administrador";
+                    acesso = "Admin";
                 }
                 else
                 {
