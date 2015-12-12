@@ -1,0 +1,98 @@
+﻿@model Modelo.DAO.Avaliacao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Avaliacao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao2.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao2.Id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -87,6 +87,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -107,9 +111,6 @@
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Optimization">
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -193,8 +194,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminsController.cs" />
+    <Compile Include="Controllers\Alunoes1Controller.cs" />
+    <Compile Include="Controllers\AlunoesController.cs" />
+    <Compile Include="Controllers\Aluno_ProjetoController.cs" />
+    <Compile Include="Controllers\AvaliacaosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ParticipantesController.cs" />
+    <Compile Include="Controllers\PNAlunoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -264,6 +272,37 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="ViewPage1.cshtml" />
+    <Content Include="Views\Alunoes\Create.cshtml" />
+    <Content Include="Views\Alunoes\Delete.cshtml" />
+    <Content Include="Views\Alunoes\Details.cshtml" />
+    <Content Include="Views\Alunoes\Edit.cshtml" />
+    <Content Include="Views\Alunoes\Index.cshtml" />
+    <Content Include="Views\Aluno_Projeto\Create.cshtml" />
+    <Content Include="Views\Aluno_Projeto\Delete.cshtml" />
+    <Content Include="Views\Aluno_Projeto\Details.cshtml" />
+    <Content Include="Views\Aluno_Projeto\Edit.cshtml" />
+    <Content Include="Views\Aluno_Projeto\Index.cshtml" />
+    <Content Include="Views\Admins\Create.cshtml" />
+    <Content Include="Views\Admins\Delete.cshtml" />
+    <Content Include="Views\Admins\Details.cshtml" />
+    <Content Include="Views\Admins\Edit.cshtml" />
+    <Content Include="Views\Admins\Index.cshtml" />
+    <Content Include="Views\Avaliacaos\Create.cshtml" />
+    <Content Include="Views\Avaliacaos\Delete.cshtml" />
+    <Content Include="Views\Avaliacaos\Details.cshtml" />
+    <Content Include="Views\Avaliacaos\Edit.cshtml" />
+    <Content Include="Views\Avaliacaos\Index.cshtml" />
+    <Content Include="Views\Participantes\Create.cshtml" />
+    <Content Include="Views\Participantes\Delete.cshtml" />
+    <Content Include="Views\Participantes\Details.cshtml" />
+    <Content Include="Views\Participantes\Edit.cshtml" />
+    <Content Include="Views\Participantes\Index.cshtml" />
+    <Content Include="Views\PNAlunoes\Create.cshtml" />
+    <Content Include="Views\PNAlunoes\Delete.cshtml" />
+    <Content Include="Views\PNAlunoes\Details.cshtml" />
+    <Content Include="Views\PNAlunoes\Edit.cshtml" />
+    <Content Include="Views\PNAlunoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

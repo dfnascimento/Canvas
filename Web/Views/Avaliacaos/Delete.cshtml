@@ -1,0 +1,104 @@
+﻿@model Modelo.DAO.Avaliacao
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Avaliacao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota_Quadro_9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota_Quadro_9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao2.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao2.Id)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

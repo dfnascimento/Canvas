@@ -10,18 +10,18 @@ using Modelo.DAO;
 
 namespace Web.Controllers
 {
-    public class AlunoesController : Controller
+    public class Alunoes1Controller : Controller
     {
         private CanvasEntities2 db = new CanvasEntities2();
 
-        // GET: Alunoes
+        // GET: Alunoes1
         public ActionResult Index()
         {
-            var alunoes = db.Alunoes;
+            var alunoes = db.Alunoes.Include(a => a.Participante);
             return View(alunoes.ToList());
         }
 
-        // GET: Alunoes/Details/5
+        // GET: Alunoes1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,14 +36,14 @@ namespace Web.Controllers
             return View(aluno);
         }
 
-        // GET: Alunoes/Create
+        // GET: Alunoes1/Create
         public ActionResult Create()
         {
             ViewBag.Id_Participante = new SelectList(db.Participantes, "Id", "Email");
             return View();
         }
 
-        // POST: Alunoes/Create
+        // POST: Alunoes1/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -61,7 +61,7 @@ namespace Web.Controllers
             return View(aluno);
         }
 
-        // GET: Alunoes/Edit/5
+        // GET: Alunoes1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,7 +77,7 @@ namespace Web.Controllers
             return View(aluno);
         }
 
-        // POST: Alunoes/Edit/5
+        // POST: Alunoes1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -94,7 +94,7 @@ namespace Web.Controllers
             return View(aluno);
         }
 
-        // GET: Alunoes/Delete/5
+        // GET: Alunoes1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -109,7 +109,7 @@ namespace Web.Controllers
             return View(aluno);
         }
 
-        // POST: Alunoes/Delete/5
+        // POST: Alunoes1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
