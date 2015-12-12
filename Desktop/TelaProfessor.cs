@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Modelo.DAO;
+using Modelo.PN;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,37 @@ namespace Desktop
         public TelaProfessor()
         {
             InitializeComponent();
+
+
+            this.Name = Acesso.acesso + " : " + Acesso.nome;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+
+            if (cbDesativar.CheckState.Equals(CheckState.Checked))
+            {
+
+                Participante part = new Participante();
+
+                part.Email = Acesso.email;
+
+                if (CadastroUsuario.Inativar(part))
+                {
+                    MessageBox.Show("Usuário desativado com sucesso");
+                    this.Close();
+                }
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

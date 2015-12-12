@@ -175,7 +175,9 @@ namespace Modelo.PN
             {
                 CanvasEntities2 db = new CanvasEntities2();
 
-                Participante par = db.Participantes.First(p => p.Email == pa.Email);
+                Participante par = new Participante();
+
+                par = db.Participantes.First(p => p.Email == pa.Email);
 
                 par.Status = "Ativo";
 

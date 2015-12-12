@@ -116,6 +116,12 @@
     <EmbeddedResource Include="TelaAdmin.resx">
       <DependentUpon>TelaAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TelaAvaliador.resx">
+      <DependentUpon>TelaAvaliador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaProfessor.resx">
+      <DependentUpon>TelaProfessor.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

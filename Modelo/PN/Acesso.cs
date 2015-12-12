@@ -14,6 +14,7 @@ namespace Modelo.PN
         public static String nome { get; set; }
         public static int id { get; set; }
         public static String acesso { get; set; }
+        public static String status { get; set; }
 
         public static String logar(String login, String senha)
         {
@@ -37,6 +38,7 @@ namespace Modelo.PN
                 email = p.Email;
                 nome = p.Nome;
                 id = p.Id;
+                status = p.Status;
 
                 if ((from aluno in db.Alunoes where aluno.Id_Participante == p.Id select aluno).Count() > 0)
                 {
@@ -57,6 +59,10 @@ namespace Modelo.PN
                 else
                 {
                     acesso = "Erro";
+                }
+
+                if (status.Equals("Inativo")) {
+                    return "Usuário inativo. Contate o Administrador do sistema para ativar seu cadastro";
                 }
 
                 return "Sucesso";

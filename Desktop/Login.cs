@@ -61,6 +61,8 @@ namespace Desktop
 
                 this.Hide();
                 formLogado.ShowDialog();
+                this.txtUsuario.Text = "";
+                this.txtSenha.Text = "";
                 this.Show();
             }
         }
@@ -70,6 +72,8 @@ namespace Desktop
             var cadastrar = new Cadastro();
             this.Hide();
             cadastrar.ShowDialog();
+            this.txtUsuario.Text = "";
+            this.txtSenha.Text = "";
             this.Show();
         }
     }

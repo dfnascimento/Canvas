@@ -39,7 +39,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(45, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 58);
+            this.label2.Location = new System.Drawing.Point(45, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 1;
@@ -57,24 +57,24 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(15, 25);
+            this.txtUsuario.Location = new System.Drawing.Point(48, 48);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(152, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(180, 20);
             this.txtUsuario.TabIndex = 2;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(15, 74);
+            this.txtSenha.Location = new System.Drawing.Point(48, 97);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(152, 20);
+            this.txtSenha.Size = new System.Drawing.Size(180, 20);
             this.txtSenha.TabIndex = 3;
             // 
             // btnCriar
             // 
-            this.btnCriar.Location = new System.Drawing.Point(15, 141);
+            this.btnCriar.Location = new System.Drawing.Point(48, 164);
             this.btnCriar.Name = "btnCriar";
-            this.btnCriar.Size = new System.Drawing.Size(152, 23);
+            this.btnCriar.Size = new System.Drawing.Size(180, 23);
             this.btnCriar.TabIndex = 4;
             this.btnCriar.Text = "Criar novo usuário";
             this.btnCriar.UseVisualStyleBackColor = true;
@@ -82,9 +82,9 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(15, 112);
+            this.btnLogin.Location = new System.Drawing.Point(48, 135);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(152, 23);
+            this.btnLogin.Size = new System.Drawing.Size(180, 23);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(186, 186);
+            this.ClientSize = new System.Drawing.Size(279, 235);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnCriar);
             this.Controls.Add(this.txtSenha);
