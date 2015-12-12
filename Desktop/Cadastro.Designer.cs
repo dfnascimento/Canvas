@@ -76,7 +76,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(422, 70);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selecione sua modalidade: ";
             // 
@@ -121,7 +121,7 @@
             this.txtNome.Location = new System.Drawing.Point(126, 100);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(308, 20);
-            this.txtNome.TabIndex = 11;
+            this.txtNome.TabIndex = 2;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // txtEmail
@@ -129,7 +129,7 @@
             this.txtEmail.Location = new System.Drawing.Point(126, 136);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(308, 20);
-            this.txtEmail.TabIndex = 12;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtSenha
             // 
@@ -137,7 +137,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(180, 20);
-            this.txtSenha.TabIndex = 13;
+            this.txtSenha.TabIndex = 4;
             // 
             // txtRepetirSenha
             // 
@@ -145,14 +145,14 @@
             this.txtRepetirSenha.Name = "txtRepetirSenha";
             this.txtRepetirSenha.PasswordChar = '*';
             this.txtRepetirSenha.Size = new System.Drawing.Size(180, 20);
-            this.txtRepetirSenha.TabIndex = 14;
+            this.txtRepetirSenha.TabIndex = 5;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(74, 341);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -162,7 +162,7 @@
             this.btnEnviar.Location = new System.Drawing.Point(231, 341);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(75, 23);
-            this.btnEnviar.TabIndex = 20;
+            this.btnEnviar.TabIndex = 7;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = true;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
@@ -172,7 +172,7 @@
             this.panelDinamico.Location = new System.Drawing.Point(12, 249);
             this.panelDinamico.Name = "panelDinamico";
             this.panelDinamico.Size = new System.Drawing.Size(422, 76);
-            this.panelDinamico.TabIndex = 21;
+            this.panelDinamico.TabIndex = 6;
             this.panelDinamico.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDinamico_Paint);
             // 
             // Cadastro
@@ -194,7 +194,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Cadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro";
+            this.Text = "15";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
