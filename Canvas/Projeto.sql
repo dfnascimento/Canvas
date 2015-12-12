@@ -15,5 +15,5 @@
     [Resposta_11] VARCHAR(200) NULL, 
     [Resposta_12] VARCHAR(200) NULL, 
     [Resposta_13] VARCHAR(200) NULL, 
-    [Nome] VARCHAR(20) NOT NULL
+    [Nome] VARCHAR(50) NOT NULL
 )
