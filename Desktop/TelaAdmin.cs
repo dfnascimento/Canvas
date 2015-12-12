@@ -18,7 +18,6 @@ namespace Desktop
         {
             InitializeComponent();
 
-
             this.Name = Acesso.acesso + " : " + Acesso.nome;
 
             populaGridProfessor();

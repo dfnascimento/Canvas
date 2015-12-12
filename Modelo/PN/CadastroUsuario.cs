@@ -167,6 +167,48 @@ namespace Modelo.PN
             }
         }
 
+        public static List<PNAluno> ListaAlunos()
+        {
+
+            try
+            {
+                CanvasEntities2 db = new CanvasEntities2();
+
+                var query =
+                           from aluno in db.Alunoes
+                           join part in db.Participantes on aluno.Id_Participante equals part.Id
+                           select new
+                           {
+                               aluno,
+                               part
+                           };
+
+                List<PNAluno> lista = new List<PNAluno>();
+
+                foreach (var result in query)
+                {
+                    PNAluno p = new PNAluno();
+                    p.id = result.part.Id;
+                    p.nome = result.part.Nome;
+                    p.email = result.part.Email;
+                    p.senha = result.part.Senha;
+                    p.status = result.part.Status;
+                    p.curso = result.aluno.Curso;
+                    p.campus = result.aluno.Campus;
+                    p.periodo = result.aluno.Periodo;
+
+                    lista.Add(p);
+
+                }
+                return lista;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
 
         public static bool Ativar(Participante pa) {

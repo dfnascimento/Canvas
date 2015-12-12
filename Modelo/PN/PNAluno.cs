@@ -9,6 +9,7 @@ namespace Modelo.PN
 {
     public class PNAluno
     {
+        public int id { get; set; }
         public String nome { get; set; }
         public String email { get; set; }
         public String senha { get; set; }
