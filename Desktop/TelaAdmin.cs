@@ -22,7 +22,19 @@ namespace Desktop
 
             populaGridProfessor();
             populaGridAvaliador();
+            populaComboBoxProjetosAv();
         }
+
+        private void populaComboBoxProjetosAv() {
+
+            List<String> list = CadastroProjeto.listarProjetosDisp();
+
+            this.cbProjDisp.DataSource = list;
+
+        }
+
+
+
 
         private void populaGridProfessor() {
 
@@ -123,6 +135,128 @@ namespace Desktop
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCarregar_Click(object sender, EventArgs e)
+        {
+            if (this.cbProjDisp.Text.Equals(""))
+            {
+                MessageBox.Show("Selecione um Projeto");
+            }
+            else {
+                PNProjeto proj = CadastroProjeto.getProjeto(cbProjDisp.Text);
+
+                this.lblStatus.Text = "Status : " + proj.status;
+                populaGridAlunosProjeto(proj);
+                populaGridOrientadorProjeto(proj);
+                populaGridAvaliadorProjeto(proj);
+                popularListBoxAvaliadores(proj);
+            }
+        }
+
+        private void populaGridAlunosProjeto(PNProjeto proj)
+        {
+
+            this.gridAlunosParicipantesProj.Rows.Clear();
+
+            List<PNAluno> list = proj.ListMembros();
+
+            string[] linha = new string[6];
+
+            foreach (var value in list)
+            {
+
+                linha[0] = value.nome;
+                linha[1] = value.email;
+                linha[2] = value.status;
+                linha[3] = value.curso;
+                linha[4] = value.periodo.ToString();
+                linha[5] = value.campus;
+
+                this.gridAlunosParicipantesProj.Rows.Add(linha);
+            }
+        }
+
+        private void populaGridOrientadorProjeto(PNProjeto proj)
+        {
+
+            this.gridOrientadoresProj.Rows.Clear();
+
+            List<PNProfessor> list = proj.ListOrientadores();
+
+            string[] linha = new string[5];
+
+            foreach (var value in list)
+            {
+
+                linha[0] = value.nome;
+                linha[1] = value.email;
+                linha[2] = value.status;
+                linha[3] = value.disciplinaPrincipal;
+                linha[4] = value.departamento;
+
+                this.gridOrientadoresProj.Rows.Add(linha);
+            }
+        }
+
+        private void populaGridAvaliadorProjeto(PNProjeto proj)
+        {
+
+            this.gridAvaliadoresProj.Rows.Clear();
+
+            List<PNAvaliadorExterno> list = proj.ListAvaliadores();
+
+            string[] linha = new string[5];
+
+            foreach (var value in list)
+            {
+
+                linha[0] = value.nome;
+                linha[1] = value.email;
+                linha[2] = value.status;
+                linha[3] = value.areaAtuacao;
+                linha[4] = value.formacao;
+
+                this.gridAvaliadoresProj.Rows.Add(linha);
+            }
+        }
+
+
+
+        public void popularListBoxAvaliadores(PNProjeto proj)
+        {
+            List<String> list = proj.getAvaliadoresDisp();
+
+            this.combAvaliadoresDisp.DataSource = list;
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            PNProjeto proj = CadastroProjeto.getProjeto(cbProjDisp.Text);
+
+            if (proj.addAvaliador(CadastroProjeto.getAvaliador(combAvaliadoresDisp.Text))) {
+                MessageBox.Show(combAvaliadoresDisp.Text + " adicionado com sucesso!");
+                this.lblStatus.Text = "Status : " + proj.status;
+                populaGridAvaliadorProjeto(proj);
+                popularListBoxAvaliadores(proj);
+            }
+
+
         }
     }
 }
