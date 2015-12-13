@@ -23,6 +23,23 @@ namespace Desktop
             populaGridProfessor();
             populaGridAvaliador();
             populaComboBoxProjetosAv();
+            populaPesos();
+        }
+
+        private void populaPesos() {
+            Peso p = PNPeso.getPeso();
+
+            txtNota1.Text = p.Peso_Quadro_1.ToString();
+            txtNota2.Text = p.Peso_Quadro_2.ToString();
+            txtNota3.Text = p.Peso_Quadro_3.ToString();
+            txtNota4.Text = p.Peso_Quadro_4.ToString();
+            txtNota5.Text = p.Peso_Quadro_5.ToString();
+            txtNota6.Text = p.Peso_Quadro_6.ToString();
+            txtNota7.Text = p.Peso_Quadro_7.ToString();
+            txtNota8.Text = p.Peso_Quadro_8.ToString();
+            txtNota9.Text = p.Peso_Quadro_9.ToString();
+
+
         }
 
         private void populaComboBoxProjetosAv() {
@@ -257,6 +274,72 @@ namespace Desktop
             }
 
 
+        }
+
+        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (txtNota1.Text.Equals("") ||
+                txtNota2.Text.Equals("") ||
+                txtNota3.Text.Equals("") ||
+                txtNota4.Text.Equals("") ||
+                txtNota5.Text.Equals("") ||
+                txtNota6.Text.Equals("") ||
+                txtNota7.Text.Equals("") ||
+                txtNota8.Text.Equals("") ||
+                txtNota9.Text.Equals(""))
+            {
+                MessageBox.Show("Todos os campos devem ser preenchidos");
+            }
+
+            else if (Convert.ToInt32(txtNota1.Text) > 10 ||
+                Convert.ToInt32(txtNota2.Text) > 10 ||
+                Convert.ToInt32(txtNota3.Text) > 10 ||
+                Convert.ToInt32(txtNota4.Text) > 10 ||
+                Convert.ToInt32(txtNota5.Text) > 10 ||
+                Convert.ToInt32(txtNota6.Text) > 10 ||
+                Convert.ToInt32(txtNota7.Text) > 10 ||
+                Convert.ToInt32(txtNota8.Text) > 10 ||
+                Convert.ToInt32(txtNota9.Text) > 10)
+            {
+                MessageBox.Show("Intervalo de valores perimitido: [0 ~ 10]");
+            }
+            else
+            {
+                Peso p = new Peso();
+                p.Peso_Quadro_1 = Convert.ToInt32(txtNota1.Text);
+                p.Peso_Quadro_2 = Convert.ToInt32(txtNota2.Text);
+                p.Peso_Quadro_3 = Convert.ToInt32(txtNota3.Text);
+                p.Peso_Quadro_4 = Convert.ToInt32(txtNota4.Text);
+                p.Peso_Quadro_5 = Convert.ToInt32(txtNota5.Text);
+                p.Peso_Quadro_6 = Convert.ToInt32(txtNota6.Text);
+                p.Peso_Quadro_7 = Convert.ToInt32(txtNota7.Text);
+                p.Peso_Quadro_8 = Convert.ToInt32(txtNota8.Text);
+                p.Peso_Quadro_9 = Convert.ToInt32(txtNota9.Text);
+
+                if (PNPeso.setPeso(p))
+                {
+                    MessageBox.Show("Pesos atualizados com sucesso");
+                }
+            }
+        }
+
+        private void txtNota8_TextChanged(object sender, EventArgs e)
+        {
+           
+           
+        }
+
+        private void numberKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

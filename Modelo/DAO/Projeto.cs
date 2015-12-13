@@ -21,7 +21,6 @@ namespace Modelo.DAO
             this.Avaliador_Projeto = new HashSet<Avaliador_Projeto>();
             this.Liderancas = new HashSet<Lideranca>();
             this.Orientador_Projeto = new HashSet<Orientador_Projeto>();
-            this.Pesoes = new HashSet<Peso>();
         }
     
         public int Id { get; set; }
@@ -45,7 +44,5 @@ namespace Modelo.DAO
         public virtual ICollection<Lideranca> Liderancas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orientador_Projeto> Orientador_Projeto { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Peso> Pesoes { get; set; }
     }
 }

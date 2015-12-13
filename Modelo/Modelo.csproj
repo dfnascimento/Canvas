@@ -111,6 +111,7 @@
     <Compile Include="PN\CadastroUsuario.cs" />
     <Compile Include="PN\PNAluno.cs" />
     <Compile Include="PN\PNAvaliadorExterno.cs" />
+    <Compile Include="PN\PNPeso.cs" />
     <Compile Include="PN\PNProfessor.cs" />
     <Compile Include="PN\PNProjeto.cs" />
     <Compile Include="PN\Quadro.cs" />

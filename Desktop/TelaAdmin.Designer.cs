@@ -1,4 +1,5 @@
-﻿using Modelo.PN;
+﻿
+using Modelo.PN;
 
 namespace Desktop
 {
@@ -77,6 +78,59 @@ namespace Desktop
             this.btnCarregar = new System.Windows.Forms.Button();
             this.cbProjDisp = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtNota1 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtNota2 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtNota6 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtNota7 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.txtNota3 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtNota4 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtNota8 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txtNota5 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.txtNota9 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -87,6 +141,21 @@ namespace Desktop
             ((System.ComponentModel.ISupportInitialize)(this.gridAvaliadoresProj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrientadoresProj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunosParicipantesProj)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -94,11 +163,13 @@ namespace Desktop
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(-1, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(887, 545);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -547,6 +618,541 @@ namespace Desktop
             this.label3.Text = "Selecione o projeto : ";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(879, 519);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Acompanhar Projeto";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.btnConfirmar);
+            this.tabPage5.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(879, 519);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Gerenciamento de Pesos";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(732, 490);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(129, 23);
+            this.btnConfirmar.TabIndex = 1;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(38, 41);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(809, 427);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.panel3, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel2, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 278F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(803, 278);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightBlue;
+            this.panel3.Controls.Add(this.txtNota1);
+            this.panel3.Controls.Add(this.label32);
+            this.panel3.Controls.Add(this.label19);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Location = new System.Drawing.Point(643, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(154, 272);
+            this.panel3.TabIndex = 4;
+            // 
+            // txtNota1
+            // 
+            this.txtNota1.Location = new System.Drawing.Point(104, 248);
+            this.txtNota1.Name = "txtNota1";
+            this.txtNota1.Size = new System.Drawing.Size(47, 20);
+            this.txtNota1.TabIndex = 0;
+            this.txtNota1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberKeyPress);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(57, 251);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(37, 13);
+            this.label32.TabIndex = 4;
+            this.label32.Text = "Peso: ";
+            // 
+            // label19
+            // 
+            this.label19.Location = new System.Drawing.Point(21, 76);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(108, 81);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Para quem criamos valor?                                                      Qua" +
+    "is são nossos clientes mais importantes?";
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 3);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(148, 49);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "I) Segmento de Clientes";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightBlue;
+            this.panel2.Controls.Add(this.txtNota2);
+            this.panel2.Controls.Add(this.label29);
+            this.panel2.Controls.Add(this.label18);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Location = new System.Drawing.Point(323, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(154, 272);
+            this.panel2.TabIndex = 3;
+            // 
+            // txtNota2
+            // 
+            this.txtNota2.Location = new System.Drawing.Point(102, 249);
+            this.txtNota2.Name = "txtNota2";
+            this.txtNota2.Size = new System.Drawing.Size(47, 20);
+            this.txtNota2.TabIndex = 0;
+            this.txtNota2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberKeyPress);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(60, 252);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(37, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Peso: ";
+            // 
+            // label18
+            // 
+            this.label18.Location = new System.Drawing.Point(23, 85);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(104, 94);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Que valor proporcionou a nossos clientes?                                  Que pr" +
+    "oblemas de nossos clientes estão solucionados? ";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(148, 49);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "II) Proposta de Valor";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.panel5, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panel4, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(163, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(154, 272);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DarkGray;
+            this.panel5.Controls.Add(this.txtNota6);
+            this.panel5.Controls.Add(this.label28);
+            this.panel5.Controls.Add(this.label21);
+            this.panel5.Controls.Add(this.label14);
+            this.panel5.Location = new System.Drawing.Point(3, 139);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(148, 130);
+            this.panel5.TabIndex = 1;
+            // 
+            // txtNota6
+            // 
+            this.txtNota6.Location = new System.Drawing.Point(98, 106);
+            this.txtNota6.Name = "txtNota6";
+            this.txtNota6.Size = new System.Drawing.Size(47, 20);
+            this.txtNota6.TabIndex = 0;
+            this.txtNota6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberKeyPress);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(51, 109);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(37, 13);
+            this.label28.TabIndex = 6;
+            this.label28.Text = "Peso: ";
+            // 
+            // label21
+            // 
+            this.label21.Location = new System.Drawing.Point(4, 46);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(131, 57);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "Que recursos físicos, humanos, intelectuais ou econômicos são essenciais?";
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(142, 52);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "VI) Recursos Chave";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Controls.Add(this.txtNota7);
+            this.panel4.Controls.Add(this.label27);
+            this.panel4.Controls.Add(this.label20);
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(148, 130);
+            this.panel4.TabIndex = 0;
+            // 
+            // txtNota7
+            // 
+            this.txtNota7.Location = new System.Drawing.Point(98, 107);
+            this.txtNota7.Name = "txtNota7";
+            this.txtNota7.Size = new System.Drawing.Size(47, 20);
+            this.txtNota7.TabIndex = 0;
+            this.txtNota7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberKeyPress);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(51, 110);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(37, 13);
+            this.label27.TabIndex = 5;
+            this.label27.Text = "Peso: ";
+            // 
+            // label20
+            // 
+            this.label20.Location = new System.Drawing.Point(21, 49);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(102, 34);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "O que devemos Saber e fazer?";
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(142, 49);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "VII) Atividades Chave";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Controls.Add(this.panel7, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.panel6, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(483, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(154, 272);
+            this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel7.Controls.Add(this.txtNota3);
+            this.panel7.Controls.Add(this.label31);
+            this.panel7.Controls.Add(this.label23);
+            this.panel7.Controls.Add(this.label16);
+            this.panel7.Location = new System.Drawing.Point(3, 139);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(148, 130);
+            this.panel7.TabIndex = 2;
+            // 
+            // txtNota3
+            // 
+            this.txtNota3.Location = new System.Drawing.Point(98, 106);
+            this.txtNota3.Name = "txtNota3";
+            this.txtNota3.Size = new System.Drawing.Size(47, 20);
+            this.txtNota3.TabIndex = 0;
+            this.txtNota3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberKeyPress);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(51, 109);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(37, 13);
+            this.label31.TabIndex = 8;
+            this.label31.Text = "Peso: ";
+            // 
+            // label23
+            // 
+            this.label23.Location = new System.Drawing.Point(4, 27);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(141, 76);
+            this.label23.TabIndex = 7;
+            this.label23.Text = "Que meios preferem utilizar nosso segmento de mercado?                        Com" +
+    "o estabelecer contato com os clientes?";
+            // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(3, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(142, 32);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "III) Canais";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.DarkGray;
+            this.panel6.Controls.Add(this.txtNota4);
+            this.panel6.Controls.Add(this.label30);
+            this.panel6.Controls.Add(this.label22);
+            this.panel6.Controls.Add(this.label15);
+            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(148, 130);
+            this.panel6.TabIndex = 1;
+            // 
+            // txtNota4
+            // 
+            this.txtNota4.Location = new System.Drawing.Point(98, 107);
+            this.txtNota4.Name = "txtNota4";
+            this.txtNota4.Size = new System.Drawing.Size(47, 20);
+            this.txtNota4.TabIndex = 0;
+            this.txtNota4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberKeyPress);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(51, 110);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(37, 13);
+            this.label30.TabIndex = 7;
+            this.label30.Text = "Peso: ";
+            // 
+            // label22
+            // 
+            this.label22.Location = new System.Drawing.Point(4, 40);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(146, 70);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "Que tipo de relacionamento que cada segmento de cliente espera ter para estabelec" +
+    "er e manter sua preferencia?";
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(3, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(151, 49);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "IV) Relacionamento com clientes";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.txtNota8);
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(154, 272);
+            this.panel1.TabIndex = 0;
+            // 
+            // txtNota8
+            // 
+            this.txtNota8.Location = new System.Drawing.Point(104, 249);
+            this.txtNota8.Name = "txtNota8";
+            this.txtNota8.Size = new System.Drawing.Size(47, 20);
+            this.txtNota8.TabIndex = 1;
+            this.txtNota8.TextChanged += new System.EventHandler(this.txtNota8_TextChanged);
+            this.txtNota8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberKeyPress);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(57, 252);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(37, 13);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Peso: ";
+            // 
+            // label17
+            // 
+            this.label17.Location = new System.Drawing.Point(16, 110);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(120, 61);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Quem são nossos parceiros e provedores fundamentais?";
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 3);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(148, 49);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "VIII) Parcerias Chave";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.panel9, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.panel8, 0, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 287);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 137F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(803, 137);
+            this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.DarkGray;
+            this.panel9.Controls.Add(this.txtNota5);
+            this.panel9.Controls.Add(this.label34);
+            this.panel9.Controls.Add(this.label25);
+            this.panel9.Controls.Add(this.label12);
+            this.panel9.Location = new System.Drawing.Point(404, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(395, 131);
+            this.panel9.TabIndex = 1;
+            // 
+            // txtNota5
+            // 
+            this.txtNota5.Location = new System.Drawing.Point(343, 108);
+            this.txtNota5.Name = "txtNota5";
+            this.txtNota5.Size = new System.Drawing.Size(47, 20);
+            this.txtNota5.TabIndex = 0;
+            this.txtNota5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberKeyPress);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(296, 111);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(37, 13);
+            this.label34.TabIndex = 4;
+            this.label34.Text = "Peso: ";
+            // 
+            // label25
+            // 
+            this.label25.Location = new System.Drawing.Point(23, 38);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(339, 50);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "Por que valor os nossos clientes realmente estão dispostos a pagar?              " +
+    "                                                                                " +
+    "             Como gostariam de pagar?";
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(106, 25);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "V) Receitas";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel8.Controls.Add(this.txtNota9);
+            this.panel8.Controls.Add(this.label33);
+            this.panel8.Controls.Add(this.label24);
+            this.panel8.Controls.Add(this.label11);
+            this.panel8.Location = new System.Drawing.Point(3, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(395, 131);
+            this.panel8.TabIndex = 0;
+            // 
+            // txtNota9
+            // 
+            this.txtNota9.Location = new System.Drawing.Point(345, 108);
+            this.txtNota9.Name = "txtNota9";
+            this.txtNota9.Size = new System.Drawing.Size(47, 20);
+            this.txtNota9.TabIndex = 0;
+            this.txtNota9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberKeyPress);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(298, 111);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(37, 13);
+            this.label33.TabIndex = 6;
+            this.label33.Text = "Peso: ";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(44, 55);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(297, 13);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Quais são os custos mais importantes do modelo de negocio?";
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(104, 25);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "IX) Custos";
+            // 
             // btnLogout
             // 
             this.btnLogout.Location = new System.Drawing.Point(755, 551);
@@ -578,6 +1184,30 @@ namespace Desktop
             ((System.ComponentModel.ISupportInitialize)(this.gridAvaliadoresProj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrientadoresProj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunosParicipantesProj)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -632,5 +1262,58 @@ namespace Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusOrien;
         private System.Windows.Forms.DataGridViewTextBoxColumn DisciplinaOrient;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartamentoOrient;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txtNota8;
+        private System.Windows.Forms.TextBox txtNota7;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txtNota6;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox txtNota2;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox txtNota4;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtNota1;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtNota3;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txtNota9;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txtNota5;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

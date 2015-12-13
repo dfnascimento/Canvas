@@ -113,7 +113,6 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Id_Projeto" Type="int" Nullable="false" />
           <Property Name="Peso_Quadro_1" Type="int" />
           <Property Name="Peso_Quadro_2" Type="int" />
           <Property Name="Peso_Quadro_3" Type="int" />
@@ -306,18 +305,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Peso_Projeto">
-          <End Role="Projeto" Type="Self.Projeto" Multiplicity="1" />
-          <End Role="Peso" Type="Self.Peso" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Projeto">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Peso">
-              <PropertyRef Name="Id_Projeto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Professor_Participante">
           <End Role="Participante" Type="Self.Participante" Multiplicity="1" />
           <End Role="Professor" Type="Self.Professor" Multiplicity="*" />
@@ -395,10 +382,6 @@
           <AssociationSet Name="FK_Orientador_Projeto_Projeto" Association="Self.FK_Orientador_Projeto_Projeto">
             <End Role="Professor" EntitySet="Professor" />
             <End Role="Orientador_Projeto" EntitySet="Orientador_Projeto" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Peso_Projeto" Association="Self.FK_Peso_Projeto">
-            <End Role="Projeto" EntitySet="Projeto" />
-            <End Role="Peso" EntitySet="Peso" />
           </AssociationSet>
           <AssociationSet Name="FK_Professor_Participante" Association="Self.FK_Professor_Participante">
             <End Role="Participante" EntitySet="Participante" />
@@ -540,7 +523,6 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Id_Projeto" Type="Int32" Nullable="false" />
           <Property Name="Peso_Quadro_1" Type="Int32" />
           <Property Name="Peso_Quadro_2" Type="Int32" />
           <Property Name="Peso_Quadro_3" Type="Int32" />
@@ -550,7 +532,6 @@
           <Property Name="Peso_Quadro_7" Type="Int32" />
           <Property Name="Peso_Quadro_8" Type="Int32" />
           <Property Name="Peso_Quadro_9" Type="Int32" />
-          <NavigationProperty Name="Projeto" Relationship="Self.FK_Peso_Projeto" FromRole="Peso" ToRole="Projeto" />
         </EntityType>
         <EntityType Name="Professor">
           <Key>
@@ -583,7 +564,6 @@
           <NavigationProperty Name="Avaliador_Projeto" Relationship="Self.FK_Avaliador_Projeto_Projeto" FromRole="Projeto" ToRole="Avaliador_Projeto" />
           <NavigationProperty Name="Liderancas" Relationship="Self.FK_Lideranca_Projeto" FromRole="Projeto" ToRole="Lideranca" />
           <NavigationProperty Name="Orientador_Projeto" Relationship="Self.FK_Orientador_Projeto_Professor" FromRole="Projeto" ToRole="Orientador_Projeto" />
-          <NavigationProperty Name="Pesoes" Relationship="Self.FK_Peso_Projeto" FromRole="Projeto" ToRole="Peso" />
         </EntityType>
         <Association Name="FK_Admin_Participante">
           <End Role="Participante" Type="Self.Participante" Multiplicity="1" />
@@ -753,18 +733,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Peso_Projeto">
-          <End Role="Projeto" Type="Self.Projeto" Multiplicity="1" />
-          <End Role="Peso" Type="Self.Peso" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Projeto">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Peso">
-              <PropertyRef Name="Id_Projeto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="CanvasEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admins" EntityType="Self.Admin" />
           <EntitySet Name="Alunoes" EntityType="Self.Aluno" />
@@ -834,10 +802,6 @@
           <AssociationSet Name="FK_Professor_Participante" Association="Self.FK_Professor_Participante">
             <End Role="Participante" EntitySet="Participantes" />
             <End Role="Professor" EntitySet="Professors" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Peso_Projeto" Association="Self.FK_Peso_Projeto">
-            <End Role="Projeto" EntitySet="Projetoes" />
-            <End Role="Peso" EntitySet="Pesoes" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -963,7 +927,6 @@
             <EntityTypeMapping TypeName="CanvasModel.Peso">
               <MappingFragment StoreEntitySet="Peso">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Id_Projeto" ColumnName="Id_Projeto" />
                 <ScalarProperty Name="Peso_Quadro_1" ColumnName="Peso_Quadro_1" />
                 <ScalarProperty Name="Peso_Quadro_2" ColumnName="Peso_Quadro_2" />
                 <ScalarProperty Name="Peso_Quadro_3" ColumnName="Peso_Quadro_3" />
