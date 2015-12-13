@@ -195,7 +195,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminsController.cs" />
-    <Compile Include="Controllers\Alunoes1Controller.cs" />
     <Compile Include="Controllers\AlunoesController.cs" />
     <Compile Include="Controllers\Aluno_ProjetoController.cs" />
     <Compile Include="Controllers\AvaliacaosController.cs" />
