@@ -61,11 +61,43 @@ namespace Modelo.PN
                     acesso = "Erro";
                 }
 
-                if (status.Equals("Inativo")) {
+                if (status.Equals("Inativo"))
+                {
                     return "Usuário inativo. Contate o Administrador do sistema para ativar seu cadastro";
                 }
 
                 return "Sucesso";
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static PNAvaliadorExterno getAvaliador()
+        {
+
+            try
+            {
+
+
+                PNAvaliadorExterno ae = new PNAvaliadorExterno();
+
+                ae.nome = nome;
+                ae.email = email;
+                ae.status = status;
+
+                CanvasEntities2 db = new CanvasEntities2();
+
+                var query = (from aval in db.Avaliador_Externo
+                             where aval.Id_Participante == id
+                             select aval).First();
+
+                ae.id = query.Id;
+                ae.formacao = query.Formacao;
+                ae.areaAtuacao = query.Area_Atuacao;
+
+                return ae;
             }
             catch (Exception)
             {

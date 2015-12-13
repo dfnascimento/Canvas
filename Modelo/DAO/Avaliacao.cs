@@ -14,12 +14,6 @@ namespace Modelo.DAO
     
     public partial class Avaliacao
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Avaliacao()
-        {
-            this.Avaliacao1 = new HashSet<Avaliacao>();
-        }
-    
         public int Id { get; set; }
         public int Id_Avaliador_Projeto { get; set; }
         public Nullable<int> Nota_Quadro_1 { get; set; }
@@ -32,8 +26,6 @@ namespace Modelo.DAO
         public Nullable<int> Nota_Quadro_8 { get; set; }
         public Nullable<int> Nota_Quadro_9 { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Avaliacao> Avaliacao1 { get; set; }
-        public virtual Avaliacao Avaliacao2 { get; set; }
+        public virtual Avaliador_Projeto Avaliador_Projeto { get; set; }
     }
 }

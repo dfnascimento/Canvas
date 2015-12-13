@@ -113,6 +113,7 @@
     <Compile Include="PN\PNAvaliadorExterno.cs" />
     <Compile Include="PN\PNProfessor.cs" />
     <Compile Include="PN\PNProjeto.cs" />
+    <Compile Include="PN\Quadro.cs" />
     <Compile Include="PN\Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

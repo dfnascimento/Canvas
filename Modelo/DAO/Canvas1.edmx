@@ -70,15 +70,15 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Aluno_Projeto" Type="int" Nullable="false" />
-          <Property Name="Quadro_1" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_2" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_3" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_4" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_5" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_6" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_7" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_8" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_9" Type="varchar" MaxLength="200" />
+          <Property Name="Quadro_1" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_2" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_3" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_4" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_5" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_6" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_7" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_8" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_9" Type="varchar" MaxLength="2000" />
         </EntityType>
         <EntityType Name="Lideranca">
           <Key>
@@ -138,20 +138,16 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Resposta_1" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_2" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_3" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_4" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_5" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_6" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_7" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_8" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_9" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_10" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_11" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_12" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_13" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Resposta_1" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_2" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_3" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_4" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_5" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_6" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_7" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_8" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_9" Type="varchar" MaxLength="2000" />
           <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_Admin_Participante">
@@ -203,13 +199,13 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Avaliacao_Avaliador_Projeto">
-          <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="1" />
-          <End Role="Avaliacao1" Type="Self.Avaliacao" Multiplicity="*" />
+          <End Role="Avaliador_Projeto" Type="Self.Avaliador_Projeto" Multiplicity="1" />
+          <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Avaliacao">
+            <Principal Role="Avaliador_Projeto">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Avaliacao1">
+            <Dependent Role="Avaliacao">
               <PropertyRef Name="Id_Avaliador_Projeto" />
             </Dependent>
           </ReferentialConstraint>
@@ -365,8 +361,8 @@
             <End Role="Aluno_Projeto" EntitySet="Aluno_Projeto" />
           </AssociationSet>
           <AssociationSet Name="FK_Avaliacao_Avaliador_Projeto" Association="Self.FK_Avaliacao_Avaliador_Projeto">
+            <End Role="Avaliador_Projeto" EntitySet="Avaliador_Projeto" />
             <End Role="Avaliacao" EntitySet="Avaliacao" />
-            <End Role="Avaliacao1" EntitySet="Avaliacao" />
           </AssociationSet>
           <AssociationSet Name="FK_Avaliador_Externo_Participante" Association="Self.FK_Avaliador_Externo_Participante">
             <End Role="Participante" EntitySet="Participante" />
@@ -461,8 +457,7 @@
           <Property Name="Nota_Quadro_7" Type="Int32" />
           <Property Name="Nota_Quadro_8" Type="Int32" />
           <Property Name="Nota_Quadro_9" Type="Int32" />
-          <NavigationProperty Name="Avaliacao1" Relationship="Self.FK_Avaliacao_Avaliador_Projeto" FromRole="Avaliacao" ToRole="Avaliacao1" />
-          <NavigationProperty Name="Avaliacao2" Relationship="Self.FK_Avaliacao_Avaliador_Projeto" FromRole="Avaliacao1" ToRole="Avaliacao" />
+          <NavigationProperty Name="Avaliador_Projeto" Relationship="Self.FK_Avaliacao_Avaliador_Projeto" FromRole="Avaliacao" ToRole="Avaliador_Projeto" />
         </EntityType>
         <EntityType Name="Avaliador_Externo">
           <Key>
@@ -483,6 +478,7 @@
           <Property Name="Id_Avaliador" Type="Int32" Nullable="false" />
           <Property Name="Id_Projeto" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Avaliacaos" Relationship="Self.FK_Avaliacao_Avaliador_Projeto" FromRole="Avaliador_Projeto" ToRole="Avaliacao" />
           <NavigationProperty Name="Avaliador_Externo" Relationship="Self.FK_Avaliador_Projeto_Avaliador" FromRole="Avaliador_Projeto" ToRole="Avaliador_Externo" />
           <NavigationProperty Name="Projeto" Relationship="Self.FK_Avaliador_Projeto_Projeto" FromRole="Avaliador_Projeto" ToRole="Projeto" />
         </EntityType>
@@ -492,15 +488,15 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_Aluno_Projeto" Type="Int32" Nullable="false" />
-          <Property Name="Quadro_1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_5" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_6" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_7" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_8" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_9" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_1" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_2" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_3" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_4" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_5" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_6" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_7" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_8" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_9" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Aluno_Projeto" Relationship="Self.FK_Comentario_Aluno_Projeto" FromRole="Comentario" ToRole="Aluno_Projeto" />
         </EntityType>
         <EntityType Name="Lideranca">
@@ -573,19 +569,15 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Resposta_1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_5" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_6" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_7" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_8" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_9" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_10" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_11" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_12" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_13" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_1" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_2" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_3" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_4" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_5" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_6" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_7" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_8" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_9" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Aluno_Projeto" Relationship="Self.FK_Aluno_Projeto_Projeto" FromRole="Projeto" ToRole="Aluno_Projeto" />
           <NavigationProperty Name="Avaliador_Projeto" Relationship="Self.FK_Avaliador_Projeto_Projeto" FromRole="Projeto" ToRole="Avaliador_Projeto" />
@@ -666,13 +658,13 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Avaliacao_Avaliador_Projeto">
-          <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="1" />
-          <End Role="Avaliacao1" Type="Self.Avaliacao" Multiplicity="*" />
+          <End Role="Avaliador_Projeto" Type="Self.Avaliador_Projeto" Multiplicity="1" />
+          <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Avaliacao">
+            <Principal Role="Avaliador_Projeto">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Avaliacao1">
+            <Dependent Role="Avaliacao">
               <PropertyRef Name="Id_Avaliador_Projeto" />
             </Dependent>
           </ReferentialConstraint>
@@ -812,8 +804,8 @@
             <End Role="Comentario" EntitySet="Comentarios" />
           </AssociationSet>
           <AssociationSet Name="FK_Avaliacao_Avaliador_Projeto" Association="Self.FK_Avaliacao_Avaliador_Projeto">
+            <End Role="Avaliador_Projeto" EntitySet="Avaliador_Projeto" />
             <End Role="Avaliacao" EntitySet="Avaliacaos" />
-            <End Role="Avaliacao1" EntitySet="Avaliacaos" />
           </AssociationSet>
           <AssociationSet Name="FK_Avaliador_Externo_Participante" Association="Self.FK_Avaliador_Externo_Participante">
             <End Role="Participante" EntitySet="Participantes" />
@@ -1008,10 +1000,6 @@
                 <ScalarProperty Name="Resposta_7" ColumnName="Resposta_7" />
                 <ScalarProperty Name="Resposta_8" ColumnName="Resposta_8" />
                 <ScalarProperty Name="Resposta_9" ColumnName="Resposta_9" />
-                <ScalarProperty Name="Resposta_10" ColumnName="Resposta_10" />
-                <ScalarProperty Name="Resposta_11" ColumnName="Resposta_11" />
-                <ScalarProperty Name="Resposta_12" ColumnName="Resposta_12" />
-                <ScalarProperty Name="Resposta_13" ColumnName="Resposta_13" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
               </MappingFragment>
             </EntityTypeMapping>

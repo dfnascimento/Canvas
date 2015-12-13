@@ -14,11 +14,19 @@ namespace Modelo.DAO
     
     public partial class Avaliador_Projeto
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Avaliador_Projeto()
+        {
+            this.Avaliacaos = new HashSet<Avaliacao>();
+        }
+    
         public int Id { get; set; }
         public int Id_Avaliador { get; set; }
         public int Id_Projeto { get; set; }
         public string Status { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Avaliacao> Avaliacaos { get; set; }
         public virtual Avaliador_Externo Avaliador_Externo { get; set; }
         public virtual Projeto Projeto { get; set; }
     }

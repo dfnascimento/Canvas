@@ -53,31 +53,31 @@ namespace Desktop
             this.label7 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.gridAvaliadoresProj = new System.Windows.Forms.DataGridView();
+            this.NomeAval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailAval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusAval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AreaAval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormacaoAval = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.gridOrientadoresProj = new System.Windows.Forms.DataGridView();
+            this.NomeOrient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailOrient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusOrien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DisciplinaOrient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepartamentoOrient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.gridAlunosParicipantesProj = new System.Windows.Forms.DataGridView();
-            this.btnCarregar = new System.Windows.Forms.Button();
-            this.cbProjDisp = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.NomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CursoAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PeriodoAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CampusAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeOrient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailOrient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusOrien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DisciplinaOrient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DepartamentoOrient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeAval = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailAval = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusAval = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AreaAval = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FormacaoAval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCarregar = new System.Windows.Forms.Button();
+            this.cbProjDisp = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -297,6 +297,7 @@ namespace Desktop
             // 
             // combAvaliadoresDisp
             // 
+            this.combAvaliadoresDisp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combAvaliadoresDisp.FormattingEnabled = true;
             this.combAvaliadoresDisp.Location = new System.Drawing.Point(14, 469);
             this.combAvaliadoresDisp.Name = "combAvaliadoresDisp";
@@ -341,6 +342,41 @@ namespace Desktop
             this.gridAvaliadoresProj.TabIndex = 8;
             this.gridAvaliadoresProj.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellContentClick);
             // 
+            // NomeAval
+            // 
+            this.NomeAval.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomeAval.HeaderText = "Nome";
+            this.NomeAval.Name = "NomeAval";
+            this.NomeAval.ReadOnly = true;
+            // 
+            // EmailAval
+            // 
+            this.EmailAval.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EmailAval.HeaderText = "Email";
+            this.EmailAval.Name = "EmailAval";
+            this.EmailAval.ReadOnly = true;
+            // 
+            // StatusAval
+            // 
+            this.StatusAval.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StatusAval.HeaderText = "Status";
+            this.StatusAval.Name = "StatusAval";
+            this.StatusAval.ReadOnly = true;
+            // 
+            // AreaAval
+            // 
+            this.AreaAval.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AreaAval.HeaderText = "Area Atuação";
+            this.AreaAval.Name = "AreaAval";
+            this.AreaAval.ReadOnly = true;
+            // 
+            // FormacaoAval
+            // 
+            this.FormacaoAval.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FormacaoAval.HeaderText = "Formação";
+            this.FormacaoAval.Name = "FormacaoAval";
+            this.FormacaoAval.ReadOnly = true;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -367,6 +403,41 @@ namespace Desktop
             this.gridOrientadoresProj.ReadOnly = true;
             this.gridOrientadoresProj.Size = new System.Drawing.Size(836, 54);
             this.gridOrientadoresProj.TabIndex = 6;
+            // 
+            // NomeOrient
+            // 
+            this.NomeOrient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomeOrient.HeaderText = "Nome";
+            this.NomeOrient.Name = "NomeOrient";
+            this.NomeOrient.ReadOnly = true;
+            // 
+            // EmailOrient
+            // 
+            this.EmailOrient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EmailOrient.HeaderText = "Email";
+            this.EmailOrient.Name = "EmailOrient";
+            this.EmailOrient.ReadOnly = true;
+            // 
+            // StatusOrien
+            // 
+            this.StatusOrien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StatusOrien.HeaderText = "Status";
+            this.StatusOrien.Name = "StatusOrien";
+            this.StatusOrien.ReadOnly = true;
+            // 
+            // DisciplinaOrient
+            // 
+            this.DisciplinaOrient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DisciplinaOrient.HeaderText = "Disciplina Principal";
+            this.DisciplinaOrient.Name = "DisciplinaOrient";
+            this.DisciplinaOrient.ReadOnly = true;
+            // 
+            // DepartamentoOrient
+            // 
+            this.DepartamentoOrient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DepartamentoOrient.HeaderText = "Departamento";
+            this.DepartamentoOrient.Name = "DepartamentoOrient";
+            this.DepartamentoOrient.ReadOnly = true;
             // 
             // label5
             // 
@@ -404,44 +475,6 @@ namespace Desktop
             this.gridAlunosParicipantesProj.ReadOnly = true;
             this.gridAlunosParicipantesProj.Size = new System.Drawing.Size(836, 94);
             this.gridAlunosParicipantesProj.TabIndex = 3;
-            // 
-            // btnCarregar
-            // 
-            this.btnCarregar.Location = new System.Drawing.Point(560, 14);
-            this.btnCarregar.Name = "btnCarregar";
-            this.btnCarregar.Size = new System.Drawing.Size(75, 23);
-            this.btnCarregar.TabIndex = 2;
-            this.btnCarregar.Text = "Carregar";
-            this.btnCarregar.UseVisualStyleBackColor = true;
-            this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
-            // 
-            // cbProjDisp
-            // 
-            this.cbProjDisp.FormattingEnabled = true;
-            this.cbProjDisp.Location = new System.Drawing.Point(135, 16);
-            this.cbProjDisp.Name = "cbProjDisp";
-            this.cbProjDisp.Size = new System.Drawing.Size(392, 21);
-            this.cbProjDisp.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Selecione o projeto : ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(755, 551);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(127, 23);
-            this.btnLogout.TabIndex = 1;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // NomeAluno
             // 
@@ -485,75 +518,44 @@ namespace Desktop
             this.CampusAluno.Name = "CampusAluno";
             this.CampusAluno.ReadOnly = true;
             // 
-            // NomeOrient
+            // btnCarregar
             // 
-            this.NomeOrient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NomeOrient.HeaderText = "Nome";
-            this.NomeOrient.Name = "NomeOrient";
-            this.NomeOrient.ReadOnly = true;
+            this.btnCarregar.Location = new System.Drawing.Point(560, 14);
+            this.btnCarregar.Name = "btnCarregar";
+            this.btnCarregar.Size = new System.Drawing.Size(75, 23);
+            this.btnCarregar.TabIndex = 2;
+            this.btnCarregar.Text = "Carregar";
+            this.btnCarregar.UseVisualStyleBackColor = true;
+            this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
             // 
-            // EmailOrient
+            // cbProjDisp
             // 
-            this.EmailOrient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.EmailOrient.HeaderText = "Email";
-            this.EmailOrient.Name = "EmailOrient";
-            this.EmailOrient.ReadOnly = true;
+            this.cbProjDisp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProjDisp.FormattingEnabled = true;
+            this.cbProjDisp.Location = new System.Drawing.Point(135, 16);
+            this.cbProjDisp.Name = "cbProjDisp";
+            this.cbProjDisp.Size = new System.Drawing.Size(392, 21);
+            this.cbProjDisp.TabIndex = 1;
             // 
-            // StatusOrien
+            // label3
             // 
-            this.StatusOrien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StatusOrien.HeaderText = "Status";
-            this.StatusOrien.Name = "StatusOrien";
-            this.StatusOrien.ReadOnly = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Selecione o projeto : ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // DisciplinaOrient
+            // btnLogout
             // 
-            this.DisciplinaOrient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DisciplinaOrient.HeaderText = "Disciplina Principal";
-            this.DisciplinaOrient.Name = "DisciplinaOrient";
-            this.DisciplinaOrient.ReadOnly = true;
-            // 
-            // DepartamentoOrient
-            // 
-            this.DepartamentoOrient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DepartamentoOrient.HeaderText = "Departamento";
-            this.DepartamentoOrient.Name = "DepartamentoOrient";
-            this.DepartamentoOrient.ReadOnly = true;
-            // 
-            // NomeAval
-            // 
-            this.NomeAval.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NomeAval.HeaderText = "Nome";
-            this.NomeAval.Name = "NomeAval";
-            this.NomeAval.ReadOnly = true;
-            // 
-            // EmailAval
-            // 
-            this.EmailAval.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.EmailAval.HeaderText = "Email";
-            this.EmailAval.Name = "EmailAval";
-            this.EmailAval.ReadOnly = true;
-            // 
-            // StatusAval
-            // 
-            this.StatusAval.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StatusAval.HeaderText = "Status";
-            this.StatusAval.Name = "StatusAval";
-            this.StatusAval.ReadOnly = true;
-            // 
-            // AreaAval
-            // 
-            this.AreaAval.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AreaAval.HeaderText = "Area Atuação";
-            this.AreaAval.Name = "AreaAval";
-            this.AreaAval.ReadOnly = true;
-            // 
-            // FormacaoAval
-            // 
-            this.FormacaoAval.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FormacaoAval.HeaderText = "Formação";
-            this.FormacaoAval.Name = "FormacaoAval";
-            this.FormacaoAval.ReadOnly = true;
+            this.btnLogout.Location = new System.Drawing.Point(755, 551);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(127, 23);
+            this.btnLogout.TabIndex = 1;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // TelaAdmin
             // 

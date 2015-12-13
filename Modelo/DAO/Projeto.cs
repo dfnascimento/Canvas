@@ -35,10 +35,6 @@ namespace Modelo.DAO
         public string Resposta_7 { get; set; }
         public string Resposta_8 { get; set; }
         public string Resposta_9 { get; set; }
-        public string Resposta_10 { get; set; }
-        public string Resposta_11 { get; set; }
-        public string Resposta_12 { get; set; }
-        public string Resposta_13 { get; set; }
         public string Nome { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
