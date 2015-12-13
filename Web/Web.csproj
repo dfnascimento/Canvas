@@ -203,6 +203,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ParticipantesController.cs" />
     <Compile Include="Controllers\PNAlunoesController.cs" />
+    <Compile Include="Controllers\ProjetoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -303,6 +304,11 @@
     <Content Include="Views\PNAlunoes\Details.cshtml" />
     <Content Include="Views\PNAlunoes\Edit.cshtml" />
     <Content Include="Views\PNAlunoes\Index.cshtml" />
+    <Content Include="Views\Projetoes\Create.cshtml" />
+    <Content Include="Views\Projetoes\Delete.cshtml" />
+    <Content Include="Views\Projetoes\Details.cshtml" />
+    <Content Include="Views\Projetoes\Edit.cshtml" />
+    <Content Include="Views\Projetoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
