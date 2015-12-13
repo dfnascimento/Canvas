@@ -1,0 +1,144 @@
+﻿@model Modelo.DAO.Projeto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Projeto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resposta_13)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resposta_13)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

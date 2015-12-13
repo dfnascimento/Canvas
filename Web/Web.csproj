@@ -195,7 +195,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminsController.cs" />
-    <Compile Include="Controllers\Alunoes1Controller.cs" />
     <Compile Include="Controllers\AlunoesController.cs" />
     <Compile Include="Controllers\Aluno_ProjetoController.cs" />
     <Compile Include="Controllers\AvaliacaosController.cs" />
@@ -203,6 +202,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ParticipantesController.cs" />
     <Compile Include="Controllers\PNAlunoesController.cs" />
+    <Compile Include="Controllers\ProjetoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -272,7 +272,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="ViewPage1.cshtml" />
     <Content Include="Views\Alunoes\Create.cshtml" />
     <Content Include="Views\Alunoes\Delete.cshtml" />
     <Content Include="Views\Alunoes\Details.cshtml" />
@@ -303,6 +302,11 @@
     <Content Include="Views\PNAlunoes\Details.cshtml" />
     <Content Include="Views\PNAlunoes\Edit.cshtml" />
     <Content Include="Views\PNAlunoes\Index.cshtml" />
+    <Content Include="Views\Projetoes\Create.cshtml" />
+    <Content Include="Views\Projetoes\Delete.cshtml" />
+    <Content Include="Views\Projetoes\Details.cshtml" />
+    <Content Include="Views\Projetoes\Edit.cshtml" />
+    <Content Include="Views\Projetoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

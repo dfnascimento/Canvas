@@ -10,112 +10,107 @@ using Modelo.DAO;
 
 namespace Web.Controllers
 {
-    public class Alunoes1Controller : Controller
+    public class ProjetoesController : Controller
     {
         private CanvasEntities2 db = new CanvasEntities2();
 
-        // GET: Alunoes1
+        // GET: Projetoes
         public ActionResult Index()
         {
-            var alunoes = db.Alunoes.Include(a => a.Participante);
-            return View(alunoes.ToList());
+            return View(db.Projetoes.ToList());
         }
 
-        // GET: Alunoes1/Details/5
+        // GET: Projetoes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Aluno aluno = db.Alunoes.Find(id);
-            if (aluno == null)
+            Projeto projeto = db.Projetoes.Find(id);
+            if (projeto == null)
             {
                 return HttpNotFound();
             }
-            return View(aluno);
+            return View(projeto);
         }
 
-        // GET: Alunoes1/Create
+        // GET: Projetoes/Create
         public ActionResult Create()
         {
-            ViewBag.Id_Participante = new SelectList(db.Participantes, "Id", "Email");
             return View();
         }
 
-        // POST: Alunoes1/Create
+        // POST: Projetoes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Id_Participante,Curso,Periodo,Campus")] Aluno aluno)
+        public ActionResult Create([Bind(Include = "Id,Status,Resposta_1,Resposta_2,Resposta_3,Resposta_4,Resposta_5,Resposta_6,Resposta_7,Resposta_8,Resposta_9,Resposta_10,Resposta_11,Resposta_12,Resposta_13,Nome")] Projeto projeto)
         {
             if (ModelState.IsValid)
             {
-                db.Alunoes.Add(aluno);
+                db.Projetoes.Add(projeto);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Id_Participante = new SelectList(db.Participantes, "Id", "Email", aluno.Id_Participante);
-            return View(aluno);
+            return View(projeto);
         }
 
-        // GET: Alunoes1/Edit/5
+        // GET: Projetoes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Aluno aluno = db.Alunoes.Find(id);
-            if (aluno == null)
+            Projeto projeto = db.Projetoes.Find(id);
+            if (projeto == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Id_Participante = new SelectList(db.Participantes, "Id", "Email", aluno.Id_Participante);
-            return View(aluno);
+            return View(projeto);
         }
 
-        // POST: Alunoes1/Edit/5
+        // POST: Projetoes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Id_Participante,Curso,Periodo,Campus")] Aluno aluno)
+        public ActionResult Edit([Bind(Include = "Id,Status,Resposta_1,Resposta_2,Resposta_3,Resposta_4,Resposta_5,Resposta_6,Resposta_7,Resposta_8,Resposta_9,Resposta_10,Resposta_11,Resposta_12,Resposta_13,Nome")] Projeto projeto)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(aluno).State = EntityState.Modified;
+                db.Entry(projeto).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Id_Participante = new SelectList(db.Participantes, "Id", "Email", aluno.Id_Participante);
-            return View(aluno);
+            return View(projeto);
         }
 
-        // GET: Alunoes1/Delete/5
+        // GET: Projetoes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Aluno aluno = db.Alunoes.Find(id);
-            if (aluno == null)
+            Projeto projeto = db.Projetoes.Find(id);
+            if (projeto == null)
             {
                 return HttpNotFound();
             }
-            return View(aluno);
+            return View(projeto);
         }
 
-        // POST: Alunoes1/Delete/5
+        // POST: Projetoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Aluno aluno = db.Alunoes.Find(id);
-            db.Alunoes.Remove(aluno);
+            Projeto projeto = db.Projetoes.Find(id);
+            db.Projetoes.Remove(projeto);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
