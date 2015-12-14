@@ -27,6 +27,7 @@ namespace Desktop
             List<String> list = Acesso.getAvaliador().listarProjetosDisp();
 
             this.cmbProjDisp.DataSource = list;
+            this.combProjDisp.DataSource = list;
         }
 
 
@@ -123,22 +124,66 @@ namespace Desktop
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            int nota = Convert.ToInt32(txtNota.Text);
-
-            if (nota > 100 || nota < 0)
+            if (txtNota.Text.Equals(""))
             {
-                MessageBox.Show("Nota deve estar no intervalo [0 ~ 100] ");
-                txtNota.Text = "";
+                MessageBox.Show("Digite uma nota");
             }
             else
             { 
-                PNProjeto pn = CadastroProjeto.getProjeto(cmbProjDisp.Text);
+                int nota = Convert.ToInt32(txtNota.Text);
 
-                if (pn.addNota(cmbQuadros.Text, nota))
+                if (nota > 100 || nota < 0)
                 {
-                    MessageBox.Show("Nota inserida com sucesso");
+                    MessageBox.Show("Nota deve estar no intervalo [0 ~ 100] ");
+                    txtNota.Text = "";
+                }
+                else
+                { 
+                    PNProjeto pn = CadastroProjeto.getProjeto(cmbProjDisp.Text);
+
+                    if (pn.addNota(cmbQuadros.Text, nota))
+                    {
+                        MessageBox.Show("Nota inserida com sucesso");
+                    }
                 }
             }
+
+        }
+
+        private void lblNota8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSelec_Click(object sender, EventArgs e)
+        {
+            PNProjeto pn = CadastroProjeto.getProjeto(cmbProjDisp.Text);
+            Dictionary<String, int> notas = pn.dictNotas();
+
+            lblNota1.Text = "I - Segmento de Clientes : " + (notas["I - Segmento de Clientes"].ToString().Equals("-1") ? "" : notas["I - Segmento de Clientes"].ToString());
+            lblNota2.Text = "II - Proposta de Valor : " + (notas["II - Proposta de Valor"].ToString().Equals("-1") ? "" : notas["II - Proposta de Valor"].ToString());
+            lblNota3.Text = "III - Canais : " + (notas["III - Canais (Distribuição e Comunicação)"].ToString().Equals("-1") ? "" : notas["III - Canais (Distribuição e Comunicação)"].ToString());
+            lblNota4.Text = "IV - Relacionamento com clientes : " + (notas["IV - Relacionamento com clientes"].ToString().Equals("-1") ? "" : notas["IV - Relacionamento com clientes"].ToString());
+            lblNota5.Text = "V - Receitas : " + (notas["V - Receitas"].ToString().Equals("-1") ? "" : notas["V - Receitas"].ToString());
+            lblNota6.Text = "VI - Recursos Chave : " + (notas["VI - Recursos Chave"].ToString().Equals("-1") ? "" : notas["VI - Recursos Chave"].ToString());
+            lblNota7.Text = "VII - Atividades Chave : " + (notas["VII - Atividades Chave"].ToString().Equals("-1") ? "" : notas["VII - Atividades Chave"].ToString());
+            lblNota8.Text = "VIII - Parcerias Chave : " + (notas["VIII - Parcerias Chave"].ToString().Equals("-1") ? "" : notas["VIII - Parcerias Chave"].ToString());
+            lblNota9.Text = "IX - Custos : " + (notas["IX - Custos"].ToString().Equals("-1") ? "" : notas["IX - Custos"].ToString());
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            PNProjeto pn = CadastroProjeto.getProjeto(combProjDisp.Text);
+
+            if (!pn.isNotasPreenchidas()) {
+                MessageBox.Show("Todas as notas devem estar preenchidas para finalizar avaliação");
+            }
+
+            pn.finalizarAvaliacao();
+
+            txtMediaArit.Text = "Média artimética: " + Math.Ceiling(pn.getMediaAritimetica()).ToString();
+            txtMediaPond.Text = "Média ponderada: " + Math.Ceiling(pn.getMediaPonderada()).ToString();
+
         }
     }
 }

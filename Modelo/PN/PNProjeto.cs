@@ -99,12 +99,96 @@ namespace Modelo.PN
             return notas;
         }
 
+        public bool isNotasPreenchidas() {
+            Dictionary<String, int>  notas = dictNotas();
+
+            foreach (var nota in notas)
+            {
+
+                if (nota.Value == -1) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+        public double getMediaAritimetica() {
+            Dictionary<String, int> notas = dictNotas();
+
+            double soma = 0.0;
+
+            foreach (var nota in notas) {
+                soma += nota.Value;
+            }
+
+            return soma / 9.0;
+        }
+
+        public double getMediaPonderada()
+        {
+            Dictionary<String, int> notas = dictNotas();
+            Peso p = PNPeso.getPeso();
+
+            double soma = 0.0;
+
+
+            
+            soma += notas["I - Segmento de Clientes"] * p.Peso_Quadro_1.Value;
+            soma += notas["II - Proposta de Valor"] * p.Peso_Quadro_2.Value;
+            soma += notas["III - Canais (Distribuição e Comunicação)"] * p.Peso_Quadro_3.Value;
+            soma += notas["IV - Relacionamento com clientes"] * p.Peso_Quadro_4.Value;
+            soma += notas["V - Receitas"] * p.Peso_Quadro_5.Value;
+            soma += notas["VI - Recursos Chave"] * p.Peso_Quadro_6.Value;
+            soma += notas["VII - Atividades Chave"] * p.Peso_Quadro_7.Value;
+            soma += notas["VIII - Parcerias Chave"] * p.Peso_Quadro_8.Value;
+            soma += notas["IX - Custos"] * p.Peso_Quadro_9.Value;
+
+            double somaPeso = 0.0;
+
+            somaPeso += p.Peso_Quadro_1.Value;
+            somaPeso += p.Peso_Quadro_2.Value;
+            somaPeso += p.Peso_Quadro_3.Value;
+            somaPeso += p.Peso_Quadro_4.Value;
+            somaPeso += p.Peso_Quadro_5.Value;
+            somaPeso += p.Peso_Quadro_6.Value;
+            somaPeso += p.Peso_Quadro_7.Value;
+            somaPeso += p.Peso_Quadro_8.Value;
+            somaPeso += p.Peso_Quadro_9.Value;
+
+            return soma / somaPeso; 
+        }
+
+        public bool finalizarAvaliacao() {
+
+            CanvasEntities2 db = new CanvasEntities2();
+
+            var idAvaliador = Acesso.getAvaliador().id;
+
+            Avaliador_Projeto av = (from avProj in db.Avaliador_Projeto
+                            where avProj.Id_Avaliador == idAvaliador
+                            && avProj.Id_Projeto == id
+                            select avProj).First();
+            av.Status = "Finalizada";
+
+            db.SaveChanges();
+
+            return true;
+
+        }
+
         public bool addNota(String quadro, int nota) {
 
             CanvasEntities2 db = new CanvasEntities2();
 
+            var idAvaliador = Acesso.getAvaliador().id;
+
+
             Avaliacao av = (from aval in db.Avaliacaos
                             join avProj in db.Avaliador_Projeto on aval.Id_Avaliador_Projeto equals avProj.Id
+                            where avProj.Id_Avaliador == idAvaliador
+                            && avProj.Id_Projeto == id
                             select aval).First();
             switch (quadro)
             {
@@ -203,7 +287,7 @@ namespace Modelo.PN
             Avaliador_Projeto ap = new Avaliador_Projeto();
             ap.Id_Avaliador = av.Id;
             ap.Id_Projeto = id;
-            ap.Status = "Novo";
+            ap.Status = "Em Preenchimento";
             db.Avaliador_Projeto.Add(ap);
             db.SaveChanges();
 

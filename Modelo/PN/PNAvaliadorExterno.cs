@@ -59,7 +59,8 @@ namespace Modelo.PN
                            from proj in db.Projetoes
                            join avalproj in db.Avaliador_Projeto on proj.Id equals avalproj.Id_Projeto
                            where proj.Status == "Em avaliação" &&
-                                 avalproj.Id_Avaliador == this.id
+                                 avalproj.Id_Avaliador == this.id &&
+                                 avalproj.Status == "Em Preenchimento"
                            select new
                            {
                                proj

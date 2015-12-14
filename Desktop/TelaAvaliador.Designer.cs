@@ -46,6 +46,23 @@ namespace Desktop
             this.btnAvaliar = new System.Windows.Forms.Button();
             this.cmbProjDisp = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSelec = new System.Windows.Forms.Button();
+            this.combProjDisp = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtStatus = new System.Windows.Forms.Label();
+            this.txtMediaPond = new System.Windows.Forms.Label();
+            this.txtMediaArit = new System.Windows.Forms.Label();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.lblNota9 = new System.Windows.Forms.Label();
+            this.lblNota8 = new System.Windows.Forms.Label();
+            this.lblNota7 = new System.Windows.Forms.Label();
+            this.lblNota5 = new System.Windows.Forms.Label();
+            this.lblNota6 = new System.Windows.Forms.Label();
+            this.lblNota4 = new System.Windows.Forms.Label();
+            this.lblNota3 = new System.Windows.Forms.Label();
+            this.lblNota2 = new System.Windows.Forms.Label();
+            this.lblNota1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnOk = new System.Windows.Forms.Button();
             this.cbDesativar = new System.Windows.Forms.CheckBox();
@@ -53,12 +70,14 @@ namespace Desktop
             this.btnLogout = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabAvaliar.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabAvaliar);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(14, 13);
             this.tabControl1.Name = "tabControl1";
@@ -212,6 +231,179 @@ namespace Desktop
             this.label2.Text = "Projetos disponíveis para avaliação: ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.btnSelec);
+            this.tabPage1.Controls.Add(this.combProjDisp);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.txtStatus);
+            this.tabPage1.Controls.Add(this.txtMediaPond);
+            this.tabPage1.Controls.Add(this.txtMediaArit);
+            this.tabPage1.Controls.Add(this.btnFinalizar);
+            this.tabPage1.Controls.Add(this.lblNota9);
+            this.tabPage1.Controls.Add(this.lblNota8);
+            this.tabPage1.Controls.Add(this.lblNota7);
+            this.tabPage1.Controls.Add(this.lblNota5);
+            this.tabPage1.Controls.Add(this.lblNota6);
+            this.tabPage1.Controls.Add(this.lblNota4);
+            this.tabPage1.Controls.Add(this.lblNota3);
+            this.tabPage1.Controls.Add(this.lblNota2);
+            this.tabPage1.Controls.Add(this.lblNota1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(885, 437);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Finalizar Avaliação";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnSelec
+            // 
+            this.btnSelec.Location = new System.Drawing.Point(778, 26);
+            this.btnSelec.Name = "btnSelec";
+            this.btnSelec.Size = new System.Drawing.Size(75, 23);
+            this.btnSelec.TabIndex = 18;
+            this.btnSelec.Text = "Selecionar";
+            this.btnSelec.UseVisualStyleBackColor = true;
+            this.btnSelec.Click += new System.EventHandler(this.btnSelec_Click);
+            // 
+            // combProjDisp
+            // 
+            this.combProjDisp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combProjDisp.FormattingEnabled = true;
+            this.combProjDisp.Location = new System.Drawing.Point(286, 23);
+            this.combProjDisp.Name = "combProjDisp";
+            this.combProjDisp.Size = new System.Drawing.Size(405, 21);
+            this.combProjDisp.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(181, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Projetos disponíveis para avaliação: ";
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.AutoSize = true;
+            this.txtStatus.Location = new System.Drawing.Point(139, 374);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(41, 13);
+            this.txtStatus.TabIndex = 15;
+            this.txtStatus.Text = "label19";
+            // 
+            // txtMediaPond
+            // 
+            this.txtMediaPond.AutoSize = true;
+            this.txtMediaPond.Location = new System.Drawing.Point(139, 324);
+            this.txtMediaPond.Name = "txtMediaPond";
+            this.txtMediaPond.Size = new System.Drawing.Size(41, 13);
+            this.txtMediaPond.TabIndex = 14;
+            this.txtMediaPond.Text = "label18";
+            // 
+            // txtMediaArit
+            // 
+            this.txtMediaArit.AutoSize = true;
+            this.txtMediaArit.Location = new System.Drawing.Point(139, 281);
+            this.txtMediaArit.Name = "txtMediaArit";
+            this.txtMediaArit.Size = new System.Drawing.Size(47, 13);
+            this.txtMediaArit.TabIndex = 13;
+            this.txtMediaArit.Text = "txtMedia";
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Location = new System.Drawing.Point(778, 191);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(75, 23);
+            this.btnFinalizar.TabIndex = 12;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // lblNota9
+            // 
+            this.lblNota9.AutoSize = true;
+            this.lblNota9.Location = new System.Drawing.Point(478, 191);
+            this.lblNota9.Name = "lblNota9";
+            this.lblNota9.Size = new System.Drawing.Size(41, 13);
+            this.lblNota9.TabIndex = 11;
+            this.lblNota9.Text = "label16";
+            // 
+            // lblNota8
+            // 
+            this.lblNota8.AutoSize = true;
+            this.lblNota8.Location = new System.Drawing.Point(478, 148);
+            this.lblNota8.Name = "lblNota8";
+            this.lblNota8.Size = new System.Drawing.Size(41, 13);
+            this.lblNota8.TabIndex = 10;
+            this.lblNota8.Text = "label15";
+            this.lblNota8.Click += new System.EventHandler(this.lblNota8_Click);
+            // 
+            // lblNota7
+            // 
+            this.lblNota7.AutoSize = true;
+            this.lblNota7.Location = new System.Drawing.Point(478, 105);
+            this.lblNota7.Name = "lblNota7";
+            this.lblNota7.Size = new System.Drawing.Size(41, 13);
+            this.lblNota7.TabIndex = 9;
+            this.lblNota7.Text = "label14";
+            // 
+            // lblNota5
+            // 
+            this.lblNota5.AutoSize = true;
+            this.lblNota5.Location = new System.Drawing.Point(274, 148);
+            this.lblNota5.Name = "lblNota5";
+            this.lblNota5.Size = new System.Drawing.Size(41, 13);
+            this.lblNota5.TabIndex = 8;
+            this.lblNota5.Text = "label13";
+            // 
+            // lblNota6
+            // 
+            this.lblNota6.AutoSize = true;
+            this.lblNota6.Location = new System.Drawing.Point(274, 191);
+            this.lblNota6.Name = "lblNota6";
+            this.lblNota6.Size = new System.Drawing.Size(41, 13);
+            this.lblNota6.TabIndex = 7;
+            this.lblNota6.Text = "label12";
+            // 
+            // lblNota4
+            // 
+            this.lblNota4.AutoSize = true;
+            this.lblNota4.Location = new System.Drawing.Point(274, 105);
+            this.lblNota4.Name = "lblNota4";
+            this.lblNota4.Size = new System.Drawing.Size(41, 13);
+            this.lblNota4.TabIndex = 6;
+            this.lblNota4.Text = "label11";
+            // 
+            // lblNota3
+            // 
+            this.lblNota3.AutoSize = true;
+            this.lblNota3.Location = new System.Drawing.Point(71, 191);
+            this.lblNota3.Name = "lblNota3";
+            this.lblNota3.Size = new System.Drawing.Size(41, 13);
+            this.lblNota3.TabIndex = 5;
+            this.lblNota3.Text = "label10";
+            // 
+            // lblNota2
+            // 
+            this.lblNota2.AutoSize = true;
+            this.lblNota2.Location = new System.Drawing.Point(71, 148);
+            this.lblNota2.Name = "lblNota2";
+            this.lblNota2.Size = new System.Drawing.Size(35, 13);
+            this.lblNota2.TabIndex = 4;
+            this.lblNota2.Text = "label9";
+            // 
+            // lblNota1
+            // 
+            this.lblNota1.AutoSize = true;
+            this.lblNota1.Location = new System.Drawing.Point(71, 105);
+            this.lblNota1.Name = "lblNota1";
+            this.lblNota1.Size = new System.Drawing.Size(35, 13);
+            this.lblNota1.TabIndex = 3;
+            this.lblNota1.Text = "label1";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btnOk);
@@ -276,6 +468,8 @@ namespace Desktop
             this.tabControl1.ResumeLayout(false);
             this.tabAvaliar.ResumeLayout(false);
             this.tabAvaliar.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
@@ -304,5 +498,22 @@ namespace Desktop
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
+        private TabPage tabPage1;
+        private Button btnSelec;
+        private ComboBox combProjDisp;
+        private Label label7;
+        private Label txtStatus;
+        private Label txtMediaPond;
+        private Label txtMediaArit;
+        private Button btnFinalizar;
+        private Label lblNota9;
+        private Label lblNota8;
+        private Label lblNota7;
+        private Label lblNota5;
+        private Label lblNota6;
+        private Label lblNota4;
+        private Label lblNota3;
+        private Label lblNota2;
+        private Label lblNota1;
     }
 }
