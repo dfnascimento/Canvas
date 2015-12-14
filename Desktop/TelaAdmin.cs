@@ -23,6 +23,7 @@ namespace Desktop
             populaGridProfessor();
             populaGridAvaliador();
             populaComboBoxProjetosAv();
+            populaComboBoxProjetosDispAv();
             populaPesos();
         }
 
@@ -52,6 +53,12 @@ namespace Desktop
 
 
 
+
+        private void populaComboBoxProjetosDispAv()
+        {
+            List<String> list = CadastroProjeto.listarProjetosAvaliacaoEncerrada();
+            this.combProjDisp.DataSource = list;
+        }
 
         private void populaGridProfessor() {
 
@@ -314,6 +321,46 @@ namespace Desktop
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label35_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clickComb(object sender, EventArgs e)
+        {
+            if (CadastroProjeto.listarProjetosAvaliacaoEncerrada().Count() == 0) {
+                MessageBox.Show("Nenhum projeto com avaliação encerrada disponível");
+            }
+        }
+
+        private void combProjEmAva(object sender, EventArgs e)
+        {
+            if (CadastroProjeto.listarProjetosDisp().Count() == 0)
+            {
+                MessageBox.Show("Nenhum projeto com disponível para atribuir avaliador");
             }
         }
     }

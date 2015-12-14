@@ -78,7 +78,6 @@ namespace Desktop
             this.btnCarregar = new System.Windows.Forms.Button();
             this.cbProjDisp = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -132,6 +131,19 @@ namespace Desktop
             this.label24 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnSelec = new System.Windows.Forms.Button();
+            this.combProjDisp = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.NomeAv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mediaAv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MediaPond = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -156,6 +168,8 @@ namespace Desktop
             this.tableLayoutPanel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -605,6 +619,7 @@ namespace Desktop
             this.cbProjDisp.Name = "cbProjDisp";
             this.cbProjDisp.Size = new System.Drawing.Size(392, 21);
             this.cbProjDisp.TabIndex = 1;
+            this.cbProjDisp.Click += new System.EventHandler(this.combProjEmAva);
             // 
             // label3
             // 
@@ -614,16 +629,6 @@ namespace Desktop
             this.label3.Size = new System.Drawing.Size(107, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Selecione o projeto : ";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(879, 519);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Acompanhar Projeto";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
@@ -1159,6 +1164,137 @@ namespace Desktop
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(18, 100);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(118, 13);
+            this.label36.TabIndex = 3;
+            this.label36.Text = "Notas dos avaliadores: ";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AllowUserToOrderColumns = true;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeAv,
+            this.mediaAv,
+            this.MediaPond});
+            this.dataGridView3.Location = new System.Drawing.Point(71, 136);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.Size = new System.Drawing.Size(724, 150);
+            this.dataGridView3.TabIndex = 4;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(119, 354);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(41, 13);
+            this.label37.TabIndex = 5;
+            this.label37.Text = "label37";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(120, 400);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(41, 13);
+            this.label38.TabIndex = 6;
+            this.label38.Text = "label38";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(615, 344);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Confirmar Status";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(615, 400);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(125, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Encerrar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.btnSelec);
+            this.tabPage4.Controls.Add(this.combProjDisp);
+            this.tabPage4.Controls.Add(this.label39);
+            this.tabPage4.Controls.Add(this.button3);
+            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Controls.Add(this.label38);
+            this.tabPage4.Controls.Add(this.label37);
+            this.tabPage4.Controls.Add(this.dataGridView3);
+            this.tabPage4.Controls.Add(this.label36);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(879, 519);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Acompanhar Projeto";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            // 
+            // btnSelec
+            // 
+            this.btnSelec.Location = new System.Drawing.Point(778, 23);
+            this.btnSelec.Name = "btnSelec";
+            this.btnSelec.Size = new System.Drawing.Size(75, 23);
+            this.btnSelec.TabIndex = 21;
+            this.btnSelec.Text = "Selecionar";
+            this.btnSelec.UseVisualStyleBackColor = true;
+            // 
+            // combProjDisp
+            // 
+            this.combProjDisp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combProjDisp.FormattingEnabled = true;
+            this.combProjDisp.Location = new System.Drawing.Point(286, 20);
+            this.combProjDisp.Name = "combProjDisp";
+            this.combProjDisp.Size = new System.Drawing.Size(405, 21);
+            this.combProjDisp.TabIndex = 20;
+            this.combProjDisp.Click += new System.EventHandler(this.clickComb);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(18, 23);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(177, 13);
+            this.label39.TabIndex = 19;
+            this.label39.Text = "Projetos com avaliação encerrada:  ";
+            // 
+            // NomeAv
+            // 
+            this.NomeAv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomeAv.HeaderText = "Nome";
+            this.NomeAv.Name = "NomeAv";
+            this.NomeAv.ReadOnly = true;
+            // 
+            // mediaAv
+            // 
+            this.mediaAv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mediaAv.HeaderText = "Média Aritimética";
+            this.mediaAv.Name = "mediaAv";
+            this.mediaAv.ReadOnly = true;
+            // 
+            // MediaPond
+            // 
+            this.MediaPond.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MediaPond.HeaderText = "Média Ponderada";
+            this.MediaPond.Name = "MediaPond";
+            this.MediaPond.ReadOnly = true;
+            // 
             // TelaAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1204,6 +1340,9 @@ namespace Desktop
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1258,7 +1397,6 @@ namespace Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusOrien;
         private System.Windows.Forms.DataGridViewTextBoxColumn DisciplinaOrient;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartamentoOrient;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -1311,5 +1449,21 @@ namespace Desktop
         private System.Windows.Forms.TextBox txtNota5;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button btnSelec;
+        private System.Windows.Forms.ComboBox combProjDisp;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeAv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mediaAv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MediaPond;
     }
 }

@@ -99,6 +99,39 @@ namespace Modelo.PN
             {
                 throw;
             }
+
+
+        }
+
+        public static List<String> listarProjetosAvaliacaoEncerrada()
+        {
+
+            try
+            {
+                CanvasEntities2 db = new CanvasEntities2();
+
+                var query =
+                           from proj in db.Projetoes
+                           where proj.Status == "Avaliação Encerrada"
+                           select new
+                           {
+                               proj
+                           };
+
+                List<String> lista = new List<String>();
+
+                foreach (var result in query)
+                {
+                    lista.Add(result.proj.Nome);
+
+                }
+                return lista;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public static Avaliador_Externo getAvaliador(String nome)
