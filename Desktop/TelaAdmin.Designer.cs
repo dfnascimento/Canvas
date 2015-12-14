@@ -392,7 +392,6 @@ namespace Desktop
             this.lblStatus.Size = new System.Drawing.Size(43, 13);
             this.lblStatus.TabIndex = 9;
             this.lblStatus.Text = "Status: ";
-            this.lblStatus.Click += new System.EventHandler(this.label7_Click);
             // 
             // gridAvaliadoresProj
             // 
@@ -411,7 +410,6 @@ namespace Desktop
             this.gridAvaliadoresProj.ReadOnly = true;
             this.gridAvaliadoresProj.Size = new System.Drawing.Size(836, 94);
             this.gridAvaliadoresProj.TabIndex = 8;
-            this.gridAvaliadoresProj.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellContentClick);
             // 
             // NomeAval
             // 
@@ -616,7 +614,6 @@ namespace Desktop
             this.label3.Size = new System.Drawing.Size(107, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Selecione o projeto : ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tabPage4
             // 
@@ -1014,7 +1011,6 @@ namespace Desktop
             this.txtNota8.Name = "txtNota8";
             this.txtNota8.Size = new System.Drawing.Size(47, 20);
             this.txtNota8.TabIndex = 1;
-            this.txtNota8.TextChanged += new System.EventHandler(this.txtNota8_TextChanged);
             this.txtNota8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberKeyPress);
             // 
             // label26

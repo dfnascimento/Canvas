@@ -21,11 +21,7 @@ namespace Desktop
 
             this.Name = Acesso.acesso + " : " + Acesso.nome;
         }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnOk_Click(object sender, EventArgs e)
         {

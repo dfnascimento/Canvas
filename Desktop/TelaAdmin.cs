@@ -153,22 +153,7 @@ namespace Desktop
         {
             this.Close();
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnCarregar_Click(object sender, EventArgs e)
         {
             if (this.cbProjDisp.Text.Equals(""))
@@ -275,11 +260,7 @@ namespace Desktop
 
 
         }
-
-        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
@@ -327,13 +308,7 @@ namespace Desktop
                 }
             }
         }
-
-        private void txtNota8_TextChanged(object sender, EventArgs e)
-        {
-           
-           
-        }
-
+        
         private void numberKeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

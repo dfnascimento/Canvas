@@ -122,7 +122,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(308, 20);
             this.txtNome.TabIndex = 2;
-            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // txtEmail
             // 
@@ -173,7 +172,6 @@
             this.panelDinamico.Name = "panelDinamico";
             this.panelDinamico.Size = new System.Drawing.Size(422, 76);
             this.panelDinamico.TabIndex = 6;
-            this.panelDinamico.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDinamico_Paint);
             // 
             // Cadastro
             // 

@@ -30,11 +30,7 @@ namespace Desktop
             this.combProjDisp.DataSource = list;
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnOk_Click(object sender, EventArgs e)
         {
@@ -57,21 +53,8 @@ namespace Desktop
         {
             this.Close();
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNota_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
+      
 
         private void txtNota_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -149,11 +132,7 @@ namespace Desktop
             }
 
         }
-
-        private void lblNota8_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnSelec_Click(object sender, EventArgs e)
         {

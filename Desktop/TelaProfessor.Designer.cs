@@ -93,7 +93,6 @@ namespace Desktop
             this.cbDesativar.TabIndex = 1;
             this.cbDesativar.Text = "Desejo desativar meu cadastro.";
             this.cbDesativar.UseVisualStyleBackColor = true;
-            this.cbDesativar.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label1
             // 

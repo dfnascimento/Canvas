@@ -201,20 +201,7 @@ namespace Desktop
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelDinamico_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-        }
-
+        
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();

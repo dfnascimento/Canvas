@@ -124,7 +124,6 @@ namespace Desktop
             this.txtNota.Name = "txtNota";
             this.txtNota.Size = new System.Drawing.Size(100, 20);
             this.txtNota.TabIndex = 11;
-            this.txtNota.TextChanged += new System.EventHandler(this.txtNota_TextChanged);
             this.txtNota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNota_KeyPress);
             // 
             // label6
@@ -229,7 +228,6 @@ namespace Desktop
             this.label2.Size = new System.Drawing.Size(181, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Projetos disponíveis para avaliação: ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tabPage1
             // 
@@ -339,7 +337,6 @@ namespace Desktop
             this.lblNota8.Size = new System.Drawing.Size(41, 13);
             this.lblNota8.TabIndex = 10;
             this.lblNota8.Text = "label15";
-            this.lblNota8.Click += new System.EventHandler(this.lblNota8_Click);
             // 
             // lblNota7
             // 
