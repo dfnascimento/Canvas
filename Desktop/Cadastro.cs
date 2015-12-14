@@ -109,7 +109,6 @@ namespace Desktop
                 this.lblFormacao.Size = new System.Drawing.Size(60, 13);
                 this.lblFormacao.TabIndex = 14;
                 this.lblFormacao.Text = "Formação: ";
-                this.lblFormacao.Click += new System.EventHandler(this.label5_Click);
                 // 
                 // lblArea
                 // 

@@ -173,6 +173,17 @@ namespace Modelo.PN
             av.Status = "Finalizada";
 
             db.SaveChanges();
+            //Verifica se ainda existe Avaliação pendente para o projeto
+            var num = (from avProj in db.Avaliador_Projeto
+                       where avProj.Id_Projeto == id
+                       && avProj.Status != "Finalizada"
+                       select avProj).Count();
+
+            if (num == 0)
+            {
+                updateStatus("Avaliação Encerrada");
+            }
+
 
             return true;
 

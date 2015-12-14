@@ -68,10 +68,16 @@ namespace Desktop
             this.cbDesativar = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabAvaliar.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -107,6 +113,7 @@ namespace Desktop
             this.tabAvaliar.TabIndex = 0;
             this.tabAvaliar.Text = "Avaliar Projeto";
             this.tabAvaliar.UseVisualStyleBackColor = true;
+            this.tabAvaliar.Click += new System.EventHandler(this.tabAvaliar_Click);
             // 
             // btnConfirmar
             // 
@@ -231,22 +238,14 @@ namespace Desktop
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.btnSelec);
             this.tabPage1.Controls.Add(this.combProjDisp);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.txtStatus);
-            this.tabPage1.Controls.Add(this.txtMediaPond);
-            this.tabPage1.Controls.Add(this.txtMediaArit);
             this.tabPage1.Controls.Add(this.btnFinalizar);
-            this.tabPage1.Controls.Add(this.lblNota9);
-            this.tabPage1.Controls.Add(this.lblNota8);
-            this.tabPage1.Controls.Add(this.lblNota7);
-            this.tabPage1.Controls.Add(this.lblNota5);
-            this.tabPage1.Controls.Add(this.lblNota6);
-            this.tabPage1.Controls.Add(this.lblNota4);
-            this.tabPage1.Controls.Add(this.lblNota3);
-            this.tabPage1.Controls.Add(this.lblNota2);
-            this.tabPage1.Controls.Add(this.lblNota1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -273,6 +272,8 @@ namespace Desktop
             this.combProjDisp.Name = "combProjDisp";
             this.combProjDisp.Size = new System.Drawing.Size(405, 21);
             this.combProjDisp.TabIndex = 17;
+            this.combProjDisp.SelectedIndexChanged += new System.EventHandler(this.combProjDisp_SelectedIndexChanged);
+            this.combProjDisp.Click += new System.EventHandler(this.cmbClick);
             // 
             // label7
             // 
@@ -286,29 +287,29 @@ namespace Desktop
             // txtStatus
             // 
             this.txtStatus.AutoSize = true;
-            this.txtStatus.Location = new System.Drawing.Point(139, 374);
+            this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(439, 51);
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(41, 13);
+            this.txtStatus.Size = new System.Drawing.Size(0, 20);
             this.txtStatus.TabIndex = 15;
-            this.txtStatus.Text = "label19";
             // 
             // txtMediaPond
             // 
             this.txtMediaPond.AutoSize = true;
-            this.txtMediaPond.Location = new System.Drawing.Point(139, 324);
+            this.txtMediaPond.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMediaPond.Location = new System.Drawing.Point(248, 51);
             this.txtMediaPond.Name = "txtMediaPond";
-            this.txtMediaPond.Size = new System.Drawing.Size(41, 13);
+            this.txtMediaPond.Size = new System.Drawing.Size(0, 20);
             this.txtMediaPond.TabIndex = 14;
-            this.txtMediaPond.Text = "label18";
             // 
             // txtMediaArit
             // 
             this.txtMediaArit.AutoSize = true;
-            this.txtMediaArit.Location = new System.Drawing.Point(139, 281);
+            this.txtMediaArit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMediaArit.Location = new System.Drawing.Point(41, 51);
             this.txtMediaArit.Name = "txtMediaArit";
-            this.txtMediaArit.Size = new System.Drawing.Size(47, 13);
+            this.txtMediaArit.Size = new System.Drawing.Size(0, 20);
             this.txtMediaArit.TabIndex = 13;
-            this.txtMediaArit.Text = "txtMedia";
             // 
             // btnFinalizar
             // 
@@ -323,83 +324,74 @@ namespace Desktop
             // lblNota9
             // 
             this.lblNota9.AutoSize = true;
-            this.lblNota9.Location = new System.Drawing.Point(478, 191);
+            this.lblNota9.Location = new System.Drawing.Point(426, 98);
             this.lblNota9.Name = "lblNota9";
-            this.lblNota9.Size = new System.Drawing.Size(41, 13);
+            this.lblNota9.Size = new System.Drawing.Size(0, 13);
             this.lblNota9.TabIndex = 11;
-            this.lblNota9.Text = "label16";
             // 
             // lblNota8
             // 
             this.lblNota8.AutoSize = true;
-            this.lblNota8.Location = new System.Drawing.Point(478, 148);
+            this.lblNota8.Location = new System.Drawing.Point(426, 55);
             this.lblNota8.Name = "lblNota8";
-            this.lblNota8.Size = new System.Drawing.Size(41, 13);
+            this.lblNota8.Size = new System.Drawing.Size(0, 13);
             this.lblNota8.TabIndex = 10;
-            this.lblNota8.Text = "label15";
             // 
             // lblNota7
             // 
             this.lblNota7.AutoSize = true;
-            this.lblNota7.Location = new System.Drawing.Point(478, 105);
+            this.lblNota7.Location = new System.Drawing.Point(426, 12);
             this.lblNota7.Name = "lblNota7";
-            this.lblNota7.Size = new System.Drawing.Size(41, 13);
+            this.lblNota7.Size = new System.Drawing.Size(0, 13);
             this.lblNota7.TabIndex = 9;
-            this.lblNota7.Text = "label14";
             // 
             // lblNota5
             // 
             this.lblNota5.AutoSize = true;
-            this.lblNota5.Location = new System.Drawing.Point(274, 148);
+            this.lblNota5.Location = new System.Drawing.Point(222, 55);
             this.lblNota5.Name = "lblNota5";
-            this.lblNota5.Size = new System.Drawing.Size(41, 13);
+            this.lblNota5.Size = new System.Drawing.Size(0, 13);
             this.lblNota5.TabIndex = 8;
-            this.lblNota5.Text = "label13";
             // 
             // lblNota6
             // 
             this.lblNota6.AutoSize = true;
-            this.lblNota6.Location = new System.Drawing.Point(274, 191);
+            this.lblNota6.Location = new System.Drawing.Point(222, 98);
             this.lblNota6.Name = "lblNota6";
-            this.lblNota6.Size = new System.Drawing.Size(41, 13);
+            this.lblNota6.Size = new System.Drawing.Size(0, 13);
             this.lblNota6.TabIndex = 7;
-            this.lblNota6.Text = "label12";
             // 
             // lblNota4
             // 
             this.lblNota4.AutoSize = true;
-            this.lblNota4.Location = new System.Drawing.Point(274, 105);
+            this.lblNota4.Location = new System.Drawing.Point(222, 12);
             this.lblNota4.Name = "lblNota4";
-            this.lblNota4.Size = new System.Drawing.Size(41, 13);
+            this.lblNota4.Size = new System.Drawing.Size(0, 13);
             this.lblNota4.TabIndex = 6;
-            this.lblNota4.Text = "label11";
             // 
             // lblNota3
             // 
             this.lblNota3.AutoSize = true;
-            this.lblNota3.Location = new System.Drawing.Point(71, 191);
+            this.lblNota3.Location = new System.Drawing.Point(19, 98);
             this.lblNota3.Name = "lblNota3";
-            this.lblNota3.Size = new System.Drawing.Size(41, 13);
+            this.lblNota3.Size = new System.Drawing.Size(0, 13);
             this.lblNota3.TabIndex = 5;
-            this.lblNota3.Text = "label10";
             // 
             // lblNota2
             // 
             this.lblNota2.AutoSize = true;
-            this.lblNota2.Location = new System.Drawing.Point(71, 148);
+            this.lblNota2.Location = new System.Drawing.Point(19, 55);
             this.lblNota2.Name = "lblNota2";
-            this.lblNota2.Size = new System.Drawing.Size(35, 13);
+            this.lblNota2.Size = new System.Drawing.Size(0, 13);
             this.lblNota2.TabIndex = 4;
-            this.lblNota2.Text = "label9";
             // 
             // lblNota1
             // 
             this.lblNota1.AutoSize = true;
-            this.lblNota1.Location = new System.Drawing.Point(71, 105);
+            this.lblNota1.Location = new System.Drawing.Point(19, 12);
             this.lblNota1.Name = "lblNota1";
-            this.lblNota1.Size = new System.Drawing.Size(35, 13);
+            this.lblNota1.Size = new System.Drawing.Size(0, 13);
             this.lblNota1.TabIndex = 3;
-            this.lblNota1.Text = "label1";
             // 
             // tabPage2
             // 
@@ -453,6 +445,54 @@ namespace Desktop
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.lblNota9);
+            this.panel1.Controls.Add(this.lblNota8);
+            this.panel1.Controls.Add(this.lblNota7);
+            this.panel1.Controls.Add(this.lblNota5);
+            this.panel1.Controls.Add(this.lblNota6);
+            this.panel1.Controls.Add(this.lblNota4);
+            this.panel1.Controls.Add(this.lblNota3);
+            this.panel1.Controls.Add(this.lblNota2);
+            this.panel1.Controls.Add(this.lblNota1);
+            this.panel1.Location = new System.Drawing.Point(52, 93);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(674, 120);
+            this.panel1.TabIndex = 19;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.panel2.Controls.Add(this.txtStatus);
+            this.panel2.Controls.Add(this.txtMediaPond);
+            this.panel2.Controls.Add(this.txtMediaArit);
+            this.panel2.Location = new System.Drawing.Point(74, 288);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(731, 105);
+            this.panel2.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(49, 68);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(158, 20);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Revisão de notas: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(70, 255);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 20);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Notas finais: ";
+            // 
             // TelaAvaliador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,6 +509,10 @@ namespace Desktop
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -512,5 +556,9 @@ namespace Desktop
         private Label lblNota3;
         private Label lblNota2;
         private Label lblNota1;
+        private Label label9;
+        private Label label8;
+        private Panel panel2;
+        private Panel panel1;
     }
 }
