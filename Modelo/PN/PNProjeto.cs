@@ -172,6 +172,9 @@ namespace Modelo.PN
                             select avProj).First();
             av.Status = "Finalizada";
 
+            av.Media_Aritimetica = (int) Math.Ceiling(getMediaAritimetica());
+            av.Media_Ponderada = (int)Math.Ceiling(getMediaPonderada());
+
             db.SaveChanges();
             //Verifica se ainda existe Avaliação pendente para o projeto
             var num = (from avProj in db.Avaliador_Projeto
@@ -477,6 +480,67 @@ namespace Modelo.PN
             quadro.Add("IX - Custos");
 
             return quadro;
+        }
+
+        public List<DadosAvaliacao> getDadosAvaliacao()
+        {
+            List<DadosAvaliacao> list = new List<DadosAvaliacao>();
+
+            CanvasEntities2 db = new CanvasEntities2();
+
+            var query = from pessoa in db.Participantes
+                        join aval in db.Avaliador_Externo on pessoa.Id equals aval.Id_Participante
+                        join avalPro in db.Avaliador_Projeto on aval.Id equals avalPro.Id_Avaliador
+                        where avalPro.Id_Projeto == id
+                        select new { pessoa, avalPro };
+
+            foreach (var line in query)
+            {
+                list.Add(new DadosAvaliacao(line.pessoa.Nome, line.avalPro.Media_Aritimetica.Value, line.avalPro.Media_Ponderada.Value));
+            }
+
+            return list;
+        }
+
+        public int getMediaPondProj()
+        {
+            List<DadosAvaliacao> dados = getDadosAvaliacao();
+
+            double soma = 0.0;
+
+            foreach (var dado in dados)
+            {
+                soma += dado.mediaPonderada;
+            }
+
+            return (int) Math.Ceiling(soma / dados.Count);
+
+        }
+
+        public String getStatusFinal() {
+
+            if (getMediaPondProj() > 70)
+            {
+                this.status = "Aprovado";
+            }
+            else
+            {
+                this.status = "Reprovado";
+            }
+
+            return this.status;
+        }
+
+        public bool confirmaStatua()
+        {
+            return updateStatus(this.status);
+            
+        }
+
+        public bool finaliza()
+
+        {
+            return updateStatus("Encerrado");
         }
 
     }

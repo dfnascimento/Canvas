@@ -184,14 +184,15 @@ namespace Desktop
                 {
                     MessageBox.Show("Todas as notas devem estar preenchidas para finalizar avaliação");
                 }
+                else {
+                    pn.finalizarAvaliacao();
 
-                pn.finalizarAvaliacao();
+                    txtMediaArit.Text = "Média artimética: " + Math.Ceiling(pn.getMediaAritimetica()).ToString();
+                    txtMediaPond.Text = "Média ponderada: " + Math.Ceiling(pn.getMediaPonderada()).ToString();
+                    txtStatus.Text = "Status : " + pn.status;
 
-                txtMediaArit.Text = "Média artimética: " + Math.Ceiling(pn.getMediaAritimetica()).ToString();
-                txtMediaPond.Text = "Média ponderada: " + Math.Ceiling(pn.getMediaPonderada()).ToString();
-                txtStatus.Text = "Status : " + pn.status;
-
-                populaProjetosDisponiveis();
+                    populaProjetosDisponiveis();
+                }
             }
         }
 

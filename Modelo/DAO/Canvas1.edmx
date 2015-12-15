@@ -63,6 +63,8 @@
           <Property Name="Id_Avaliador" Type="int" Nullable="false" />
           <Property Name="Id_Projeto" Type="int" Nullable="false" />
           <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Media_Ponderada" Type="int" />
+          <Property Name="Media_Aritimetica" Type="int" />
         </EntityType>
         <EntityType Name="Comentario">
           <Key>
@@ -461,6 +463,8 @@
           <Property Name="Id_Avaliador" Type="Int32" Nullable="false" />
           <Property Name="Id_Projeto" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Media_Ponderada" Type="Int32" />
+          <Property Name="Media_Aritimetica" Type="Int32" />
           <NavigationProperty Name="Avaliacaos" Relationship="Self.FK_Avaliacao_Avaliador_Projeto" FromRole="Avaliador_Projeto" ToRole="Avaliacao" />
           <NavigationProperty Name="Avaliador_Externo" Relationship="Self.FK_Avaliador_Projeto_Avaliador" FromRole="Avaliador_Projeto" ToRole="Avaliador_Externo" />
           <NavigationProperty Name="Projeto" Relationship="Self.FK_Avaliador_Projeto_Projeto" FromRole="Avaliador_Projeto" ToRole="Projeto" />
@@ -872,6 +876,8 @@
                 <ScalarProperty Name="Id_Avaliador" ColumnName="Id_Avaliador" />
                 <ScalarProperty Name="Id_Projeto" ColumnName="Id_Projeto" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Media_Ponderada" ColumnName="Media_Ponderada" />
+                <ScalarProperty Name="Media_Aritimetica" ColumnName="Media_Aritimetica" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -133,10 +133,10 @@ namespace Desktop
             this.btnLogout = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.lblNota = new System.Windows.Forms.Label();
+            this.lblSta = new System.Windows.Forms.Label();
+            this.btnConfirmaSt = new System.Windows.Forms.Button();
+            this.btnEncerrar = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btnSelec = new System.Windows.Forms.Button();
             this.combProjDisp = new System.Windows.Forms.ComboBox();
@@ -1189,52 +1189,51 @@ namespace Desktop
             this.dataGridView3.Size = new System.Drawing.Size(724, 150);
             this.dataGridView3.TabIndex = 4;
             // 
-            // label37
+            // lblNota
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(119, 354);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(41, 13);
-            this.label37.TabIndex = 5;
-            this.label37.Text = "label37";
+            this.lblNota.AutoSize = true;
+            this.lblNota.Location = new System.Drawing.Point(119, 354);
+            this.lblNota.Name = "lblNota";
+            this.lblNota.Size = new System.Drawing.Size(0, 13);
+            this.lblNota.TabIndex = 5;
             // 
-            // label38
+            // lblSta
             // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(120, 400);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(41, 13);
-            this.label38.TabIndex = 6;
-            this.label38.Text = "label38";
+            this.lblSta.AutoSize = true;
+            this.lblSta.Location = new System.Drawing.Point(120, 400);
+            this.lblSta.Name = "lblSta";
+            this.lblSta.Size = new System.Drawing.Size(0, 13);
+            this.lblSta.TabIndex = 6;
             // 
-            // button2
+            // btnConfirmaSt
             // 
-            this.button2.Location = new System.Drawing.Point(615, 344);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Confirmar Status";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnConfirmaSt.Location = new System.Drawing.Point(615, 344);
+            this.btnConfirmaSt.Name = "btnConfirmaSt";
+            this.btnConfirmaSt.Size = new System.Drawing.Size(125, 23);
+            this.btnConfirmaSt.TabIndex = 7;
+            this.btnConfirmaSt.Text = "Confirmar Status";
+            this.btnConfirmaSt.UseVisualStyleBackColor = true;
+            this.btnConfirmaSt.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnEncerrar
             // 
-            this.button3.Location = new System.Drawing.Point(615, 400);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Encerrar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnEncerrar.Location = new System.Drawing.Point(615, 400);
+            this.btnEncerrar.Name = "btnEncerrar";
+            this.btnEncerrar.Size = new System.Drawing.Size(125, 23);
+            this.btnEncerrar.TabIndex = 8;
+            this.btnEncerrar.Text = "Encerrar";
+            this.btnEncerrar.UseVisualStyleBackColor = true;
+            this.btnEncerrar.Click += new System.EventHandler(this.button3_Click);
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.btnSelec);
             this.tabPage4.Controls.Add(this.combProjDisp);
             this.tabPage4.Controls.Add(this.label39);
-            this.tabPage4.Controls.Add(this.button3);
-            this.tabPage4.Controls.Add(this.button2);
-            this.tabPage4.Controls.Add(this.label38);
-            this.tabPage4.Controls.Add(this.label37);
+            this.tabPage4.Controls.Add(this.btnEncerrar);
+            this.tabPage4.Controls.Add(this.btnConfirmaSt);
+            this.tabPage4.Controls.Add(this.lblSta);
+            this.tabPage4.Controls.Add(this.lblNota);
             this.tabPage4.Controls.Add(this.dataGridView3);
             this.tabPage4.Controls.Add(this.label36);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -1254,6 +1253,7 @@ namespace Desktop
             this.btnSelec.TabIndex = 21;
             this.btnSelec.Text = "Selecionar";
             this.btnSelec.UseVisualStyleBackColor = true;
+            this.btnSelec.Click += new System.EventHandler(this.btnSelec_Click);
             // 
             // combProjDisp
             // 
@@ -1454,10 +1454,10 @@ namespace Desktop
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblNota;
+        private System.Windows.Forms.Label lblSta;
+        private System.Windows.Forms.Button btnConfirmaSt;
+        private System.Windows.Forms.Button btnEncerrar;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button btnSelec;
         private System.Windows.Forms.ComboBox combProjDisp;

@@ -346,7 +346,21 @@ namespace Desktop
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (this.combProjDisp.Text.Equals(""))
+            {
+                MessageBox.Show("Selecione um projeto");
+            }
+            else
+            {
+                PNProjeto proj = CadastroProjeto.getProjeto(combProjDisp.Text);
 
+                if (proj.finaliza())
+                {
+
+                    MessageBox.Show("Projeto encerrado");
+                }
+
+            }
         }
 
         private void clickComb(object sender, EventArgs e)
@@ -361,6 +375,58 @@ namespace Desktop
             if (CadastroProjeto.listarProjetosDisp().Count() == 0)
             {
                 MessageBox.Show("Nenhum projeto com disponível para atribuir avaliador");
+            }
+        }
+
+        private void btnSelec_Click(object sender, EventArgs e)
+        {
+            if (this.combProjDisp.Text.Equals(""))
+            {
+                MessageBox.Show("Selecione um projeto");
+            }
+            else
+            {
+                PNProjeto proj = CadastroProjeto.getProjeto(combProjDisp.Text);
+
+                populaGridNotas(proj);
+
+                lblNota.Text = "Média final : " + proj.getMediaPondProj().ToString();
+                lblSta.Text = "Status : " + proj.getStatusFinal();
+            }
+        }
+
+        private void populaGridNotas(PNProjeto proj) {
+            this.dataGridView3.Rows.Clear();
+
+            List<DadosAvaliacao> list = proj.getDadosAvaliacao();
+
+            string[] linha = new string[3];
+
+            foreach (var value in list)
+            {
+
+                linha[0] = value.nomeAvaliador;
+                linha[1] = value.mediaAritimetica.ToString();
+                linha[2] = value.mediaPonderada.ToString();
+
+                this.dataGridView3.Rows.Add(linha);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (this.combProjDisp.Text.Equals(""))
+            {
+                MessageBox.Show("Selecione um projeto");
+            }
+            else
+            {
+                PNProjeto proj = CadastroProjeto.getProjeto(combProjDisp.Text);
+
+                if (proj.confirmaStatua()) {
+                    MessageBox.Show("Status confimado");
+                }
+                
             }
         }
     }

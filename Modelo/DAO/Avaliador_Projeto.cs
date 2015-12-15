@@ -24,6 +24,8 @@ namespace Modelo.DAO
         public int Id_Avaliador { get; set; }
         public int Id_Projeto { get; set; }
         public string Status { get; set; }
+        public Nullable<int> Media_Ponderada { get; set; }
+        public Nullable<int> Media_Aritimetica { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Avaliacao> Avaliacaos { get; set; }
