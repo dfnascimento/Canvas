@@ -99,6 +99,33 @@ namespace Modelo.PN
             return notas;
         }
 
+        public Dictionary<String, String> dictComentarios()
+        {
+            Dictionary<String, String> comentarios = new Dictionary<String, String>();
+
+            CanvasEntities2 db = new CanvasEntities2();
+
+            var idProfessor = Acesso.getProfessor().id;
+
+            Comentario cm = (from com in db.Comentarios
+                            join orproj in db.Orientador_Projeto on com.Id_Orientador_Projeto equals orproj.Id
+                            where orproj.Id_Orientador == idProfessor
+                            && orproj.Id_Projeto == id
+                            select com).First();
+
+            comentarios.Add("I - Segmento de Clientes", cm.Quadro_1 == null ? " " : cm.Quadro_1.ToString());
+            comentarios.Add("II - Proposta de Valor", cm.Quadro_2 == null ? " " : cm.Quadro_2.ToString());
+            comentarios.Add("III - Canais (Distribuição e Comunicação)", cm.Quadro_3 == null ? " " : cm.Quadro_3.ToString());
+            comentarios.Add("IV - Relacionamento com clientes", cm.Quadro_4 == null ? " " : cm.Quadro_4.ToString());
+            comentarios.Add("V - Receitas", cm.Quadro_5 == null ? " " : cm.Quadro_5.ToString());
+            comentarios.Add("VI - Recursos Chave", cm.Quadro_6 == null ? " " : cm.Quadro_6.ToString());
+            comentarios.Add("VII - Atividades Chave", cm.Quadro_7 == null ? " " : cm.Quadro_7.ToString());
+            comentarios.Add("VIII - Parcerias Chave", cm.Quadro_8 == null ? " " : cm.Quadro_8.ToString());
+            comentarios.Add("IX - Custos", cm.Quadro_9 == null ? " " : cm.Quadro_9.ToString());
+
+            return comentarios;
+        }
+
         public bool isNotasPreenchidas() {
             Dictionary<String, int>  notas = dictNotas();
 
@@ -233,6 +260,57 @@ namespace Modelo.PN
                     break;
                 case "IX - Custos":
                     av.Nota_Quadro_9 = nota;
+                    break;
+                default:
+                    return false;
+            }
+
+            db.SaveChanges();
+            return true;
+
+        }
+
+        public bool addComentario(String quadro, String comentario)
+        {
+            CanvasEntities2 db = new CanvasEntities2();
+
+            var idProfessor = Acesso.getProfessor().id;
+
+
+            Comentario com = (from comm in db.Comentarios
+                            join orProj in db.Orientador_Projeto on comm.Id_Orientador_Projeto equals orProj.Id
+                            where orProj.Id_Orientador == idProfessor
+                            && orProj.Id_Projeto == id
+                            select comm).First();
+            switch (quadro)
+            {
+
+                case "I - Segmento de Clientes":
+                    com.Quadro_1 = comentario;
+                    break;
+                case "II - Proposta de Valor":
+                    com.Quadro_2 = comentario;
+                    break;
+                case "III - Canais (Distribuição e Comunicação)":
+                    com.Quadro_3 = comentario;
+                    break;
+                case "IV - Relacionamento com clientes":
+                    com.Quadro_4 = comentario;
+                    break;
+                case "V - Receitas":
+                    com.Quadro_5 = comentario;
+                    break;
+                case "VI - Recursos Chave":
+                    com.Quadro_6 = comentario;
+                    break;
+                case "VII - Atividades Chave":
+                    com.Quadro_7 = comentario;
+                    break;
+                case "VIII - Parcerias Chave":
+                    com.Quadro_8 = comentario;
+                    break;
+                case "IX - Custos":
+                    com.Quadro_9 = comentario;
                     break;
                 default:
                     return false;

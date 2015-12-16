@@ -14,19 +14,11 @@ namespace Modelo.DAO
     
     public partial class Aluno_Projeto
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Aluno_Projeto()
-        {
-            this.Comentarios = new HashSet<Comentario>();
-        }
-    
         public int Id { get; set; }
         public int Id_Projeto { get; set; }
         public int Id_Aluno { get; set; }
     
         public virtual Aluno Aluno { get; set; }
         public virtual Projeto Projeto { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comentario> Comentarios { get; set; }
     }
 }

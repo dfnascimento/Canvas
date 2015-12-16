@@ -15,7 +15,7 @@ namespace Modelo.DAO
     public partial class Comentario
     {
         public int Id { get; set; }
-        public int Id_Aluno_Projeto { get; set; }
+        public int Id_Orientador_Projeto { get; set; }
         public string Quadro_1 { get; set; }
         public string Quadro_2 { get; set; }
         public string Quadro_3 { get; set; }
@@ -26,6 +26,6 @@ namespace Modelo.DAO
         public string Quadro_8 { get; set; }
         public string Quadro_9 { get; set; }
     
-        public virtual Aluno_Projeto Aluno_Projeto { get; set; }
+        public virtual Orientador_Projeto Orientador_Projeto { get; set; }
     }
 }

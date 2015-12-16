@@ -78,6 +78,19 @@ namespace Desktop
             this.btnCarregar = new System.Windows.Forms.Button();
             this.cbProjDisp = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnSelec = new System.Windows.Forms.Button();
+            this.combProjDisp = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.btnEncerrar = new System.Windows.Forms.Button();
+            this.btnConfirmaSt = new System.Windows.Forms.Button();
+            this.lblSta = new System.Windows.Forms.Label();
+            this.lblNota = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.NomeAv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mediaAv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MediaPond = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label36 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -131,19 +144,6 @@ namespace Desktop
             this.label24 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.label36 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.lblNota = new System.Windows.Forms.Label();
-            this.lblSta = new System.Windows.Forms.Label();
-            this.btnConfirmaSt = new System.Windows.Forms.Button();
-            this.btnEncerrar = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btnSelec = new System.Windows.Forms.Button();
-            this.combProjDisp = new System.Windows.Forms.ComboBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.NomeAv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mediaAv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MediaPond = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -153,6 +153,8 @@ namespace Desktop
             ((System.ComponentModel.ISupportInitialize)(this.gridAvaliadoresProj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrientadoresProj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunosParicipantesProj)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -168,8 +170,6 @@ namespace Desktop
             this.tableLayoutPanel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -629,6 +629,137 @@ namespace Desktop
             this.label3.Size = new System.Drawing.Size(107, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Selecione o projeto : ";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.btnSelec);
+            this.tabPage4.Controls.Add(this.combProjDisp);
+            this.tabPage4.Controls.Add(this.label39);
+            this.tabPage4.Controls.Add(this.btnEncerrar);
+            this.tabPage4.Controls.Add(this.btnConfirmaSt);
+            this.tabPage4.Controls.Add(this.lblSta);
+            this.tabPage4.Controls.Add(this.lblNota);
+            this.tabPage4.Controls.Add(this.dataGridView3);
+            this.tabPage4.Controls.Add(this.label36);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(879, 519);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Acompanhar Projeto";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            // 
+            // btnSelec
+            // 
+            this.btnSelec.Location = new System.Drawing.Point(778, 23);
+            this.btnSelec.Name = "btnSelec";
+            this.btnSelec.Size = new System.Drawing.Size(75, 23);
+            this.btnSelec.TabIndex = 21;
+            this.btnSelec.Text = "Selecionar";
+            this.btnSelec.UseVisualStyleBackColor = true;
+            this.btnSelec.Click += new System.EventHandler(this.btnSelec_Click);
+            // 
+            // combProjDisp
+            // 
+            this.combProjDisp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combProjDisp.FormattingEnabled = true;
+            this.combProjDisp.Location = new System.Drawing.Point(286, 20);
+            this.combProjDisp.Name = "combProjDisp";
+            this.combProjDisp.Size = new System.Drawing.Size(405, 21);
+            this.combProjDisp.TabIndex = 20;
+            this.combProjDisp.Click += new System.EventHandler(this.clickComb);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(18, 23);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(177, 13);
+            this.label39.TabIndex = 19;
+            this.label39.Text = "Projetos com avaliação encerrada:  ";
+            // 
+            // btnEncerrar
+            // 
+            this.btnEncerrar.Location = new System.Drawing.Point(615, 400);
+            this.btnEncerrar.Name = "btnEncerrar";
+            this.btnEncerrar.Size = new System.Drawing.Size(125, 23);
+            this.btnEncerrar.TabIndex = 8;
+            this.btnEncerrar.Text = "Encerrar";
+            this.btnEncerrar.UseVisualStyleBackColor = true;
+            this.btnEncerrar.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnConfirmaSt
+            // 
+            this.btnConfirmaSt.Location = new System.Drawing.Point(615, 344);
+            this.btnConfirmaSt.Name = "btnConfirmaSt";
+            this.btnConfirmaSt.Size = new System.Drawing.Size(125, 23);
+            this.btnConfirmaSt.TabIndex = 7;
+            this.btnConfirmaSt.Text = "Confirmar Status";
+            this.btnConfirmaSt.UseVisualStyleBackColor = true;
+            this.btnConfirmaSt.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // lblSta
+            // 
+            this.lblSta.AutoSize = true;
+            this.lblSta.Location = new System.Drawing.Point(120, 400);
+            this.lblSta.Name = "lblSta";
+            this.lblSta.Size = new System.Drawing.Size(0, 13);
+            this.lblSta.TabIndex = 6;
+            // 
+            // lblNota
+            // 
+            this.lblNota.AutoSize = true;
+            this.lblNota.Location = new System.Drawing.Point(119, 354);
+            this.lblNota.Name = "lblNota";
+            this.lblNota.Size = new System.Drawing.Size(0, 13);
+            this.lblNota.TabIndex = 5;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AllowUserToOrderColumns = true;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeAv,
+            this.mediaAv,
+            this.MediaPond});
+            this.dataGridView3.Location = new System.Drawing.Point(71, 136);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.Size = new System.Drawing.Size(724, 150);
+            this.dataGridView3.TabIndex = 4;
+            // 
+            // NomeAv
+            // 
+            this.NomeAv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomeAv.HeaderText = "Nome";
+            this.NomeAv.Name = "NomeAv";
+            this.NomeAv.ReadOnly = true;
+            // 
+            // mediaAv
+            // 
+            this.mediaAv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mediaAv.HeaderText = "Média Aritimética";
+            this.mediaAv.Name = "mediaAv";
+            this.mediaAv.ReadOnly = true;
+            // 
+            // MediaPond
+            // 
+            this.MediaPond.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MediaPond.HeaderText = "Média Ponderada";
+            this.MediaPond.Name = "MediaPond";
+            this.MediaPond.ReadOnly = true;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(18, 100);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(118, 13);
+            this.label36.TabIndex = 3;
+            this.label36.Text = "Notas dos avaliadores: ";
             // 
             // tabPage5
             // 
@@ -1164,137 +1295,6 @@ namespace Desktop
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(18, 100);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(118, 13);
-            this.label36.TabIndex = 3;
-            this.label36.Text = "Notas dos avaliadores: ";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToOrderColumns = true;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeAv,
-            this.mediaAv,
-            this.MediaPond});
-            this.dataGridView3.Location = new System.Drawing.Point(71, 136);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(724, 150);
-            this.dataGridView3.TabIndex = 4;
-            // 
-            // lblNota
-            // 
-            this.lblNota.AutoSize = true;
-            this.lblNota.Location = new System.Drawing.Point(119, 354);
-            this.lblNota.Name = "lblNota";
-            this.lblNota.Size = new System.Drawing.Size(0, 13);
-            this.lblNota.TabIndex = 5;
-            // 
-            // lblSta
-            // 
-            this.lblSta.AutoSize = true;
-            this.lblSta.Location = new System.Drawing.Point(120, 400);
-            this.lblSta.Name = "lblSta";
-            this.lblSta.Size = new System.Drawing.Size(0, 13);
-            this.lblSta.TabIndex = 6;
-            // 
-            // btnConfirmaSt
-            // 
-            this.btnConfirmaSt.Location = new System.Drawing.Point(615, 344);
-            this.btnConfirmaSt.Name = "btnConfirmaSt";
-            this.btnConfirmaSt.Size = new System.Drawing.Size(125, 23);
-            this.btnConfirmaSt.TabIndex = 7;
-            this.btnConfirmaSt.Text = "Confirmar Status";
-            this.btnConfirmaSt.UseVisualStyleBackColor = true;
-            this.btnConfirmaSt.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnEncerrar
-            // 
-            this.btnEncerrar.Location = new System.Drawing.Point(615, 400);
-            this.btnEncerrar.Name = "btnEncerrar";
-            this.btnEncerrar.Size = new System.Drawing.Size(125, 23);
-            this.btnEncerrar.TabIndex = 8;
-            this.btnEncerrar.Text = "Encerrar";
-            this.btnEncerrar.UseVisualStyleBackColor = true;
-            this.btnEncerrar.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.btnSelec);
-            this.tabPage4.Controls.Add(this.combProjDisp);
-            this.tabPage4.Controls.Add(this.label39);
-            this.tabPage4.Controls.Add(this.btnEncerrar);
-            this.tabPage4.Controls.Add(this.btnConfirmaSt);
-            this.tabPage4.Controls.Add(this.lblSta);
-            this.tabPage4.Controls.Add(this.lblNota);
-            this.tabPage4.Controls.Add(this.dataGridView3);
-            this.tabPage4.Controls.Add(this.label36);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(879, 519);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Acompanhar Projeto";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
-            // 
-            // btnSelec
-            // 
-            this.btnSelec.Location = new System.Drawing.Point(778, 23);
-            this.btnSelec.Name = "btnSelec";
-            this.btnSelec.Size = new System.Drawing.Size(75, 23);
-            this.btnSelec.TabIndex = 21;
-            this.btnSelec.Text = "Selecionar";
-            this.btnSelec.UseVisualStyleBackColor = true;
-            this.btnSelec.Click += new System.EventHandler(this.btnSelec_Click);
-            // 
-            // combProjDisp
-            // 
-            this.combProjDisp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combProjDisp.FormattingEnabled = true;
-            this.combProjDisp.Location = new System.Drawing.Point(286, 20);
-            this.combProjDisp.Name = "combProjDisp";
-            this.combProjDisp.Size = new System.Drawing.Size(405, 21);
-            this.combProjDisp.TabIndex = 20;
-            this.combProjDisp.Click += new System.EventHandler(this.clickComb);
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(18, 23);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(177, 13);
-            this.label39.TabIndex = 19;
-            this.label39.Text = "Projetos com avaliação encerrada:  ";
-            // 
-            // NomeAv
-            // 
-            this.NomeAv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NomeAv.HeaderText = "Nome";
-            this.NomeAv.Name = "NomeAv";
-            this.NomeAv.ReadOnly = true;
-            // 
-            // mediaAv
-            // 
-            this.mediaAv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mediaAv.HeaderText = "Média Aritimética";
-            this.mediaAv.Name = "mediaAv";
-            this.mediaAv.ReadOnly = true;
-            // 
-            // MediaPond
-            // 
-            this.MediaPond.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MediaPond.HeaderText = "Média Ponderada";
-            this.MediaPond.Name = "MediaPond";
-            this.MediaPond.ReadOnly = true;
-            // 
             // TelaAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1304,6 +1304,7 @@ namespace Desktop
             this.Controls.Add(this.tabControl1);
             this.Name = "TelaAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Admin";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1316,6 +1317,9 @@ namespace Desktop
             ((System.ComponentModel.ISupportInitialize)(this.gridAvaliadoresProj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrientadoresProj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunosParicipantesProj)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1340,9 +1344,6 @@ namespace Desktop
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }

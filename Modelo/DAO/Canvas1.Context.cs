@@ -38,7 +38,5 @@ namespace Modelo.DAO
         public virtual DbSet<Peso> Pesoes { get; set; }
         public virtual DbSet<Professor> Professors { get; set; }
         public virtual DbSet<Projeto> Projetoes { get; set; }
-
-        public System.Data.Entity.DbSet<Modelo.PN.PNProjeto> PNProjetoes { get; set; }
     }
 }

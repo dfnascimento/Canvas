@@ -47,13 +47,13 @@ namespace Desktop
             this.cmbProjDisp = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnSelec = new System.Windows.Forms.Button();
-            this.combProjDisp = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.txtStatus = new System.Windows.Forms.Label();
             this.txtMediaPond = new System.Windows.Forms.Label();
             this.txtMediaArit = new System.Windows.Forms.Label();
-            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lblNota9 = new System.Windows.Forms.Label();
             this.lblNota8 = new System.Windows.Forms.Label();
             this.lblNota7 = new System.Windows.Forms.Label();
@@ -63,21 +63,21 @@ namespace Desktop
             this.lblNota3 = new System.Windows.Forms.Label();
             this.lblNota2 = new System.Windows.Forms.Label();
             this.lblNota1 = new System.Windows.Forms.Label();
+            this.btnSelec = new System.Windows.Forms.Button();
+            this.combProjDisp = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnOk = new System.Windows.Forms.Button();
             this.cbDesativar = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabAvaliar.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -254,35 +254,36 @@ namespace Desktop
             this.tabPage1.Text = "Finalizar Avaliação";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnSelec
+            // label9
             // 
-            this.btnSelec.Location = new System.Drawing.Point(778, 26);
-            this.btnSelec.Name = "btnSelec";
-            this.btnSelec.Size = new System.Drawing.Size(75, 23);
-            this.btnSelec.TabIndex = 18;
-            this.btnSelec.Text = "Selecionar";
-            this.btnSelec.UseVisualStyleBackColor = true;
-            this.btnSelec.Click += new System.EventHandler(this.btnSelec_Click);
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(70, 255);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 20);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Notas finais: ";
             // 
-            // combProjDisp
+            // label8
             // 
-            this.combProjDisp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combProjDisp.FormattingEnabled = true;
-            this.combProjDisp.Location = new System.Drawing.Point(286, 23);
-            this.combProjDisp.Name = "combProjDisp";
-            this.combProjDisp.Size = new System.Drawing.Size(405, 21);
-            this.combProjDisp.TabIndex = 17;
-            this.combProjDisp.SelectedIndexChanged += new System.EventHandler(this.combProjDisp_SelectedIndexChanged);
-            this.combProjDisp.Click += new System.EventHandler(this.cmbClick);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(49, 68);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(158, 20);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Revisão de notas: ";
             // 
-            // label7
+            // panel2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(181, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Projetos disponíveis para avaliação: ";
+            this.panel2.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.panel2.Controls.Add(this.txtStatus);
+            this.panel2.Controls.Add(this.txtMediaPond);
+            this.panel2.Controls.Add(this.txtMediaArit);
+            this.panel2.Location = new System.Drawing.Point(74, 288);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(731, 105);
+            this.panel2.TabIndex = 20;
             // 
             // txtStatus
             // 
@@ -311,15 +312,22 @@ namespace Desktop
             this.txtMediaArit.Size = new System.Drawing.Size(0, 20);
             this.txtMediaArit.TabIndex = 13;
             // 
-            // btnFinalizar
+            // panel1
             // 
-            this.btnFinalizar.Location = new System.Drawing.Point(778, 191);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(75, 23);
-            this.btnFinalizar.TabIndex = 12;
-            this.btnFinalizar.Text = "Finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.lblNota9);
+            this.panel1.Controls.Add(this.lblNota8);
+            this.panel1.Controls.Add(this.lblNota7);
+            this.panel1.Controls.Add(this.lblNota5);
+            this.panel1.Controls.Add(this.lblNota6);
+            this.panel1.Controls.Add(this.lblNota4);
+            this.panel1.Controls.Add(this.lblNota3);
+            this.panel1.Controls.Add(this.lblNota2);
+            this.panel1.Controls.Add(this.lblNota1);
+            this.panel1.Location = new System.Drawing.Point(52, 93);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(674, 120);
+            this.panel1.TabIndex = 19;
             // 
             // lblNota9
             // 
@@ -393,6 +401,46 @@ namespace Desktop
             this.lblNota1.Size = new System.Drawing.Size(0, 13);
             this.lblNota1.TabIndex = 3;
             // 
+            // btnSelec
+            // 
+            this.btnSelec.Location = new System.Drawing.Point(778, 26);
+            this.btnSelec.Name = "btnSelec";
+            this.btnSelec.Size = new System.Drawing.Size(75, 23);
+            this.btnSelec.TabIndex = 18;
+            this.btnSelec.Text = "Selecionar";
+            this.btnSelec.UseVisualStyleBackColor = true;
+            this.btnSelec.Click += new System.EventHandler(this.btnSelec_Click);
+            // 
+            // combProjDisp
+            // 
+            this.combProjDisp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combProjDisp.FormattingEnabled = true;
+            this.combProjDisp.Location = new System.Drawing.Point(286, 23);
+            this.combProjDisp.Name = "combProjDisp";
+            this.combProjDisp.Size = new System.Drawing.Size(405, 21);
+            this.combProjDisp.TabIndex = 17;
+            this.combProjDisp.SelectedIndexChanged += new System.EventHandler(this.combProjDisp_SelectedIndexChanged);
+            this.combProjDisp.Click += new System.EventHandler(this.cmbClick);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(181, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Projetos disponíveis para avaliação: ";
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Location = new System.Drawing.Point(778, 191);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(75, 23);
+            this.btnFinalizar.TabIndex = 12;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btnOk);
@@ -445,54 +493,6 @@ namespace Desktop
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel1.Controls.Add(this.lblNota9);
-            this.panel1.Controls.Add(this.lblNota8);
-            this.panel1.Controls.Add(this.lblNota7);
-            this.panel1.Controls.Add(this.lblNota5);
-            this.panel1.Controls.Add(this.lblNota6);
-            this.panel1.Controls.Add(this.lblNota4);
-            this.panel1.Controls.Add(this.lblNota3);
-            this.panel1.Controls.Add(this.lblNota2);
-            this.panel1.Controls.Add(this.lblNota1);
-            this.panel1.Location = new System.Drawing.Point(52, 93);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(674, 120);
-            this.panel1.TabIndex = 19;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.panel2.Controls.Add(this.txtStatus);
-            this.panel2.Controls.Add(this.txtMediaPond);
-            this.panel2.Controls.Add(this.txtMediaArit);
-            this.panel2.Location = new System.Drawing.Point(74, 288);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(731, 105);
-            this.panel2.TabIndex = 20;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(49, 68);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(158, 20);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Revisão de notas: ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(70, 255);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 20);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Notas finais: ";
-            // 
             // TelaAvaliador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,17 +502,18 @@ namespace Desktop
             this.Controls.Add(this.tabControl1);
             this.Name = "TelaAvaliador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Avaliador Externo";
             this.tabControl1.ResumeLayout(false);
             this.tabAvaliar.ResumeLayout(false);
             this.tabAvaliar.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }

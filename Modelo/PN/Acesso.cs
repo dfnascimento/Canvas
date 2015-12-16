@@ -104,5 +104,36 @@ namespace Modelo.PN
                 throw;
             }
         }
+
+        public static PNProfessor getProfessor()
+        {
+
+            try
+            {
+
+
+                PNProfessor ae = new PNProfessor();
+
+                ae.nome = nome;
+                ae.email = email;
+                ae.status = status;
+
+                CanvasEntities2 db = new CanvasEntities2();
+
+                var query = (from aval in db.Professors
+                             where aval.Id_Participante == id
+                             select aval).First();
+
+                ae.id = query.Id;
+                ae.disciplinaPrincipal = query.Disciplina_Principal;
+                ae.departamento = query.Departamento;
+
+                return ae;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

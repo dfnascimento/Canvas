@@ -71,7 +71,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Id_Aluno_Projeto" Type="int" Nullable="false" />
+          <Property Name="Id_Orientador_Projeto" Type="int" Nullable="false" />
           <Property Name="Quadro_1" Type="varchar" MaxLength="2000" />
           <Property Name="Quadro_2" Type="varchar" MaxLength="2000" />
           <Property Name="Quadro_3" Type="varchar" MaxLength="2000" />
@@ -247,15 +247,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Comentario_Aluno_Projeto">
-          <End Role="Aluno_Projeto" Type="Self.Aluno_Projeto" Multiplicity="1" />
+        <Association Name="FK_Comentario_Orientador_Projeto">
+          <End Role="Orientador_Projeto" Type="Self.Orientador_Projeto" Multiplicity="1" />
           <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Aluno_Projeto">
+            <Principal Role="Orientador_Projeto">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Comentario">
-              <PropertyRef Name="Id_Aluno_Projeto" />
+              <PropertyRef Name="Id_Orientador_Projeto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -365,8 +365,8 @@
             <End Role="Projeto" EntitySet="Projeto" />
             <End Role="Avaliador_Projeto" EntitySet="Avaliador_Projeto" />
           </AssociationSet>
-          <AssociationSet Name="FK_Comentario_Aluno_Projeto" Association="Self.FK_Comentario_Aluno_Projeto">
-            <End Role="Aluno_Projeto" EntitySet="Aluno_Projeto" />
+          <AssociationSet Name="FK_Comentario_Orientador_Projeto" Association="Self.FK_Comentario_Orientador_Projeto">
+            <End Role="Orientador_Projeto" EntitySet="Orientador_Projeto" />
             <End Role="Comentario" EntitySet="Comentario" />
           </AssociationSet>
           <AssociationSet Name="FK_Lideranca_Aluno" Association="Self.FK_Lideranca_Aluno">
@@ -425,7 +425,6 @@
           <Property Name="Id_Aluno" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Aluno" Relationship="Self.FK_Aluno_Projeto_Aluno" FromRole="Aluno_Projeto" ToRole="Aluno" />
           <NavigationProperty Name="Projeto" Relationship="Self.FK_Aluno_Projeto_Projeto" FromRole="Aluno_Projeto" ToRole="Projeto" />
-          <NavigationProperty Name="Comentarios" Relationship="Self.FK_Comentario_Aluno_Projeto" FromRole="Aluno_Projeto" ToRole="Comentario" />
         </EntityType>
         <EntityType Name="Avaliacao">
           <Key>
@@ -474,7 +473,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Id_Aluno_Projeto" Type="Int32" Nullable="false" />
+          <Property Name="Id_Orientador_Projeto" Type="Int32" Nullable="false" />
           <Property Name="Quadro_1" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="Quadro_2" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="Quadro_3" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
@@ -484,7 +483,7 @@
           <Property Name="Quadro_7" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="Quadro_8" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="Quadro_9" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Aluno_Projeto" Relationship="Self.FK_Comentario_Aluno_Projeto" FromRole="Comentario" ToRole="Aluno_Projeto" />
+          <NavigationProperty Name="Orientador_Projeto" Relationship="Self.FK_Comentario_Orientador_Projeto" FromRole="Comentario" ToRole="Orientador_Projeto" />
         </EntityType>
         <EntityType Name="Lideranca">
           <Key>
@@ -505,6 +504,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_Orientador" Type="Int32" Nullable="false" />
           <Property Name="Id_Projeto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Comentarios" Relationship="Self.FK_Comentario_Orientador_Projeto" FromRole="Orientador_Projeto" ToRole="Comentario" />
           <NavigationProperty Name="Projeto" Relationship="Self.FK_Orientador_Projeto_Professor" FromRole="Orientador_Projeto" ToRole="Projeto" />
           <NavigationProperty Name="Professor" Relationship="Self.FK_Orientador_Projeto_Projeto" FromRole="Orientador_Projeto" ToRole="Professor" />
         </EntityType>
@@ -629,18 +629,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Comentario_Aluno_Projeto">
-          <End Role="Aluno_Projeto" Type="Self.Aluno_Projeto" Multiplicity="1" />
-          <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Aluno_Projeto">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Comentario">
-              <PropertyRef Name="Id_Aluno_Projeto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Avaliacao_Avaliador_Projeto">
           <End Role="Avaliador_Projeto" Type="Self.Avaliador_Projeto" Multiplicity="1" />
           <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="*" />
@@ -686,6 +674,18 @@
             </Principal>
             <Dependent Role="Avaliador_Projeto">
               <PropertyRef Name="Id_Projeto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comentario_Orientador_Projeto">
+          <End Role="Orientador_Projeto" Type="Self.Orientador_Projeto" Multiplicity="1" />
+          <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orientador_Projeto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comentario">
+              <PropertyRef Name="Id_Orientador_Projeto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -771,10 +771,6 @@
             <End Role="Projeto" EntitySet="Projetoes" />
             <End Role="Aluno_Projeto" EntitySet="Aluno_Projeto" />
           </AssociationSet>
-          <AssociationSet Name="FK_Comentario_Aluno_Projeto" Association="Self.FK_Comentario_Aluno_Projeto">
-            <End Role="Aluno_Projeto" EntitySet="Aluno_Projeto" />
-            <End Role="Comentario" EntitySet="Comentarios" />
-          </AssociationSet>
           <AssociationSet Name="FK_Avaliacao_Avaliador_Projeto" Association="Self.FK_Avaliacao_Avaliador_Projeto">
             <End Role="Avaliador_Projeto" EntitySet="Avaliador_Projeto" />
             <End Role="Avaliacao" EntitySet="Avaliacaos" />
@@ -790,6 +786,10 @@
           <AssociationSet Name="FK_Avaliador_Projeto_Projeto" Association="Self.FK_Avaliador_Projeto_Projeto">
             <End Role="Projeto" EntitySet="Projetoes" />
             <End Role="Avaliador_Projeto" EntitySet="Avaliador_Projeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comentario_Orientador_Projeto" Association="Self.FK_Comentario_Orientador_Projeto">
+            <End Role="Orientador_Projeto" EntitySet="Orientador_Projeto" />
+            <End Role="Comentario" EntitySet="Comentarios" />
           </AssociationSet>
           <AssociationSet Name="FK_Lideranca_Projeto" Association="Self.FK_Lideranca_Projeto">
             <End Role="Projeto" EntitySet="Projetoes" />
@@ -885,7 +885,7 @@
             <EntityTypeMapping TypeName="CanvasModel.Comentario">
               <MappingFragment StoreEntitySet="Comentario">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Id_Aluno_Projeto" ColumnName="Id_Aluno_Projeto" />
+                <ScalarProperty Name="Id_Orientador_Projeto" ColumnName="Id_Orientador_Projeto" />
                 <ScalarProperty Name="Quadro_1" ColumnName="Quadro_1" />
                 <ScalarProperty Name="Quadro_2" ColumnName="Quadro_2" />
                 <ScalarProperty Name="Quadro_3" ColumnName="Quadro_3" />
