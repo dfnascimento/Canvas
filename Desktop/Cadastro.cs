@@ -109,7 +109,6 @@ namespace Desktop
                 this.lblFormacao.Size = new System.Drawing.Size(60, 13);
                 this.lblFormacao.TabIndex = 14;
                 this.lblFormacao.Text = "Formação: ";
-                this.lblFormacao.Click += new System.EventHandler(this.label5_Click);
                 // 
                 // lblArea
                 // 
@@ -201,20 +200,7 @@ namespace Desktop
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelDinamico_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-        }
-
+        
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();

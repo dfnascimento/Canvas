@@ -9,7 +9,7 @@ namespace Modelo.PN
 {
     public class PNAvaliadorExterno
     {
-
+        public int id { get; set; } // id avaliador
         public String nome { get; set; }
         public String email { get; set; }
         public String senha { get; set; }
@@ -45,6 +45,41 @@ namespace Modelo.PN
 
             return true;
 
+        }
+
+        //Retorna nome dos projetos disponiveis para avaliação
+        public List<String> listarProjetosDisp()
+        {
+
+            try
+            {
+                CanvasEntities2 db = new CanvasEntities2();
+
+                var query =
+                           from proj in db.Projetoes
+                           join avalproj in db.Avaliador_Projeto on proj.Id equals avalproj.Id_Projeto
+                           where proj.Status == "Em avaliação" &&
+                                 avalproj.Id_Avaliador == this.id &&
+                                 avalproj.Status == "Em Preenchimento"
+                           select new
+                           {
+                               proj
+                           };
+
+                List<String> lista = new List<String>();
+
+                foreach (var result in query)
+                {
+                    lista.Add(result.proj.Nome);
+
+                }
+                return lista;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
     }

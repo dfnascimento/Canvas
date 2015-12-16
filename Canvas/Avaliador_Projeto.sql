@@ -4,6 +4,8 @@
     [Id_Avaliador] INT NOT NULL, 
     [Id_Projeto] INT NOT NULL, 
     [Status] VARCHAR(20) NOT NULL, 
+    [Media_Ponderada] INT NULL, 
+    [Media_Aritimetica] INT NULL, 
     CONSTRAINT [FK_Avaliador_Projeto_Avaliador] FOREIGN KEY ([Id_Avaliador]) REFERENCES [Avaliador_Externo]([Id]), 
     CONSTRAINT [FK_Avaliador_Projeto_Projeto] FOREIGN KEY ([Id_Projeto]) REFERENCES [Projeto]([Id])
 )

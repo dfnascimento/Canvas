@@ -15,7 +15,6 @@ namespace Modelo.DAO
     public partial class Peso
     {
         public int Id { get; set; }
-        public int Id_Projeto { get; set; }
         public Nullable<int> Peso_Quadro_1 { get; set; }
         public Nullable<int> Peso_Quadro_2 { get; set; }
         public Nullable<int> Peso_Quadro_3 { get; set; }
@@ -25,7 +24,5 @@ namespace Modelo.DAO
         public Nullable<int> Peso_Quadro_7 { get; set; }
         public Nullable<int> Peso_Quadro_8 { get; set; }
         public Nullable<int> Peso_Quadro_9 { get; set; }
-    
-        public virtual Projeto Projeto { get; set; }
     }
 }

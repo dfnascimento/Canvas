@@ -18,9 +18,9 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Participante" Type="int" Nullable="false" />
-          <Property Name="Curso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Curso" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Periodo" Type="int" Nullable="false" />
-          <Property Name="Campus" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Campus" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Aluno_Projeto">
           <Key>
@@ -52,8 +52,8 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Participante" Type="int" Nullable="false" />
-          <Property Name="Area_Atuacao" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Formacao" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Area_Atuacao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Formacao" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Avaliador_Projeto">
           <Key>
@@ -63,22 +63,24 @@
           <Property Name="Id_Avaliador" Type="int" Nullable="false" />
           <Property Name="Id_Projeto" Type="int" Nullable="false" />
           <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Media_Ponderada" Type="int" />
+          <Property Name="Media_Aritimetica" Type="int" />
         </EntityType>
         <EntityType Name="Comentario">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Id_Aluno_Projeto" Type="int" Nullable="false" />
-          <Property Name="Quadro_1" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_2" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_3" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_4" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_5" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_6" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_7" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_8" Type="varchar" MaxLength="200" />
-          <Property Name="Quadro_9" Type="varchar" MaxLength="200" />
+          <Property Name="Id_Orientador_Projeto" Type="int" Nullable="false" />
+          <Property Name="Quadro_1" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_2" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_3" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_4" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_5" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_6" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_7" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_8" Type="varchar" MaxLength="2000" />
+          <Property Name="Quadro_9" Type="varchar" MaxLength="2000" />
         </EntityType>
         <EntityType Name="Lideranca">
           <Key>
@@ -113,7 +115,6 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Id_Projeto" Type="int" Nullable="false" />
           <Property Name="Peso_Quadro_1" Type="int" />
           <Property Name="Peso_Quadro_2" Type="int" />
           <Property Name="Peso_Quadro_3" Type="int" />
@@ -130,29 +131,25 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Participante" Type="int" Nullable="false" />
-          <Property Name="Disciplina_Principal" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Departamento" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Disciplina_Principal" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Departamento" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Projeto">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Resposta_1" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_2" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_3" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_4" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_5" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_6" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_7" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_8" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_9" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_10" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_11" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_12" Type="varchar" MaxLength="200" />
-          <Property Name="Resposta_13" Type="varchar" MaxLength="200" />
-          <Property Name="Nome" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Resposta_1" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_2" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_3" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_4" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_5" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_6" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_7" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_8" Type="varchar" MaxLength="2000" />
+          <Property Name="Resposta_9" Type="varchar" MaxLength="2000" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_Admin_Participante">
           <End Role="Participante" Type="Self.Participante" Multiplicity="1" />
@@ -203,13 +200,13 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Avaliacao_Avaliador_Projeto">
-          <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="1" />
-          <End Role="Avaliacao1" Type="Self.Avaliacao" Multiplicity="*" />
+          <End Role="Avaliador_Projeto" Type="Self.Avaliador_Projeto" Multiplicity="1" />
+          <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Avaliacao">
+            <Principal Role="Avaliador_Projeto">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Avaliacao1">
+            <Dependent Role="Avaliacao">
               <PropertyRef Name="Id_Avaliador_Projeto" />
             </Dependent>
           </ReferentialConstraint>
@@ -250,15 +247,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Comentario_Aluno_Projeto">
-          <End Role="Aluno_Projeto" Type="Self.Aluno_Projeto" Multiplicity="1" />
+        <Association Name="FK_Comentario_Orientador_Projeto">
+          <End Role="Orientador_Projeto" Type="Self.Orientador_Projeto" Multiplicity="1" />
           <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Aluno_Projeto">
+            <Principal Role="Orientador_Projeto">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Comentario">
-              <PropertyRef Name="Id_Aluno_Projeto" />
+              <PropertyRef Name="Id_Orientador_Projeto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -307,18 +304,6 @@
             </Principal>
             <Dependent Role="Orientador_Projeto">
               <PropertyRef Name="Id_Orientador" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Peso_Projeto">
-          <End Role="Projeto" Type="Self.Projeto" Multiplicity="1" />
-          <End Role="Peso" Type="Self.Peso" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Projeto">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Peso">
-              <PropertyRef Name="Id_Projeto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -365,8 +350,8 @@
             <End Role="Aluno_Projeto" EntitySet="Aluno_Projeto" />
           </AssociationSet>
           <AssociationSet Name="FK_Avaliacao_Avaliador_Projeto" Association="Self.FK_Avaliacao_Avaliador_Projeto">
+            <End Role="Avaliador_Projeto" EntitySet="Avaliador_Projeto" />
             <End Role="Avaliacao" EntitySet="Avaliacao" />
-            <End Role="Avaliacao1" EntitySet="Avaliacao" />
           </AssociationSet>
           <AssociationSet Name="FK_Avaliador_Externo_Participante" Association="Self.FK_Avaliador_Externo_Participante">
             <End Role="Participante" EntitySet="Participante" />
@@ -380,8 +365,8 @@
             <End Role="Projeto" EntitySet="Projeto" />
             <End Role="Avaliador_Projeto" EntitySet="Avaliador_Projeto" />
           </AssociationSet>
-          <AssociationSet Name="FK_Comentario_Aluno_Projeto" Association="Self.FK_Comentario_Aluno_Projeto">
-            <End Role="Aluno_Projeto" EntitySet="Aluno_Projeto" />
+          <AssociationSet Name="FK_Comentario_Orientador_Projeto" Association="Self.FK_Comentario_Orientador_Projeto">
+            <End Role="Orientador_Projeto" EntitySet="Orientador_Projeto" />
             <End Role="Comentario" EntitySet="Comentario" />
           </AssociationSet>
           <AssociationSet Name="FK_Lideranca_Aluno" Association="Self.FK_Lideranca_Aluno">
@@ -399,10 +384,6 @@
           <AssociationSet Name="FK_Orientador_Projeto_Projeto" Association="Self.FK_Orientador_Projeto_Projeto">
             <End Role="Professor" EntitySet="Professor" />
             <End Role="Orientador_Projeto" EntitySet="Orientador_Projeto" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Peso_Projeto" Association="Self.FK_Peso_Projeto">
-            <End Role="Projeto" EntitySet="Projeto" />
-            <End Role="Peso" EntitySet="Peso" />
           </AssociationSet>
           <AssociationSet Name="FK_Professor_Participante" Association="Self.FK_Professor_Participante">
             <End Role="Participante" EntitySet="Participante" />
@@ -428,9 +409,9 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_Participante" Type="Int32" Nullable="false" />
-          <Property Name="Curso" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Curso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Periodo" Type="Int32" Nullable="false" />
-          <Property Name="Campus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Campus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Participante" Relationship="Self.FK_Aluno_Participante" FromRole="Aluno" ToRole="Participante" />
           <NavigationProperty Name="Aluno_Projeto" Relationship="Self.FK_Aluno_Projeto_Aluno" FromRole="Aluno" ToRole="Aluno_Projeto" />
           <NavigationProperty Name="Liderancas" Relationship="Self.FK_Lideranca_Aluno" FromRole="Aluno" ToRole="Lideranca" />
@@ -444,7 +425,6 @@
           <Property Name="Id_Aluno" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Aluno" Relationship="Self.FK_Aluno_Projeto_Aluno" FromRole="Aluno_Projeto" ToRole="Aluno" />
           <NavigationProperty Name="Projeto" Relationship="Self.FK_Aluno_Projeto_Projeto" FromRole="Aluno_Projeto" ToRole="Projeto" />
-          <NavigationProperty Name="Comentarios" Relationship="Self.FK_Comentario_Aluno_Projeto" FromRole="Aluno_Projeto" ToRole="Comentario" />
         </EntityType>
         <EntityType Name="Avaliacao">
           <Key>
@@ -461,8 +441,7 @@
           <Property Name="Nota_Quadro_7" Type="Int32" />
           <Property Name="Nota_Quadro_8" Type="Int32" />
           <Property Name="Nota_Quadro_9" Type="Int32" />
-          <NavigationProperty Name="Avaliacao1" Relationship="Self.FK_Avaliacao_Avaliador_Projeto" FromRole="Avaliacao" ToRole="Avaliacao1" />
-          <NavigationProperty Name="Avaliacao2" Relationship="Self.FK_Avaliacao_Avaliador_Projeto" FromRole="Avaliacao1" ToRole="Avaliacao" />
+          <NavigationProperty Name="Avaliador_Projeto" Relationship="Self.FK_Avaliacao_Avaliador_Projeto" FromRole="Avaliacao" ToRole="Avaliador_Projeto" />
         </EntityType>
         <EntityType Name="Avaliador_Externo">
           <Key>
@@ -470,8 +449,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_Participante" Type="Int32" Nullable="false" />
-          <Property Name="Area_Atuacao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Formacao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Area_Atuacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Formacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Participante" Relationship="Self.FK_Avaliador_Externo_Participante" FromRole="Avaliador_Externo" ToRole="Participante" />
           <NavigationProperty Name="Avaliador_Projeto" Relationship="Self.FK_Avaliador_Projeto_Avaliador" FromRole="Avaliador_Externo" ToRole="Avaliador_Projeto" />
         </EntityType>
@@ -483,6 +462,9 @@
           <Property Name="Id_Avaliador" Type="Int32" Nullable="false" />
           <Property Name="Id_Projeto" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Media_Ponderada" Type="Int32" />
+          <Property Name="Media_Aritimetica" Type="Int32" />
+          <NavigationProperty Name="Avaliacaos" Relationship="Self.FK_Avaliacao_Avaliador_Projeto" FromRole="Avaliador_Projeto" ToRole="Avaliacao" />
           <NavigationProperty Name="Avaliador_Externo" Relationship="Self.FK_Avaliador_Projeto_Avaliador" FromRole="Avaliador_Projeto" ToRole="Avaliador_Externo" />
           <NavigationProperty Name="Projeto" Relationship="Self.FK_Avaliador_Projeto_Projeto" FromRole="Avaliador_Projeto" ToRole="Projeto" />
         </EntityType>
@@ -491,17 +473,17 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Id_Aluno_Projeto" Type="Int32" Nullable="false" />
-          <Property Name="Quadro_1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_5" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_6" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_7" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_8" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Quadro_9" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Aluno_Projeto" Relationship="Self.FK_Comentario_Aluno_Projeto" FromRole="Comentario" ToRole="Aluno_Projeto" />
+          <Property Name="Id_Orientador_Projeto" Type="Int32" Nullable="false" />
+          <Property Name="Quadro_1" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_2" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_3" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_4" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_5" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_6" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_7" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_8" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Quadro_9" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Orientador_Projeto" Relationship="Self.FK_Comentario_Orientador_Projeto" FromRole="Comentario" ToRole="Orientador_Projeto" />
         </EntityType>
         <EntityType Name="Lideranca">
           <Key>
@@ -522,6 +504,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_Orientador" Type="Int32" Nullable="false" />
           <Property Name="Id_Projeto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Comentarios" Relationship="Self.FK_Comentario_Orientador_Projeto" FromRole="Orientador_Projeto" ToRole="Comentario" />
           <NavigationProperty Name="Projeto" Relationship="Self.FK_Orientador_Projeto_Professor" FromRole="Orientador_Projeto" ToRole="Projeto" />
           <NavigationProperty Name="Professor" Relationship="Self.FK_Orientador_Projeto_Projeto" FromRole="Orientador_Projeto" ToRole="Professor" />
         </EntityType>
@@ -544,7 +527,6 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Id_Projeto" Type="Int32" Nullable="false" />
           <Property Name="Peso_Quadro_1" Type="Int32" />
           <Property Name="Peso_Quadro_2" Type="Int32" />
           <Property Name="Peso_Quadro_3" Type="Int32" />
@@ -554,7 +536,6 @@
           <Property Name="Peso_Quadro_7" Type="Int32" />
           <Property Name="Peso_Quadro_8" Type="Int32" />
           <Property Name="Peso_Quadro_9" Type="Int32" />
-          <NavigationProperty Name="Projeto" Relationship="Self.FK_Peso_Projeto" FromRole="Peso" ToRole="Projeto" />
         </EntityType>
         <EntityType Name="Professor">
           <Key>
@@ -562,8 +543,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_Participante" Type="Int32" Nullable="false" />
-          <Property Name="Disciplina_Principal" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Departamento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Disciplina_Principal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Orientador_Projeto" Relationship="Self.FK_Orientador_Projeto_Projeto" FromRole="Professor" ToRole="Orientador_Projeto" />
           <NavigationProperty Name="Participante" Relationship="Self.FK_Professor_Participante" FromRole="Professor" ToRole="Participante" />
         </EntityType>
@@ -572,26 +553,21 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Resposta_1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_5" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_6" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_7" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_8" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_9" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_10" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_11" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_12" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Resposta_13" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Nome" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Resposta_1" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_2" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_3" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_4" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_5" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_6" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_7" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_8" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Resposta_9" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Aluno_Projeto" Relationship="Self.FK_Aluno_Projeto_Projeto" FromRole="Projeto" ToRole="Aluno_Projeto" />
           <NavigationProperty Name="Avaliador_Projeto" Relationship="Self.FK_Avaliador_Projeto_Projeto" FromRole="Projeto" ToRole="Avaliador_Projeto" />
           <NavigationProperty Name="Liderancas" Relationship="Self.FK_Lideranca_Projeto" FromRole="Projeto" ToRole="Lideranca" />
           <NavigationProperty Name="Orientador_Projeto" Relationship="Self.FK_Orientador_Projeto_Professor" FromRole="Projeto" ToRole="Orientador_Projeto" />
-          <NavigationProperty Name="Pesoes" Relationship="Self.FK_Peso_Projeto" FromRole="Projeto" ToRole="Peso" />
         </EntityType>
         <Association Name="FK_Admin_Participante">
           <End Role="Participante" Type="Self.Participante" Multiplicity="1" />
@@ -653,26 +629,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Comentario_Aluno_Projeto">
-          <End Role="Aluno_Projeto" Type="Self.Aluno_Projeto" Multiplicity="1" />
-          <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Aluno_Projeto">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Comentario">
-              <PropertyRef Name="Id_Aluno_Projeto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Avaliacao_Avaliador_Projeto">
-          <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="1" />
-          <End Role="Avaliacao1" Type="Self.Avaliacao" Multiplicity="*" />
+          <End Role="Avaliador_Projeto" Type="Self.Avaliador_Projeto" Multiplicity="1" />
+          <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Avaliacao">
+            <Principal Role="Avaliador_Projeto">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Avaliacao1">
+            <Dependent Role="Avaliacao">
               <PropertyRef Name="Id_Avaliador_Projeto" />
             </Dependent>
           </ReferentialConstraint>
@@ -710,6 +674,18 @@
             </Principal>
             <Dependent Role="Avaliador_Projeto">
               <PropertyRef Name="Id_Projeto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comentario_Orientador_Projeto">
+          <End Role="Orientador_Projeto" Type="Self.Orientador_Projeto" Multiplicity="1" />
+          <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orientador_Projeto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comentario">
+              <PropertyRef Name="Id_Orientador_Projeto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -761,18 +737,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Peso_Projeto">
-          <End Role="Projeto" Type="Self.Projeto" Multiplicity="1" />
-          <End Role="Peso" Type="Self.Peso" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Projeto">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Peso">
-              <PropertyRef Name="Id_Projeto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="CanvasEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admins" EntityType="Self.Admin" />
           <EntitySet Name="Alunoes" EntityType="Self.Aluno" />
@@ -807,13 +771,9 @@
             <End Role="Projeto" EntitySet="Projetoes" />
             <End Role="Aluno_Projeto" EntitySet="Aluno_Projeto" />
           </AssociationSet>
-          <AssociationSet Name="FK_Comentario_Aluno_Projeto" Association="Self.FK_Comentario_Aluno_Projeto">
-            <End Role="Aluno_Projeto" EntitySet="Aluno_Projeto" />
-            <End Role="Comentario" EntitySet="Comentarios" />
-          </AssociationSet>
           <AssociationSet Name="FK_Avaliacao_Avaliador_Projeto" Association="Self.FK_Avaliacao_Avaliador_Projeto">
+            <End Role="Avaliador_Projeto" EntitySet="Avaliador_Projeto" />
             <End Role="Avaliacao" EntitySet="Avaliacaos" />
-            <End Role="Avaliacao1" EntitySet="Avaliacaos" />
           </AssociationSet>
           <AssociationSet Name="FK_Avaliador_Externo_Participante" Association="Self.FK_Avaliador_Externo_Participante">
             <End Role="Participante" EntitySet="Participantes" />
@@ -826,6 +786,10 @@
           <AssociationSet Name="FK_Avaliador_Projeto_Projeto" Association="Self.FK_Avaliador_Projeto_Projeto">
             <End Role="Projeto" EntitySet="Projetoes" />
             <End Role="Avaliador_Projeto" EntitySet="Avaliador_Projeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comentario_Orientador_Projeto" Association="Self.FK_Comentario_Orientador_Projeto">
+            <End Role="Orientador_Projeto" EntitySet="Orientador_Projeto" />
+            <End Role="Comentario" EntitySet="Comentarios" />
           </AssociationSet>
           <AssociationSet Name="FK_Lideranca_Projeto" Association="Self.FK_Lideranca_Projeto">
             <End Role="Projeto" EntitySet="Projetoes" />
@@ -842,10 +806,6 @@
           <AssociationSet Name="FK_Professor_Participante" Association="Self.FK_Professor_Participante">
             <End Role="Participante" EntitySet="Participantes" />
             <End Role="Professor" EntitySet="Professors" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Peso_Projeto" Association="Self.FK_Peso_Projeto">
-            <End Role="Projeto" EntitySet="Projetoes" />
-            <End Role="Peso" EntitySet="Pesoes" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -916,6 +876,8 @@
                 <ScalarProperty Name="Id_Avaliador" ColumnName="Id_Avaliador" />
                 <ScalarProperty Name="Id_Projeto" ColumnName="Id_Projeto" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Media_Ponderada" ColumnName="Media_Ponderada" />
+                <ScalarProperty Name="Media_Aritimetica" ColumnName="Media_Aritimetica" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -923,7 +885,7 @@
             <EntityTypeMapping TypeName="CanvasModel.Comentario">
               <MappingFragment StoreEntitySet="Comentario">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Id_Aluno_Projeto" ColumnName="Id_Aluno_Projeto" />
+                <ScalarProperty Name="Id_Orientador_Projeto" ColumnName="Id_Orientador_Projeto" />
                 <ScalarProperty Name="Quadro_1" ColumnName="Quadro_1" />
                 <ScalarProperty Name="Quadro_2" ColumnName="Quadro_2" />
                 <ScalarProperty Name="Quadro_3" ColumnName="Quadro_3" />
@@ -971,7 +933,6 @@
             <EntityTypeMapping TypeName="CanvasModel.Peso">
               <MappingFragment StoreEntitySet="Peso">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Id_Projeto" ColumnName="Id_Projeto" />
                 <ScalarProperty Name="Peso_Quadro_1" ColumnName="Peso_Quadro_1" />
                 <ScalarProperty Name="Peso_Quadro_2" ColumnName="Peso_Quadro_2" />
                 <ScalarProperty Name="Peso_Quadro_3" ColumnName="Peso_Quadro_3" />
@@ -1008,10 +969,6 @@
                 <ScalarProperty Name="Resposta_7" ColumnName="Resposta_7" />
                 <ScalarProperty Name="Resposta_8" ColumnName="Resposta_8" />
                 <ScalarProperty Name="Resposta_9" ColumnName="Resposta_9" />
-                <ScalarProperty Name="Resposta_10" ColumnName="Resposta_10" />
-                <ScalarProperty Name="Resposta_11" ColumnName="Resposta_11" />
-                <ScalarProperty Name="Resposta_12" ColumnName="Resposta_12" />
-                <ScalarProperty Name="Resposta_13" ColumnName="Resposta_13" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
               </MappingFragment>
             </EntityTypeMapping>

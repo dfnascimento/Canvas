@@ -28,7 +28,7 @@ namespace Modelo.PN
             Aluno al = new Aluno();
 
             p.Nome = this.nome;
-            p.Senha = this.senha;
+            p.Senha = Util.HashValue(this.senha);
             p.Email = this.email;
             p.Status = "Ativo";
 

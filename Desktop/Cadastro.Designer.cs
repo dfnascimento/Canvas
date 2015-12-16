@@ -122,7 +122,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(308, 20);
             this.txtNome.TabIndex = 2;
-            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // txtEmail
             // 
@@ -159,7 +158,7 @@
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(231, 341);
+            this.btnEnviar.Location = new System.Drawing.Point(299, 341);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(75, 23);
             this.btnEnviar.TabIndex = 7;
@@ -173,7 +172,6 @@
             this.panelDinamico.Name = "panelDinamico";
             this.panelDinamico.Size = new System.Drawing.Size(422, 76);
             this.panelDinamico.TabIndex = 6;
-            this.panelDinamico.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDinamico_Paint);
             // 
             // Cadastro
             // 
@@ -194,7 +192,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Cadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "15";
+            this.Text = "Cadastro";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

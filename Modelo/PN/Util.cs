@@ -25,5 +25,13 @@ namespace Modelo.PN
 
             return hashValue.ToString();
         }
+
+        public static int notNull(int value) {
+            if (value == null) {
+                return -1;
+            }
+
+            return value;
+        }
     }
 }

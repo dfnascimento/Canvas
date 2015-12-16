@@ -11,5 +11,5 @@
     [Nota_Quadro_7] INT NULL, 
     [Nota_Quadro_8] INT NULL, 
     [Nota_Quadro_9] INT NULL, 
-    CONSTRAINT [FK_Avaliacao_Avaliador_Projeto] FOREIGN KEY ([Id_Avaliador_Projeto]) REFERENCES [Avaliacao]([Id])
+    CONSTRAINT [FK_Avaliacao_Avaliador_Projeto] FOREIGN KEY ([Id_Avaliador_Projeto]) REFERENCES [Avaliador_Projeto]([Id])
 )

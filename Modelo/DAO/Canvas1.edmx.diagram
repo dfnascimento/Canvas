@@ -4,35 +4,34 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="44a84f625bb54a6398623a28719966f7" Name="Diagram1">
-        <EntityTypeShape EntityType="CanvasModel.Admin" Width="1.5" PointX="3.75" PointY="18.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CanvasModel.Aluno" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CanvasModel.Aluno_Projeto" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="CanvasModel.Avaliacao" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CanvasModel.Avaliador_Externo" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CanvasModel.Avaliador_Projeto" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="CanvasModel.Comentario" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CanvasModel.Lideranca" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="CanvasModel.Orientador_Projeto" Width="1.5" PointX="6" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CanvasModel.Participante" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CanvasModel.Peso" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CanvasModel.Professor" Width="1.5" PointX="3.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="CanvasModel.Projeto" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+      <Diagram DiagramId="af8f47f4c2124c2a8e41b43eabf39841" Name="Diagram1">
+        <EntityTypeShape EntityType="CanvasModel.Admin" Width="1.5" PointX="3.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="CanvasModel.Aluno" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CanvasModel.Aluno_Projeto" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CanvasModel.Avaliacao" Width="1.5" PointX="8.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CanvasModel.Avaliador_Externo" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CanvasModel.Avaliador_Projeto" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CanvasModel.Comentario" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CanvasModel.Lideranca" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CanvasModel.Orientador_Projeto" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CanvasModel.Participante" Width="1.5" PointX="1.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CanvasModel.Peso" Width="1.5" PointX="5.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CanvasModel.Professor" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CanvasModel.Projeto" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <AssociationConnector Association="CanvasModel.FK_Admin_Participante" ManuallyRouted="false" />
         <AssociationConnector Association="CanvasModel.FK_Aluno_Participante" ManuallyRouted="false" />
         <AssociationConnector Association="CanvasModel.FK_Aluno_Projeto_Aluno" ManuallyRouted="false" />
         <AssociationConnector Association="CanvasModel.FK_Lideranca_Aluno" ManuallyRouted="false" />
         <AssociationConnector Association="CanvasModel.FK_Aluno_Projeto_Projeto" ManuallyRouted="false" />
-        <AssociationConnector Association="CanvasModel.FK_Comentario_Aluno_Projeto" ManuallyRouted="false" />
         <AssociationConnector Association="CanvasModel.FK_Avaliacao_Avaliador_Projeto" ManuallyRouted="false" />
         <AssociationConnector Association="CanvasModel.FK_Avaliador_Externo_Participante" ManuallyRouted="false" />
         <AssociationConnector Association="CanvasModel.FK_Avaliador_Projeto_Avaliador" ManuallyRouted="false" />
         <AssociationConnector Association="CanvasModel.FK_Avaliador_Projeto_Projeto" ManuallyRouted="false" />
+        <AssociationConnector Association="CanvasModel.FK_Comentario_Orientador_Projeto" ManuallyRouted="false" />
         <AssociationConnector Association="CanvasModel.FK_Lideranca_Projeto" ManuallyRouted="false" />
         <AssociationConnector Association="CanvasModel.FK_Orientador_Projeto_Professor" ManuallyRouted="false" />
         <AssociationConnector Association="CanvasModel.FK_Orientador_Projeto_Projeto" ManuallyRouted="false" />
         <AssociationConnector Association="CanvasModel.FK_Professor_Participante" ManuallyRouted="false" />
-        <AssociationConnector Association="CanvasModel.FK_Peso_Projeto" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
